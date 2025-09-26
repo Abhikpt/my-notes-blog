@@ -1,0 +1,1296 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Playwright csharp - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Playwright csharp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playwright-with-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playwright with C#
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Playwright with C#">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launch-options-maximizing-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch Options &amp; Maximizing Window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browser-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browser Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Navigation Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧭 Navigation Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gotoasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      GotoAsync()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locator-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Locator Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Locator Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locator()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      AllAsync()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      CountAsync()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clickasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClickAsync()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fillasync-typeasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      FillAsync() &amp; TypeAsync()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#innertextasync-textcontentasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      InnerTextAsync() / TextContentAsync()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Checks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      📸 Screenshots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#title-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔢 Title &amp; URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⌛ Wait Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpath-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 XPath Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locator-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Locator Chaining
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔁 Locator Chaining">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waits-and-assertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Waits and Assertions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codegen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Codegen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests-in-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Tests in Parallel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-error-targetclosedexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❗ Common Error: TargetClosedException
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch-edge-via-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Launch Edge via Channel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-nunit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Sample NUnit Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-class-structure-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍💻 Base Class Structure Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-driven-testing-with-playwright-nunit-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Data-Driven Testing with Playwright + NUnit (C#)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📘 Data-Driven Testing with Playwright + NUnit (C#)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-data-driven-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ What is Data-Driven Testing?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-example-using-testcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Basic Example Using [TestCase]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-testcasesource-with-static-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Using [TestCaseSource] with Static Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-static-method-as-data-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Using Static Method as Data Source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-json-file-for-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Using JSON File for Test Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Using JSON File for Test Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 JSON Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 C# Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables-or-github-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Using Environment Variables or GitHub Secrets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-from-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Reading from Database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-data-source-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Summary of Data Source Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-secrets-in-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Secrets in GitHub Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Secrets in GitHub Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helpful-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helpful Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../README.md">🏠 Home</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#playwright-with-c">Playwright with C#</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#basic-syntax">Basic Syntax</a></li>
+<li><a href="#launch-options--maximizing-window">Launch Options &amp; Maximizing Window</a></li>
+<li><a href="#browser-setup">Browser Setup</a></li>
+<li><a href="#locators">Locators</a></li>
+<li><a href="#page-methods">Page Methods</a></li>
+<li><a href="#-navigation-methods">Navigation Methods</a></li>
+<li><a href="#-locator-methods">Locator Methods</a></li>
+<li><a href="#locator"><code>Locator()</code></a></li>
+<li><a href="#allasync"><code>AllAsync()</code></a></li>
+<li><a href="#countasync"><code>CountAsync()</code></a></li>
+<li><a href="#clickasync"><code>ClickAsync()</code></a></li>
+<li><a href="#fillasync--typeasync"><code>FillAsync()</code> &amp; <code>TypeAsync()</code></a></li>
+<li><a href="#innertextasync--textcontentasync"><code>InnerTextAsync()</code> / <code>TextContentAsync()</code></a></li>
+<li><a href="#state-checks">State Checks</a></li>
+<li><a href="#-screenshots">Screenshots</a></li>
+<li><a href="#-title--url">Title &amp; URL</a></li>
+<li><a href="#-wait-methods">Wait Methods</a></li>
+<li><a href="#-xpath-reference">XPath Reference</a></li>
+<li><a href="#-locator-chaining">Locator Chaining</a></li>
+<li><a href="#waits-and-assertions">Waits and Assertions</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#tracing">Tracing</a></li>
+<li><a href="#dialogs">Dialogs</a></li>
+<li><a href="#javascript-execution">JavaScript Execution</a></li>
+<li><a href="#upload-file">Upload File</a></li>
+<li><a href="#take-screenshot">Take Screenshot</a></li>
+<li><a href="#codegen">Codegen</a></li>
+<li><a href="#running-tests-in-parallel">Running Tests in Parallel</a></li>
+<li><a href="#-common-error-targetclosedexception">Common Error: <code>TargetClosedException</code></a></li>
+<li><a href="#-launch-edge-via-channel">Launch Edge via Channel</a></li>
+<li><a href="#-sample-nunit-test">Sample NUnit Test</a></li>
+<li><a href="#-base-class-structure-example">Base Class Structure Example</a></li>
+<li><a href="#-data-driven-testing-with-playwright--nunit-c">Data-Driven Testing with Playwright + NUnit (C#)</a></li>
+<li><a href="#-what-is-data-driven-testing">What is Data-Driven Testing?</a></li>
+<li><a href="#-basic-example-using-testcase">Basic Example Using <code>[TestCase]</code></a></li>
+<li><a href="#-using-testcasesource-with-static-property">Using <code>[TestCaseSource]</code> with Static Property</a></li>
+<li><a href="#-using-static-method-as-data-source">Using Static Method as Data Source</a></li>
+<li><a href="#-using-json-file-for-test-data">Using JSON File for Test Data</a></li>
+<li><a href="#-using-environment-variables-or-github-secrets">Using Environment Variables or GitHub Secrets</a></li>
+<li><a href="#-reading-from-database">Reading from Database</a></li>
+<li><a href="#-summary-of-data-source-options">Summary of Data Source Options</a></li>
+<li><a href="#-bonus-using-secrets-in-github-actions">Using Secrets in GitHub Actions</a></li>
+<li><a href="#github-actions-example">GitHub Actions Example</a></li>
+<li><a href="#helpful-tools">Helpful Tools</a></li>
+</ol>
+<h1 id="playwright-with-c"><strong>Playwright with C#</strong></h1>
+<pre><code class="language-bash">dotnet add package Microsoft.Playwright
+playwright install
+playwright install msedge  # Optional for Edge channel
+</code></pre>
+<h2 id="project-setup">Project Setup</h2>
+<ol>
+<li>Install Playwright CLI :</li>
+</ol>
+<pre><code class="language-bash">    dotnet tool install --global Microsoft.Playwright.CLI
+</code></pre>
+<ol>
+<li>Initialize Playwright:</li>
+</ol>
+<pre><code class="language-bash">    playwright install
+</code></pre>
+<ol>
+<li>Create an directory</li>
+</ol>
+<pre><code class="language-bash">    dotnet new Nunit -n PlaywrightPractice
+</code></pre>
+<ol>
+<li>Go to created directory:  </li>
+</ol>
+<pre><code class="language-bash">    cd PlaywrightPractice
+</code></pre>
+<ol>
+<li>Add dependencies in project:</li>
+</ol>
+<pre><code class="language-bash">    dotnet add package Microsoft.Playwright
+    playwright install
+    playwright install msedge  # Optional for Edge channel
+</code></pre>
+<ol>
+<li>
+<p>Write your Script </p>
+</li>
+<li>
+<p>Run the test</p>
+</li>
+</ol>
+<pre><code class="language-bash">    dotnet run
+</code></pre>
+<hr />
+<ol>
+<li><strong>Basic Syntax:</strong>
+   ```csharp
+   using Microsoft.Playwright;</li>
+</ol>
+<p>class Program
+   {
+       public static async Task Main()
+       {
+           using var playwright = await Playwright.CreateAsync();
+           var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });
+           var context = await browser.NewContextAsync();
+           var page = await context.NewPageAsync();
+           await page.GotoAsync("https://example.com");
+           await page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshot.png" });
+           await browser.CloseAsync();
+       }
+   }
+   ```</p>
+<hr />
+<h3 id="launch-options-maximizing-window"><strong>Launch Options &amp; Maximizing Window</strong></h3>
+<p><strong>Set Arguments:</strong></p>
+<pre><code class="language-csharp">var launchOptions = new BrowserTypeLaunchOptions
+{
+    Headless = false,
+    Args = new[] { &quot;--start-maximized&quot; }
+};
+</code></pre>
+<p><strong>Set Viewport Size:</strong></p>
+<pre><code class="language-csharp">var contextOptions = new BrowserNewContextOptions
+{
+    ViewportSize = new ViewportSize { Width = 1920, Height = 1080 }
+};
+</code></pre>
+<hr />
+<h3 id="browser-setup"><strong>Browser Setup</strong></h3>
+<ul>
+<li><strong>Edge:</strong></li>
+</ul>
+<pre><code class="language-csharp">await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Channel = &quot;msedge&quot;, Headless = false });
+</code></pre>
+<ul>
+<li><strong>Chrome with path:</strong></li>
+</ul>
+<pre><code class="language-csharp">await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { ExecutablePath = &quot;path-to-chrome&quot;, Headless = false });
+</code></pre>
+<ul>
+<li><strong>Persistent Context (No Incognito):</strong></li>
+</ul>
+<pre><code class="language-csharp">await playwright.Chromium.LaunchPersistentContextAsync(&quot;user-data-dir&quot;, new BrowserTypeLaunchPersistentContextOptions { Headless = false });
+</code></pre>
+<hr />
+<h3 id="locators"><strong>Locators</strong></h3>
+<ul>
+<li>Store and reuse locator:</li>
+</ul>
+<pre><code class="language-csharp">var locator = page.Locator(&quot;#inputEmail&quot;);
+await locator.FillAsync(&quot;email@example.com&quot;);
+</code></pre>
+<ul>
+<li>Direct action:</li>
+</ul>
+<pre><code class="language-csharp">await page.FillAsync(&quot;#inputEmail&quot;, &quot;email@example.com&quot;);
+</code></pre>
+<p><strong>Types:</strong>
+- ID: <code>#elementId</code>
+- Class: <code>.className</code>
+- Attribute: <code>[type='email']</code>
+- CSS &amp; XPath both supported</p>
+<hr />
+<h3 id="page-methods"><strong>Page Methods</strong></h3>
+<pre><code class="language-csharp">await page.FillAsync(&quot;#username&quot;, &quot;admin&quot;);
+await page.ClickAsync(&quot;text=Submit&quot;);
+var text = await page.Locator(&quot;h1&quot;).TextContentAsync();
+bool visible = await page.Locator(&quot;#element&quot;).IsVisibleAsync();
+</code></pre>
+<hr />
+<h2 id="navigation-methods">🧭 Navigation Methods</h2>
+<h3 id="gotoasync"><code>GotoAsync()</code></h3>
+<p>Navigate to a URL.</p>
+<pre><code class="language-csharp">await _page.GotoAsync(&quot;https://example.com&quot;);
+</code></pre>
+<p><strong>With options:</strong></p>
+<pre><code class="language-csharp">await _page.GotoAsync(&quot;https://example.com&quot;, new PageGotoOptions {
+    WaitUntil = WaitUntilState.NetworkIdle,
+    Timeout = 10000
+});
+</code></pre>
+<hr />
+<h2 id="locator-methods">📋 Locator Methods</h2>
+<h3 id="locator"><code>Locator()</code></h3>
+<p>Select elements.</p>
+<pre><code class="language-csharp">var button = _page.Locator(&quot;button#submit&quot;);
+</code></pre>
+<p>Supports:
+- CSS: <code>".btn.primary"</code>
+- Text: <code>"text='Login'"</code>
+- XPath: <code>"//div[@id='main']"</code>
+- Regex: <code>new Regex("Log In")</code></p>
+<hr />
+<h3 id="allasync"><code>AllAsync()</code></h3>
+<p>Returns all matching elements.</p>
+<pre><code class="language-csharp">var elements = await _page.Locator(&quot;li&quot;).AllAsync();
+</code></pre>
+<hr />
+<h3 id="countasync"><code>CountAsync()</code></h3>
+<p>Count matching elements.</p>
+<pre><code class="language-csharp">int count = await _page.Locator(&quot;.product&quot;).CountAsync();
+</code></pre>
+<hr />
+<h3 id="clickasync"><code>ClickAsync()</code></h3>
+<p>Click an element.</p>
+<pre><code class="language-csharp">await _page.Locator(&quot;#submit&quot;).ClickAsync();
+</code></pre>
+<p><strong>With options:</strong></p>
+<pre><code class="language-csharp">await _page.Locator(&quot;#submit&quot;).ClickAsync(new LocatorClickOptions {
+    Button = MouseButton.Right,
+    ClickCount = 2,
+    Timeout = 5000
+});
+</code></pre>
+<hr />
+<h3 id="fillasync-typeasync"><code>FillAsync()</code> &amp; <code>TypeAsync()</code></h3>
+<p>Fill or type into input fields.</p>
+<pre><code class="language-csharp">await _page.Locator(&quot;#email&quot;).FillAsync(&quot;test@example.com&quot;);
+await _page.Locator(&quot;#name&quot;).TypeAsync(&quot;John Doe&quot;);
+</code></pre>
+<hr />
+<h3 id="innertextasync-textcontentasync"><code>InnerTextAsync()</code> / <code>TextContentAsync()</code></h3>
+<p>Get text values.</p>
+<pre><code class="language-csharp">string visibleText = await _page.Locator(&quot;h1&quot;).InnerTextAsync();
+string allText = await _page.Locator(&quot;h1&quot;).TextContentAsync();
+</code></pre>
+<hr />
+<h3 id="state-checks">State Checks</h3>
+<pre><code class="language-csharp">await _page.Locator(&quot;#submit&quot;).IsVisibleAsync();
+await _page.Locator(&quot;#submit&quot;).IsEnabledAsync();
+await _page.Locator(&quot;#agree&quot;).IsCheckedAsync();
+await _page.Locator(&quot;#input&quot;).IsEditableAsync();
+</code></pre>
+<hr />
+<h2 id="screenshots">📸 Screenshots</h2>
+<pre><code class="language-csharp">await _page.ScreenshotAsync(new PageScreenshotOptions {
+    Path = &quot;screenshot.png&quot;,
+    FullPage = true
+});
+</code></pre>
+<hr />
+<h2 id="title-url">🔢 Title &amp; URL</h2>
+<pre><code class="language-csharp">string title = await _page.TitleAsync();
+string url = _page.Url;
+</code></pre>
+<hr />
+<h2 id="wait-methods">⌛ Wait Methods</h2>
+<pre><code class="language-csharp">await _page.WaitForTimeoutAsync(2000); // 2 seconds
+await _page.WaitForSelectorAsync(&quot;#login-form&quot;);
+</code></pre>
+<hr />
+<h2 id="xpath-reference">🔍 XPath Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>..</code></td>
+<td>Parent</td>
+</tr>
+<tr>
+<td><code>/parent::*</code></td>
+<td>Explicit parent</td>
+</tr>
+<tr>
+<td><code>/ancestor::div</code></td>
+<td>Any ancestor <code>div</code></td>
+</tr>
+<tr>
+<td><code>/following-sibling::li</code></td>
+<td>Following <code>&lt;li&gt;</code> siblings</td>
+</tr>
+<tr>
+<td><code>[1]</code></td>
+<td>First match</td>
+</tr>
+<tr>
+<td><code>//li[text()='Banana']</code></td>
+<td><code>&lt;li&gt;</code> with exact text</td>
+</tr>
+<tr>
+<td><code>//li[contains(text(), 'Ban')]</code></td>
+<td><code>&lt;li&gt;</code> containing text</td>
+</tr>
+<tr>
+<td><code>/../../..</code></td>
+<td>Go up 3 levels</td>
+</tr>
+<tr>
+<td><code>preceding-sibling::</code></td>
+<td>Previous siblings</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="locator-chaining">🔁 Locator Chaining</h2>
+<pre><code class="language-csharp">_page.Locator(&quot;div.card&quot;).Nth(2);
+_page.Locator(&quot;ul &gt; li&quot;).First;
+_page.Locator(&quot;ul &gt; li&quot;).Last;
+</code></pre>
+<hr />
+<h3 id="waits-and-assertions"><strong>Waits and Assertions</strong></h3>
+<pre><code class="language-csharp">await page.WaitForSelectorAsync(&quot;#element&quot;);
+Assert.IsTrue(await page.Locator(&quot;#element&quot;).IsVisibleAsync());
+</code></pre>
+<hr />
+<h3 id="advanced-features"><strong>Advanced Features</strong></h3>
+<p><strong>Tracing:</strong></p>
+<pre><code class="language-csharp">await context.Tracing.StartAsync(new TracingStartOptions { Screenshots = true, Snapshots = true });
+// run tests
+await context.Tracing.StopAsync(new TracingStopOptions { Path = &quot;trace.zip&quot; });
+</code></pre>
+<p><strong>Dialogs:</strong></p>
+<pre><code class="language-csharp">page.Dialog += (_, dialog) =&gt; dialog.AcceptAsync();
+</code></pre>
+<p><strong>JavaScript Execution:</strong></p>
+<pre><code class="language-csharp">var title = await page.EvaluateAsync&lt;string&gt;(&quot;() =&gt; document.title&quot;);
+</code></pre>
+<p><strong>Upload File:</strong></p>
+<pre><code class="language-csharp">await page.SetInputFilesAsync(&quot;#file-upload&quot;, &quot;path/to/file.txt&quot;);
+</code></pre>
+<p><strong>Take Screenshot:</strong></p>
+<pre><code class="language-csharp">await page.ScreenshotAsync(new PageScreenshotOptions { Path = &quot;example.png&quot; });
+</code></pre>
+<hr />
+<h3 id="codegen"><strong>Codegen</strong></h3>
+<p>To auto-generate test script:</p>
+<pre><code class="language-bash">playwright codegen https://example.com
+</code></pre>
+<hr />
+<h3 id="running-tests-in-parallel"><strong>Running Tests in Parallel</strong></h3>
+<p>Using <code>Task.WhenAll</code> or <code>Parallel.ForEach</code> with async methods in C#.</p>
+<hr />
+<h2 id="common-error-targetclosedexception">❗ Common Error: <code>TargetClosedException</code></h2>
+<p>This happens if:
+- Page/browser was closed too early
+- Async operations not awaited properly
+- Cleanup ran too soon</p>
+<p><strong>Fix</strong>: Await all async calls, ensure correct test lifecycle management.</p>
+<hr />
+<h2 id="launch-edge-via-channel">🚀 Launch Edge via Channel</h2>
+<pre><code class="language-csharp">_browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions {
+    Channel = &quot;msedge&quot;,
+    Headless = false
+});
+</code></pre>
+<hr />
+<h2 id="sample-nunit-test">✅ Sample NUnit Test</h2>
+<pre><code class="language-csharp">[Test]
+public async Task ShouldLoadExample()
+{
+    await _page.GotoAsync(&quot;https://example.com&quot;);
+    string title = await _page.TitleAsync();
+    Assert.IsTrue(title.Contains(&quot;Example&quot;));
+}
+</code></pre>
+<hr />
+<h2 id="base-class-structure-example">👨‍💻 Base Class Structure Example</h2>
+<pre><code class="language-csharp">public class PlaywrightBase
+{
+    protected IPlaywright _playwright;
+    protected IBrowser _browser;
+    protected IBrowserContext _context;
+    protected IPage _page;
+
+    public async Task StartAsync(bool headless = true)
+    {
+        _playwright = await Playwright.CreateAsync();
+        _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions {
+            Channel = &quot;msedge&quot;,
+            Headless = headless
+        });
+        _context = await _browser.NewContextAsync();
+        _page = await _context.NewPageAsync();
+    }
+
+    public async Task StopAsync()
+    {
+        await _context?.CloseAsync();
+        await _browser?.CloseAsync();
+        _playwright?.Dispose();
+    }
+}
+</code></pre>
+<h1 id="data-driven-testing-with-playwright-nunit-c">📘 Data-Driven Testing with Playwright + NUnit (C#)</h1>
+<p>This document covers how to perform data-driven testing using Playwright with C# and NUnit, along with multiple ways to provide test data.</p>
+<hr />
+<h2 id="what-is-data-driven-testing">✅ What is Data-Driven Testing?</h2>
+<p><strong>Data-driven testing</strong> allows running the same test logic with multiple sets of input data. This helps in increasing test coverage with less code duplication.</p>
+<hr />
+<h2 id="basic-example-using-testcase">✅ Basic Example Using <code>[TestCase]</code></h2>
+<p>Use when you have <strong>small static test data</strong>.</p>
+<pre><code class="language-csharp">[TestCase(&quot;user1&quot;, &quot;pass1&quot;)]
+[TestCase(&quot;user2&quot;, &quot;pass2&quot;)]
+public void LoginTest(string username, string password)
+{
+    // Your Playwright test logic here
+}
+</code></pre>
+<hr />
+<h2 id="using-testcasesource-with-static-property">✅ Using <code>[TestCaseSource]</code> with Static Property</h2>
+<pre><code class="language-csharp">public static IEnumerable&lt;TestCaseData&gt; LoginData =&gt;
+    new List&lt;TestCaseData&gt;
+    {
+        new TestCaseData(&quot;user1&quot;, &quot;pass1&quot;),
+        new TestCaseData(&quot;user2&quot;, &quot;pass2&quot;)
+    };
+
+[Test, TestCaseSource(typeof(MyDataClass), nameof(MyDataClass.LoginData))]
+public void LoginTest(string username, string password)
+{
+    // Test logic
+}
+</code></pre>
+<ul>
+<li><code>typeof(MyDataClass)</code> tells NUnit where to find the data.</li>
+<li><code>nameof(MyDataClass.LoginData)</code> specifies the exact member to use.</li>
+</ul>
+<hr />
+<h2 id="using-static-method-as-data-source">✅ Using Static Method as Data Source</h2>
+<p>Allows <strong>conditional logic</strong> or <strong>dynamic data creation</strong>.</p>
+<pre><code class="language-csharp">public static IEnumerable&lt;TestCaseData&gt; GetLoginData()
+{
+    yield return new TestCaseData(&quot;user1&quot;, &quot;pass1&quot;);
+    yield return new TestCaseData(&quot;user2&quot;, &quot;pass2&quot;);
+}
+
+[Test, TestCaseSource(typeof(MyDataClass), nameof(MyDataClass.GetLoginData))]
+</code></pre>
+<hr />
+<h2 id="using-json-file-for-test-data">✅ Using JSON File for Test Data</h2>
+<h3 id="json-example">🔹 JSON Example</h3>
+<pre><code class="language-json">[
+  { &quot;username&quot;: &quot;user1&quot;, &quot;password&quot;: &quot;pass1&quot; },
+  { &quot;username&quot;: &quot;user2&quot;, &quot;password&quot;: &quot;pass2&quot; }
+]
+</code></pre>
+<h3 id="c-code">🔹 C# Code</h3>
+<pre><code class="language-csharp">public static IEnumerable&lt;TestCaseData&gt; LoginDataFromJson()
+{
+    var json = File.ReadAllText(&quot;testdata.json&quot;);
+    var users = JsonConvert.DeserializeObject&lt;List&lt;LoginModel&gt;&gt;(json);
+    foreach (var user in users)
+    {
+        yield return new TestCaseData(user.Username, user.Password);
+    }
+}
+</code></pre>
+<hr />
+<h2 id="using-environment-variables-or-github-secrets">✅ Using Environment Variables or GitHub Secrets</h2>
+<p>Good for use in CI/CD pipelines to avoid hardcoding sensitive data.</p>
+<pre><code class="language-csharp">public static IEnumerable&lt;TestCaseData&gt; SecretsData()
+{
+    var username = Environment.GetEnvironmentVariable(&quot;USERNAME&quot;);
+    var password = Environment.GetEnvironmentVariable(&quot;PASSWORD&quot;);
+    yield return new TestCaseData(username, password);
+}
+</code></pre>
+<hr />
+<h2 id="reading-from-database">✅ Reading from Database</h2>
+<p>Use when test data is stored in a DB:</p>
+<pre><code class="language-csharp">public static IEnumerable&lt;TestCaseData&gt; LoginDataFromDb()
+{
+    using var conn = new SqlConnection(&quot;connection-string&quot;);
+    conn.Open();
+    var cmd = new SqlCommand(&quot;SELECT username, password FROM users&quot;, conn);
+    var reader = cmd.ExecuteReader();
+
+    while (reader.Read())
+    {
+        yield return new TestCaseData(reader[&quot;username&quot;], reader[&quot;password&quot;]);
+    }
+}
+</code></pre>
+<hr />
+<h2 id="summary-of-data-source-options">🧠 Summary of Data Source Options</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[TestCase]</code></td>
+<td>Simple inline data</td>
+</tr>
+<tr>
+<td><code>TestCaseSource (property)</code></td>
+<td>Shared static list</td>
+</tr>
+<tr>
+<td><code>TestCaseSource (method)</code></td>
+<td>Conditional or dynamic data</td>
+</tr>
+<tr>
+<td>JSON File</td>
+<td>Separate, manageable test data</td>
+</tr>
+<tr>
+<td>Environment Variables</td>
+<td>Secure, pipeline-friendly data</td>
+</tr>
+<tr>
+<td>Database or API</td>
+<td>Live or external data for advanced testing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="using-secrets-in-github-actions">Using Secrets in GitHub Actions</h2>
+<pre><code class="language-yaml">env:
+  USERNAME: ${{ secrets.USERNAME }}
+  PASSWORD: ${{ secrets.PASSWORD }}
+</code></pre>
+<p>And in your test code:</p>
+<pre><code class="language-csharp">var username = Environment.GetEnvironmentVariable(&quot;USERNAME&quot;);
+var password = Environment.GetEnvironmentVariable(&quot;PASSWORD&quot;);
+</code></pre>
+<h3 id="github-actions-example"><strong>GitHub Actions Example</strong></h3>
+<pre><code class="language-yaml">name: Playwright Tests
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x'
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Run tests
+      run: dotnet test
+</code></pre>
+<hr />
+<h3 id="helpful-tools"><strong>Helpful Tools</strong></h3>
+<ul>
+<li>SelectorHub</li>
+<li>Playwright Inspector</li>
+<li>Trace Viewer</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

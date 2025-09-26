@@ -1,0 +1,512 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>1. C# data structure and algorithm - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-c-data-structure-and-algorithm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. C# data structure and algorithm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-value-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Value Type:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Value Type:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-integral-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Integral Number:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-floating-point-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Floating-point numbers:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-boolean-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Boolean values:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-unicode-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Unicode characters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Enumerations:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-value-tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 Value tuples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-c-data-structure-and-algorithm">1. C# data structure and algorithm</h1>
+<p>## Division of Data Types: 
+ 1. Value type
+ 2. Reference type</p>
+<p>A variable of <code>value type</code> directly contains the data, while a variable of <code>reference type</code> just store the <code>reference of Data</code>, which is located somewhere else.</p>
+<p>Value type variable stores it's actual value directly in <code>stack memory</code>.
+ Reference type variable store only reference here in stack, actuale value is located in <code>heap memory</code>. </p>
+<ul>
+<li><strong>Note:</strong>
+ That's why two variable of Value type <code>equal (==)</code> if there data is equal while two variable of reference type will be equal if they referenc the same location</li>
+</ul>
+<h3 id="1-value-type">1. Value Type:</h3>
+<p>They are further divided into following categories:</p>
+<ul>
+<li>Structs<ul>
+<li>Built-in value types<ul>
+<li>Integral numeric type</li>
+<li>Floating-point numeric types</li>
+<li>Boolean values</li>
+<li>Unicode UTF-16 characters</li>
+</ul>
+</li>
+<li>Value tuples</li>
+<li>User-defined struct types</li>
+</ul>
+</li>
+<li>Constants</li>
+<li>Enumerations</li>
+</ul>
+<h4 id="11-integral-number">1.1 Integral Number:</h4>
+<p><strong>Supported integral types:</strong><br />
+    - Byte (byte keyword)   --&gt;   8-bit unsigned<br />
+    - Sbyte (sbyte)         --&gt;   8-bit signed<br />
+    - Int16 (short)         --&gt;   16-bit signed   <br />
+    - Uint16 (ushort)       --&gt;   16-bit unsigned<br />
+    - Int32 (int)           --&gt;   32-bit signed<br />
+    - UInt32 (unit)         --&gt;   32-bit unsigned<br />
+    - Int64 (long)          --&gt;   64-bit signed<br />
+    - UInt64 (ulong)        --&gt;   64-bit unsigned  </p>
+<p><strong>Different Modes:</strong> <br />
+1. <code>Decimal Mode</code><br />
+    No prefix needed, example: 45.  </p>
+<ol>
+<li>
+<p><code>HexaDecimal Mode</code><br />
+    Apply 0x or 0X as prefix , example: <code>0xff</code> for 255.  </p>
+</li>
+<li>
+<p><code>Binary Mode</code><br />
+    Apply 0b or 0B as prefix , example: <code>0b1101110</code> or <code>0b_0110_1110</code> for 110.  </p>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">    int a = -20;
+    byte b = 0x0f;
+    uint c = 0b1101110;
+    Console.WriteLine(a);     //-20
+    Console.WriteLine(b);     // 15
+    Console.WriteLine(c);     // 110
+</code></pre>
+<p><code>Remember</code> that the default value for any built-in integral numeric type is <code>zero</code>.</p>
+<h4 id="12-floating-point-numbers">1.2 Floating-point numbers:</h4>
+<p>It allow us to store floating-point values.You can use three floating-point numeric types:</p>
+<ol>
+<li><code>Single (float)</code> using 32 bits – for example, 1.53f (f or F suffix)</li>
+<li><code>Double (double)</code> using 64 bits – for example, 1.53 (no suffix or d/D suffix)</li>
+<li><code>Decimal (decimal)</code> using 128 bits – for example, 1.53M (m or M suffix)</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">    float temperature = 36.6f;
+    double reading = -4.5178923;
+    decimal salary = 10000.47M;
+    Console.WriteLine(temperature);     //  36.6
+    Console.WriteLine(reading);         //  -4.5178923
+    Console.WriteLine(salary);          //  10000.47
+</code></pre>
+<p><code>Remember</code> that the default value for any floating-point numeric type is <code>zero</code>.</p>
+<h4 id="13-boolean-values">1.3 Boolean values:</h4>
+<p>Regarding Boolean values, you can use the <code>Boolean</code> type or the <code>bool</code> keyword.
+This makes it possible to store a logical value. It represents one of two values,
+namely <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">    bool isTrue = true;
+    bool first = isTrue || false; // true
+    bool second = isTrue &amp;&amp; false; // false
+    bool third = 50 &gt; 10; // true
+</code></pre>
+<h4 id="14-unicode-characters">1.4 Unicode characters:</h4>
+<p>It is represented by the <code>Char</code> type or the <code>char</code> keyword. It represents a single
+Unicode character.  </p>
+<p>A char value can be specified using the following:
+- <code>Character literal</code> – for example, 'a' or 'M'
+- <code>Unicode escape sequence</code>, starting with \u – for example, <code>'\u25cf'</code> for ●
+- <code>Hexadecimal escape sequence</code>, starting with \x – for example, <code>'\x107'</code> for ć</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">    char letter = 'M';
+    char bullet = '\u25cf';
+    char special = '\x107';
+    char Test = '\0';      //    
+
+</code></pre>
+<p>The default value for a <code>char</code> value is <code>\0 (U+0000)</code>.</p>
+<h4 id="15-constants">1.5 Constants</h4>
+<p>It is worth noting that you can also define <code>constant values</code>. Each <code>constant value</code>
+is an <code>immutable</code> value that cannot be changed. Constant values can only be created from simple types.<br />
+You can use the <code>const</code> keyword to create a constant value, as shown in the following line:</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">
+    const int DaysInWeek = 7;
+</code></pre>
+<h4 id="16-enumerations">1.6 Enumerations:</h4>
+<p>An enumeration (often called "enum") is a distinct data type that consists of a set of named values called <code>enumerators</code>. <code>Enums</code> are used to represent a <code>collection of related constants</code> in a type-safe way. For example  <code>enum CurrencyEnum { Pln, Usd, Eur };</code></p>
+<p>The constants have automatically assigned values as integer numbers, starting
+with 0. This means that the <code>Pln</code> constant is equal to 0, while <code>Eur</code> is equal to 2.
+What’s more, the <code>default</code> value for the enumeration is 0, which means that it is
+Pln in this case.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">    CurrencyEnum currency = CurrencyEnum.Pln;
+    switch (currency)
+    {
+    case CurrencyEnum.Pln: /* Polish zloty */ break;
+    case CurrencyEnum.Usd: /* American Dollar */ break;
+    default: /* Euro */ break;
+    }
+    enum CurrencyEnum { Pln, Usd, Eur };
+</code></pre>
+<h4 id="17-value-tuples">1.7 Value tuples</h4>
+<p>The value tuple type is represented by the System.ValueTuple type and is a lightweight data structure that allows you to group multiple data elements of specific types.</p>
+<p>(int, int, double) result = Calculate(4, 8, 13);</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

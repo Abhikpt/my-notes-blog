@@ -1,0 +1,1290 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Selenium intro - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-selenium-tutorial-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Selenium intro
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../README.md">🏠 Home</a></p>
+<h1 id="-selenium-tutorial-">--------------------Selenium Tutorial----------------------</h1>
+<h2 id="table-of-contents">Table of Contents:</h2>
+<ol>
+<li><a href="#introduction-to-selenium">Introduction to Selenium</a></li>
+<li><a href="#significance-of-selenium">Significance of Selenium</a></li>
+<li><a href="#selenium-components">Selenium Components</a><ul>
+<li><a href="#selenium-ide">Selenium IDE</a></li>
+<li><a href="#selenium-rc">Selenium RC</a></li>
+<li><a href="#selenium-grid">Selenium Grid</a></li>
+<li><a href="#selenium-webdriver">Selenium WebDriver</a></li>
+</ul>
+</li>
+<li><a href="#webdriver-test-case-flow"> Selenium Automation Flow</a></li>
+<li><a href="#selenium-commands">Selenium Commands</a><ul>
+<li><a href="#browser-commands">Browser Commands</a></li>
+<li><a href="#element-interaction">Element Interaction</a></li>
+<li><a href="#handling-alerts-and-pop-ups">Handling Alerts and Pop-Ups</a></li>
+<li><a href="#navigation-and-frame-handling">Navigation and Frame Handling</a></li>
+<li><a href="#waiting-commands">Waiting Commands</a></li>
+<li><a href="#mouse-actions">Mouse Actions</a></li>
+<li><a href="#handling-dropdowns">Handling Dropdowns</a></li>
+<li><a href="#taking-screenshots">Taking Screenshots</a></li>
+<li><a href="#working-with-cookies">Working with Cookies</a></li>
+<li><a href="#javascript-executions">JavaScript Executions</a></li>
+<li><a href="#getting-browser-and-page-information">Getting Browser and Page Information</a></li>
+<li><a href="#handling-multiple-windows">Handling Multiple Windows</a></li>
+<li><a href="#passing-keyword-commands">Passing Keyword Commands</a></li>
+</ul>
+</li>
+<li><a href="#selenium-locators">Locators in Selenium</a><ul>
+<li><a href="#type-of-locators">Type of Locators</a></li>
+</ul>
+</li>
+<li><a href="#css-selector-locators">CSS selector Locators</a></li>
+<li><a href="#selenium-xpath">Selenium XPath</a><ul>
+<li><a href="#types-of-xpath">Types of XPath</a></li>
+<li><a href="#xpath-options">Xpath Options</a></li>
+<li><a href="#xpath-attributes">Xpath Attributes</a></li>
+<li><a href="#xpath-axes">Xpath Axes</a></li>
+<li><a href="#xpath-summary">XPath summary</a></li>
+</ul>
+</li>
+<li><a href="#automation-tutorial-using-c">Some important Operations</a><ul>
+<li><a href="#handeling-web-element-collections">Handeling Web element collections</a></li>
+<li><a href="#visible-vs-hidden-elements">Visible vs Hidden Elements</a></li>
+<li><a href="#web-element-within-another-web-element">Web Element with Another Web Element</a></li>
+<li><a href="#required-tools-and-frameworks">Required Tools and Frameworks</a>    </li>
+<li><a href="#synchronization-in-selenium">Synchronization in Selenium</a></li>
+<li><a href="#static-dropdown-handling">Static Dropdown Handling</a></li>
+<li><a href="#scrolling-the-browser">Scrolling the Browser</a>    </li>
+</ul>
+</li>
+<li><a href="../Master-xpath-css/">Mastring Xpath and CSS</a> </li>
+<li><a href="../Design-Roboust-Framework/">Design Roboust Framewrok with C#</a></li>
+</ol>
+<h1 id="introduction-to-selenium">Introduction to Selenium</h1>
+<p>Selenium is a powerful testing tool used to automate test scripts for web applications across various browsers and platforms. It does <strong>not</strong> support desktop applications.</p>
+<p>You can download Selenium from <a href="www.seleniumhq.org">www.seleniumhq.org</a>.</p>
+<h2 id="significance-of-selenium">Significance of Selenium</h2>
+<ul>
+<li><strong>Open-source:</strong> It's a free and open-source tool for web application testing.</li>
+<li><strong>Cross-platform and multi-language support:</strong> It supports executing scripts on various operating systems and in major programming languages like C#, Ruby, Java, Python, Perl, and JavaScript.</li>
+<li><strong>Cross-browser testing:</strong> It enables executing scripts across different browsers.</li>
+</ul>
+<h2 id="selenium-components">Selenium Components</h2>
+<p>Selenium consists of the following components:</p>
+<ul>
+<li><strong>Selenium IDE (Integrated Development Environment)</strong></li>
+<li><strong>Selenium RC (Remote Control)</strong></li>
+<li><strong>Selenium WebDriver</strong></li>
+<li><strong>Selenium Grid</strong></li>
+</ul>
+<h3 id="selenium-ide">Selenium IDE <a id=""></a></h3>
+<ul>
+<li>Selenium IDE is a record-and-playback tool, available as an add-on for Firefox and Chrome.</li>
+<li>It allows recording user interactions and playing them back as test scripts.</li>
+<li>Recorded scripts can be exported to various programming languages like Java, C#, Ruby, and Python.</li>
+</ul>
+<h3 id="selenium-rc-selenium-10">Selenium RC (Selenium 1.0) <a id=""></a></h3>
+<ul>
+<li>Selenium RC (Remote Control), also known as Selenium 1.0, was the core Selenium framework before WebDriver.</li>
+<li>It supports web browsers that can interpret HTTP requests and doesn't require browser-specific drivers.</li>
+<li>It uses a Selenium server to start, stop, and control browsers automatically.</li>
+<li><strong>Disadvantage:</strong> Requires a running RC server to execute test scripts.</li>
+<li><strong>Components:</strong> Script -&gt; Selenium Server -&gt; Application/Browser</li>
+<li><strong>Setup:</strong><ol>
+<li>Download the Selenium server JAR file.</li>
+<li>Run the server.</li>
+<li>Execute the script.</li>
+<li>Example code: <code>driver = new RemoteWebDriver(_testsetting.GridUri, new ChromeOptions());</code></li>
+</ol>
+</li>
+</ul>
+<h3 id="selenium-grid">Selenium Grid <a id=""></a></h3>
+<ul>
+<li>Selenium Grid is designed for running test scripts in parallel across multiple test environments, browsers, operating systems, and machines.</li>
+<li>The central machine controlling the tests is called the "hub," and the remote machines executing the tests are called "nodes."</li>
+<li>Primarily used for performance testing.</li>
+</ul>
+<h3 id="selenium-webdriver">Selenium WebDriver</h3>
+<ul>
+<li>Selenium WebDriver enables creating and executing test cases using element/object locators.</li>
+<li>It interacts directly with the web browser without an external server, making it faster than Selenium RC.</li>
+</ul>
+<h2 id="selenium-automation-flow">🚀 Selenium Automation Flow <a id="webdriver-test-case-flow"></a></h2>
+<pre><code class="language-mermaid">flowchart TD;
+     A([Start]) --&gt; B[📦 Import Language Bindings]
+    B --&gt; C[🌐 Import Selenium WebDriver]
+    C --&gt; D[🚗 Create Driver Instance]
+    D --&gt; E[🔗 Send HTTP GET Request]
+    E --&gt; F[📄 Fetch Web Page]
+    F --&gt; G{✅ Is Page Title Correct?}
+    G -- Yes --&gt; H[📊 Print Success Status]
+    G -- No --&gt; I[❌ Print Failure Status]
+    H &amp; I --&gt; J[❌ Close &amp; Exit]
+    J --&gt; K([End])
+</code></pre>
+<h2 id="selenium-commands">Selenium Commands <a id="selenium-commands"></a></h2>
+<p>Selenium commands are used to automate web browser interactions. They can be categorized as follows:</p>
+<ol>
+<li><strong>Application Commands:</strong> (Less common, often configuration related)</li>
+<li><strong>Conditional Commands:</strong> (Used for control flow, e.g., <code>if</code>, <code>else</code>)</li>
+<li><strong>Browser Commands:</strong> (Control the browser itself)</li>
+<li><strong>Navigational Commands:</strong> (Navigate within the browser)</li>
+<li><strong>Wait Commands:</strong> (Handle synchronization)</li>
+</ol>
+<h2 id="browser-commands">Browser Commands <a id="browser-commands"></a></h2>
+<p>These commands control the browser's behavior.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Driver.Navigate().GoToUrl("https://google.com")</code></td>
+<td>Open the URL in the browser.</td>
+</tr>
+<tr>
+<td><code>Driver.URL = "https://google.com"</code></td>
+<td>Open the URL in the browser.</td>
+</tr>
+<tr>
+<td><code>Driver.Manage().Window.Maximize()</code></td>
+<td>Maximize the browser window.</td>
+</tr>
+<tr>
+<td><code>Driver.Manage().Window.Minimize()</code></td>
+<td>Minimize the browser window.</td>
+</tr>
+<tr>
+<td><code>Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10)</code></td>
+<td>Set implicit wait timeout.</td>
+</tr>
+<tr>
+<td><code>Driver.Navigate().Back()</code></td>
+<td>Navigate to the previous page.</td>
+</tr>
+<tr>
+<td><code>Driver.Navigate().Forward()</code></td>
+<td>Navigate to the next page.</td>
+</tr>
+<tr>
+<td><code>Driver.Navigate().Refresh()</code></td>
+<td>Refreshes the current page.</td>
+</tr>
+<tr>
+<td><code>Driver.Quit()</code></td>
+<td>Closes the browser and ends session.</td>
+</tr>
+<tr>
+<td><code>Driver.close()</code></td>
+<td>Close the current browser window.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="element-interaction">Element Interaction <a id="element-interaction"></a></h2>
+<p>These commands interact with web elements.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Driver.findElement(By locator)</code></td>
+<td>Find the element by its locator.</td>
+</tr>
+<tr>
+<td><code>Driver.findelements(By locator)</code></td>
+<td>Find all elements by its locator.</td>
+</tr>
+<tr>
+<td><code>Element.click()</code></td>
+<td>Click on the element.</td>
+</tr>
+<tr>
+<td><code>Element.SendKeys("text")</code></td>
+<td>Type text into the input field.</td>
+</tr>
+<tr>
+<td><code>Element.clear()</code></td>
+<td>Clear the content of a text field.</td>
+</tr>
+<tr>
+<td><code>Element.Submit()</code></td>
+<td>Submit a form.</td>
+</tr>
+<tr>
+<td><code>Element.GerAttribute("attributeName")</code></td>
+<td>Retrieves the value of an attribute.</td>
+</tr>
+<tr>
+<td><code>Element.GetCssValue("color")</code></td>
+<td>Get CSS property value of an element.</td>
+</tr>
+<tr>
+<td><code>Element.GetText()</code></td>
+<td>Retrieves the text content.</td>
+</tr>
+<tr>
+<td><code>Element.Displayd</code></td>
+<td>Check if the element is visible.</td>
+</tr>
+<tr>
+<td><code>Element.Enabled</code></td>
+<td>Check if the element is enabled.</td>
+</tr>
+<tr>
+<td><code>Element.Selected</code></td>
+<td>Check if a checkbox or radio button is selected.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="handling-alerts-and-pop-ups">Handling Alerts and Pop-Ups  <a id="handling-alert-and-pop-ups"></a></h2>
+<p>These commands manage browser alerts or pop-ups.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IAlert alert = Driver.SwitchTo().Alert();</code></td>
+<td>Switches to the alert window.</td>
+</tr>
+<tr>
+<td><code>alert.Accept();</code></td>
+<td>Accept the alert (OK button).</td>
+</tr>
+<tr>
+<td><code>alert.Dismiss();</code></td>
+<td>Dismiss the alert (Cancel button).</td>
+</tr>
+<tr>
+<td><code>alert.GetText();</code></td>
+<td>Retrieves the text from the alert.</td>
+</tr>
+<tr>
+<td><code>alert.SendKeys("input text")</code></td>
+<td>Send the text to the alert.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="navigation-and-frame-handling">Navigation and Frame Handling    <a id="navigation-and-frame-handling"></a></h2>
+<p>These commands switch between windows, frames, or iframes.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>String mainWindowHandle = driver.CurrentWindowHandle;</code></td>
+<td>Retrieve the handle of the current window.</td>
+</tr>
+<tr>
+<td><code>Driver.SwitchTo().Window("windowName");</code></td>
+<td>Switch to a specific browser window.</td>
+</tr>
+<tr>
+<td><code>IReadOnlyCollection&lt;string&gt; allWindowHandles = driver.WindowHandles;</code></td>
+<td>Get a list of all open windows.</td>
+</tr>
+<tr>
+<td><code>Driver.SwitchTo().Frame("framename");</code></td>
+<td>Switches to a frame or iframe by name.</td>
+</tr>
+<tr>
+<td><code>Driver.SwitchTo().Frame(frameID);</code></td>
+<td>Switches to a frame or iframe by ID.</td>
+</tr>
+<tr>
+<td><code>driver.SwitchTo().Frame(frameWebElement);</code></td>
+<td>Switches to a frame or iframe by element.</td>
+</tr>
+<tr>
+<td><code>Driver.SwitchTo().ParentFrame();</code></td>
+<td>Switches back to the parent frame.</td>
+</tr>
+<tr>
+<td><code>Driver.SwitchTo().DefaultContent();</code></td>
+<td>Switches back to the main page content.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="waiting-commands">Waiting Commands <a id="waiting-commands"></a></h2>
+<p>These commands wait for certain conditions to be met before proceeding.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);</code></td>
+<td>Sets implicit wait.</td>
+</tr>
+<tr>
+<td><code>new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.Id("elementId")));</code></td>
+<td>Waits until an element exists.</td>
+</tr>
+<tr>
+<td><code>Thread.Sleep(3000);</code></td>
+<td>Halts execution (not recommended).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mouse-actions-actions-class">Mouse Actions (Actions Class)    <a id="mouse-actions"></a></h2>
+<p>These commands perform advanced mouse actions.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Actions actions = new Actions(driver);</code></td>
+<td>Creating an Actions Object.</td>
+</tr>
+<tr>
+<td><code>actions.MoveToElement(element).Perform();</code></td>
+<td>Hovers over an element.</td>
+</tr>
+<tr>
+<td><code>actions.ContextClick(element).Perform();</code></td>
+<td>Right-clicks on an element.</td>
+</tr>
+<tr>
+<td><code>actions.DoubleClick(element).Perform();</code></td>
+<td>Double-clicks on an element.</td>
+</tr>
+<tr>
+<td><code>actions.DragAndDrop(source, target).Perform();</code></td>
+<td>Drags and drops an element.</td>
+</tr>
+<tr>
+<td><code>new Actions(driver).ClickAndHold(element).Perform();</code></td>
+<td>Clicks and holds the mouse button.</td>
+</tr>
+<tr>
+<td><code>new Actions(driver).Release(element).Perform();</code></td>
+<td>Releases the mouse button.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="handling-dropdowns">Handling Dropdowns   <a id="handling-dropdowns"></a></h2>
+<p>These commands handle dropdown elements.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>var dropdown = new SelectElement(element);</code></td>
+<td>Creates a SelectElement for dropdown.</td>
+</tr>
+<tr>
+<td><code>dropdown.SelectByText("Option Text");</code></td>
+<td>Selects an option by visible text.</td>
+</tr>
+<tr>
+<td><code>dropdown.SelectByValue("optionValue");</code></td>
+<td>Selects an option by value.</td>
+</tr>
+<tr>
+<td><code>dropdown.SelectByIndex(1);</code></td>
+<td>Selects an option by index.</td>
+</tr>
+<tr>
+<td><code>dropdown.DeselectAll();</code></td>
+<td>Deselects all selected options.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="taking-screenshots">Taking Screenshots       <a id="taking-screenshots"></a></h2>
+<p>These commands capture screenshots during test execution.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ITakesScreenshot ss = (ITakesScreenshot)driver;</code></td>
+<td>Created an screenshot object.</td>
+</tr>
+<tr>
+<td><code>ss.GetScreenshot().SaveAsFile("screenshot.png", ScreenshotImageFormat.Png);</code></td>
+<td>Takes a screenshot and saves it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="working-with-cookies">Working with Cookies     <a id="working-with-cookies"></a></h2>
+<p>These commands manage cookies for the browser session.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driver.Manage().Cookies.AddCookie(new Cookie("name", "value"));</code></td>
+<td>Adds a cookie.</td>
+</tr>
+<tr>
+<td><code>driver.Manage().Cookies.DeleteAllCookies();</code></td>
+<td>Deletes all cookies.</td>
+</tr>
+<tr>
+<td><code>driver.Manage().Cookies.GetCookieNamed("name");</code></td>
+<td>Retrieves a specific cookie.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="javascript-executions-javascriptexecutor">JavaScript Executions (JavaScriptExecutor)   <a id="javascript-executions"></a></h2>
+<p>These commands use JavaScriptExecutor to perform operations not directly supported by Selenium.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IJavaScriptExecutor Js = (IJavaScriptExecutor)driver;</code></td>
+<td>Create JavaScript property.</td>
+</tr>
+<tr>
+<td><code>Js.ExecuteScript("arguments[0].click();", element);</code></td>
+<td>Clicks on an element using JavaScript.</td>
+</tr>
+<tr>
+<td><code>Js.ExecuteScript("window.scrollBy(0, 300);");</code></td>
+<td>Scrolls down by 300 pixels.</td>
+</tr>
+<tr>
+<td><code>((IJavaScriptExecutor)driver).ExecuteScript("return document.title;");</code></td>
+<td>Retrieves the page title.</td>
+</tr>
+<tr>
+<td><code>Js.ExecuteScript("argument[0].scrollIntoView(true);", element);</code></td>
+<td>Scroll to an element.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="getting-browser-and-page-information">Getting Browser and Page Information <a id="getting-browser-and-page-information"></a></h2>
+<p>These commands retrieve information about the browser and web page.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driver.Title;</code></td>
+<td>Retrieves the page title.</td>
+</tr>
+<tr>
+<td><code>driver.Url;</code></td>
+<td>Retrieves the current page URL.</td>
+</tr>
+<tr>
+<td><code>driver.PageSource;</code></td>
+<td>Retrieves the page source HTML.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="handling-multiple-windows">Handling Multiple Windows    <a id="handling-multiple-windows"></a></h2>
+<p>These commands manage multiple browser windows or tabs.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driver.SwitchTo().Window(driver.WindowHandles[1]);</code></td>
+<td>Switches to the second browser tab.</td>
+</tr>
+<tr>
+<td><code>driver.Close();</code></td>
+<td>Closes the current tab.</td>
+</tr>
+<tr>
+<td><code>driver.SwitchTo().Window(driver.WindowHandles[0]);</code></td>
+<td>Switches back to the first tab.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="passing-keyword-commands">Passing Keyword Commands     <a id="passing-keyword-commands"></a></h2>
+<p>These commands simulate keyboard input.</p>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>element.SendKeys("Test Input" + Keys.Enter);</code></td>
+<td>Simulate Enter key press.</td>
+</tr>
+<tr>
+<td><code>element.SendKeys(Keys.Control + "a");</code></td>
+<td>Simulate Ctrl+A (Select All).</td>
+</tr>
+<tr>
+<td><code>element.SendKeys(Keys.Control + "c");</code></td>
+<td>Simulate Ctrl+C (Copy).</td>
+</tr>
+</tbody>
+</table>
+<h1 id="locators-in-selenium">Locators in Selenium <a id="selenium-locators"></a></h1>
+<p>A locator is an address that uniquely identifies a web element within a webpage. Locators are the HTML properties of a web element that tell Selenium which element to perform an action on.</p>
+<h2 id="different-types-of-web-elements">Different Types of Web Elements  <a id=""></a></h2>
+<p>The most common elements are:</p>
+<ul>
+<li>Text box</li>
+<li>Button</li>
+<li>Drop Down</li>
+<li>Hyperlink</li>
+<li>Check Box</li>
+<li>Radio Button</li>
+<li>Timestamp</li>
+<li>Popup and alert</li>
+</ul>
+<h2 id="type-of-locators">Type of locators:  <a id="type-of-locator"></a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Locator Type</th>
+<th style="text-align: left;">Locator Name</th>
+<th style="text-align: left;">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;"><code>driver.FindElement(By.Id, 'user-name').SendKeys('standard_user')</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;"><code>driver.FindElement(By.Name, 'password').SendKeys("secret_sauce")</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Link text</td>
+<td style="text-align: left;">linkText</td>
+<td style="text-align: left;"><code>driver.FindElement(By.LinkText, 'Sauce Labs Backpack').Click()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Partial link text</td>
+<td style="text-align: left;">partialLinkText</td>
+<td style="text-align: left;"><code>driver.FindElement(By.PartialLinkText, 'Light').Click()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Class name</td>
+<td style="text-align: left;">className</td>
+<td style="text-align: left;"><code>driver.FindElement(By.ClassName, 'submit-button').Click()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Tag name</td>
+<td style="text-align: left;">tagName</td>
+<td style="text-align: left;"><code>IList&lt;IWebElement&gt; links = driver.FindElements(By.TagName, 'input')</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Customizable   Locators</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">CSS selector</td>
+<td style="text-align: left;">cssSelector</td>
+<td style="text-align: left;"><code>driver. FindElement(By.CSS_SELECTOR, 'input#email').send_keys('abhisheksinghcpj@gmail.com')</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Xpath</td>
+<td style="text-align: left;">xpath</td>
+<td style="text-align: left;">(See XPath section below for details)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods used:</strong></p>
+<ul>
+<li>
+<p>To find and use a single element/value, use <code>FindElement()</code>:</p>
+<p><code>csharp
+driver.FindElement(By.CssSelector("#app &gt; div &gt; main &gt; article &gt; h3")).Click();</code></p>
+</li>
+<li>
+<p>To find multiple elements/values, use <code>FindElements()</code>:</p>
+<p><code>csharp
+driver.FindElements(By.CssSelector("#app &gt; div &gt; main &gt; article &gt; h3")); 
+//Note: You cannot directly use ".Click()" on FindElements, as it returns a collection.</code></p>
+</li>
+</ul>
+<p><strong>LinkText and Partial LinkText:</strong></p>
+<ul>
+<li>We can find an element using the link text or the partial link text in Selenium WebDriver. Both these locators can only be applied to elements with the anchor tag (<code>&lt;a&gt;</code>).</li>
+<li>The link text locator matches the <strong>exact</strong> text inside the anchor tag. The partial link text locator matches the text inside the anchor tag <strong>partially</strong>.</li>
+<li><code>NoSuchElementException</code> shall be thrown for both these locators if there is no matching element.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><strong>Code:</strong></p>
+<pre><code class="language-csharp">driver.FindElement(By.LinkText(&quot;click here&quot;)).Click();
+driver.FindElement(By.PartialLinkText(&quot;here&quot;)).Click();
+</code></pre>
+<h2 id="css-selector-locators">CSS selector Locators  <a id="css-selector-locator"></a></h2>
+<ol>
+<li>
+<p><strong>Tag &amp; id:</strong> Use hash (<code>#</code>) to join the both attribute</p>
+<p><code>csharp
+driver.find_element(By.CSS_SELECTOR,'input#email').send_keys('abhisheksinghcpj@gmail.com');
+// or
+driver.find_element(By.CSS_SELECTOR, '#email').clear();
+//for C#
+driver.FindElement(By.CssSelector("input#email")).send_keys('abhisheksinghcpj@gmail.com');</code></p>
+</li>
+<li>
+<p><strong>Tag &amp; class:</strong> Use dot (<code>.</code>) to join the both attribute</p>
+<p><code>csharp
+driver.find_element(By.CSS_SELECTOR,'input.inputtext').send_keys('abhishekcpj@gmail.com');</code></p>
+</li>
+<li>
+<p><strong>Tag &amp; attribute:</strong> Use square bracket <code>[]</code> to join attribute</p>
+<p><code>csharp
+driver.find_element(By.CSS_SELECTOR,'input[placeholder="Password"]').send_keys('abc123456');</code></p>
+</li>
+<li>
+<p><strong>Tag, class &amp; attribute</strong></p>
+<p><code>csharp
+driver.find_element(By.CSS_SELECTOR,'button._42ft[type="submit"]').click();</code></p>
+</li>
+<li>
+<p><strong>Advance CSS Selector</strong></p>
+<ul>
+<li><strong>Direct Child Selector (<code>&gt;</code>):</strong> <code>.parent &gt; .child</code></li>
+<li><strong>Adjacent Sibling Selector (<code>+</code>):</strong> <code>.sibling1 + .sibling2</code></li>
+<li><strong>General Sibling Selector (<code>~</code>):</strong> <code>.sibling1 ~ .sibling2</code></li>
+<li><strong>Attribute Selector (<code>[]</code>):</strong> <code>input[type='text']</code></li>
+<li><strong>ID Selector (<code>#</code>):</strong> <code>#myId</code></li>
+<li><strong>Class Selector (<code>.</code>):</strong> <code>.myClass</code></li>
+<li><strong>Universal Selector (<code>*</code>):</strong> <code>div *</code></li>
+<li><strong>Pseudo-classes and Pseudo-elements:</strong> <code>a:hover</code>, <code>::before</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="selenium-xpath">Selenium XPath <a id="selenium-xpath"></a></h1>
+<p>XPath is a query language for selecting nodes from a web page using <code>XML expressions</code>. By using XPath, we can locate any element on a web page that has an HTML DOM structure.</p>
+<h2 id="syntax">Syntax</h2>
+<p>//tagname[@attribute='value']</p>
+<p>In the above syntax:</p>
+<ul>
+<li><code>//</code>: Selects nodes in the document from the current node that match the selection no matter where they are.</li>
+<li><code>tagname</code>: The name of the tag of a particular node.</li>
+<li><code>@</code>: Selects attributes.</li>
+<li><code>attribute</code>: The name of the attribute of the node.</li>
+<li><code>value</code>: The value of the attribute.</li>
+</ul>
+<h2 id="types-of-xpath">Types of XPath   <a id="xpath-types"></a></h2>
+<p>XPath is categorized into two main types:</p>
+<ol>
+<li>
+<p><strong>Absolute XPath:</strong> The XPath starts from the root of the HTML page.</p>
+<ul>
+<li>Syntax: <code>/html/body/tag1[index]/tag2[index]/.../tagN[index]</code></li>
+<li>Example: <code>/html/body/div[2]/div/div[2]/div/div/div/fieldset/form/div[1]/input[1]</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Relative XPath:</strong> The path starts from the middle of the DOM structure.</p>
+<ul>
+<li>Syntax: <code>//htmltag[@attribute1='value1' and @attribute2='value2']</code></li>
+<li>Example: <code>//input[@id='passwd' and @placeholder='password']</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="xpath-options">XPath Options  <a id="xpath-options"></a></h2>
+<p>We use different options like <code>AND</code>, <code>OR</code>, <code>contains()</code>, <code>text()</code>, and <code>starts-with()</code>.</p>
+<h3 id="and-or">AND / OR</h3>
+<pre><code class="language-csharp">driver.FindElement(By.XPath(&quot;//input[@name='keyword' and @placeholder='Search products &amp; brands']&quot;)).SendKeys(&quot;laptops&quot;);
+</code></pre>
+<h3 id="contains">contains()</h3>
+<p>A built-in method used to locate an element based on a partial text match (any text of the whole value).
+//<HTML tag>[contains(@attribute_name, 'attribute_value')]</p>
+<h3 id="starts-with">starts-with()</h3>
+<p>The starts-with() function is used to find the element whose attribute value changes (e.g., message12, message15, message28) on refresh or any operation on the webpage, but the initial text remains the same.
+//input[starts-with(@attribute_name, 'attribute_partial_value')]</p>
+<h3 id="text">text()</h3>
+<p>Used to find any text value inside the start and end tag (text that appears on the front screen).
+//tagName[text()='abhi']</p>
+<h2 id="xpath-attributes">XPath Attributes  <a id="xpath attributes"></a></h2>
+<p>XPath attributes are recommended when you don't have a suitable <code>id</code> or <code>name</code> attribute for the element you want to locate.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodeName</code></td>
+<td>Selects all nodes with this name</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Selects from the root node</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>Selects nodes in the document from the current node that match the selection no matter where they are.</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Selects the current node</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>Selects attributes</td>
+</tr>
+<tr>
+<td><code>..</code></td>
+<td>Selects the parent of the current node</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Selects any element node</td>
+</tr>
+<tr>
+<td><code>@*</code></td>
+<td>Selects any attribute node</td>
+</tr>
+<tr>
+<td><code>node()</code></td>
+<td>Selects any node</td>
+</tr>
+<tr>
+<td><code>/audio/file[last()]</code></td>
+<td>Selects the last audio file that is a child of an audio element</td>
+</tr>
+<tr>
+<td><code>/audio/file[1]</code></td>
+<td>Selects the first audio file</td>
+</tr>
+<tr>
+<td><code>/audio/file[position()&gt;4]</code></td>
+<td>Selects all audio files that are children of an audio file and have a position greater than 4.</td>
+</tr>
+<tr>
+<td><code>//[@labeled]</code></td>
+<td>Selects all elements with the <code>labeled</code> attribute.</td>
+</tr>
+<tr>
+<td><code>/audio/file/[price&gt;9.99]/title</code></td>
+<td>Selects all the <code>title</code> elements of the <code>file</code> element of the <code>audio</code> element with a <code>price</code> greater than 9.99.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xpath-axes">XPath Axes <a id="xpath-axes"></a></h2>
+<p>XPath axes are used to search for multiple nodes in an XML document from the current node context. These methods are mainly used when the web element cannot be identified using ID, name, class name, link text, CSS selector, and XPath locators.</p>
+<p><strong>Syntax:</strong>
+XPath = XPath(Current node)//xpath_axes::tagName</p>
+<pre><code class="language-csharp">var preceding = driver.FindElements(By.XPath(&quot;//a[@id='challenges-link']/parent::li/preceding::*&quot;));
+</code></pre>
+<ul>
+<li><code>self:</code> //self::tagName</li>
+<li><code>parent:</code> //parent::tagName</li>
+<li><code>child</code></li>
+<li><code>ancestor:</code> Parent of parent</li>
+<li><code>descendant:</code> Child of child</li>
+<li><code>following</code></li>
+<li><code>following-sibling</code></li>
+<li><code>preceding</code></li>
+<li><code>preceding-sibling</code></li>
+<li><code>following nodes</code> are the nodes below/after the current node in the HTML code.</li>
+<li><code>following-sibling</code> nodes are all nodes parallel and below the current node.</li>
+<li><code>preceding</code> nodes are the nodes above/before the current node in the HTML code.</li>
+<li>We can use <code>*</code> as the <code>tagName</code> if we don't know it clearly.</li>
+</ul>
+<pre><code class="language-csharp">using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.ObjectModel;
+
+public class XPathExample
+{
+    public static void Main(string[] args)
+    {
+        IWebDriver driver = new ChromeDriver();
+        driver.Manage().Window.Maximize();
+        driver.Navigate().GoToUrl(&quot;[https://owasp.org/www-project-juice-shop/](https://owasp.org/www-project-juice-shop/)&quot;);
+
+        string x = driver.FindElement(By.XPath(&quot;//a[@id='challenges-link']&quot;)).Text;
+        Console.WriteLine(&quot;display the value for selected path:-&gt; &quot; + x);
+
+        // 1. self axes
+        string x1 = driver.FindElement(By.XPath(&quot;//a[@id='challenges-link']//self::a&quot;)).Text;
+        Console.WriteLine(&quot;self axes:-&gt; &quot; + x1);
+
+        // parent node
+        string p = driver.FindElement(By.XPath(&quot;//a[@id='challenges-link']//parent::*&quot;)).Text;
+        Console.WriteLine(&quot;parent axes:-&gt; &quot; + p);
+
+        // ancestor node
+        string a = driver.FindElement(By.XPath(&quot;//a[@id='challenges-link']//ancestor::ul&quot;)).Text;
+        Console.WriteLine(&quot;ancestor axes:-&gt; &quot; + a);
+
+        // child node
+        string c = driver.FindElement(By.XPath(&quot;//a[@id='challenges-link']//ancestor::ul/child::li&quot;)).Text;
+        Console.WriteLine(&quot;child node of ancestor axes -&gt;&quot; + c);
+
+        // descendant : child of child node
+        ReadOnlyCollection&lt;IWebElement&gt; d = driver.FindElements(By.XPath(&quot;//a[@id='challenges-link']/ancestor::ul/descendant::*&quot;));
+        Console.WriteLine(&quot;lengthe descendant node value :-&gt; &quot; + d.Count);
+
+        // following
+        ReadOnlyCollection&lt;IWebElement&gt; folwng = driver.FindElements(By.XPath(&quot;//a[@id='challenges-link']//parent::li//following::li&quot;));
+        Console.WriteLine(&quot;following length -&gt;&quot; + folwng.Count);
+        folwng = driver.FindElements(By.XPath(&quot;//a[@id='challenges-link']//parent::li//following::*&quot;));
+        Console.WriteLine(&quot;following node length having tag * -&gt;&quot; + folwng.Count);
+
+        // following-sibling
+        ReadOnlyCollection&lt;IWebElement&gt; fs = driver.FindElements(By.XPath(&quot;//a[@id='challenges-link']//parent::li//following-sibling::li&quot;));
+        Console.WriteLine(&quot;following-sibling length -&gt;&quot; + fs.Count);
+
+        // preceding node
+        ReadOnlyCollection&lt;IWebElement&gt; preceding = driver.FindElements(By.XPath(&quot;//a[@id='challenges-link']//parent::li//preceding::*&quot;));
+        Console.WriteLine(&quot;lengthe of preceding node -&gt; &quot; + preceding.Count);
+
+        // preceding-sibling node
+        ReadOnlyCollection&lt;IWebElement&gt; preceding_sb = driver.FindElements(By.XPath(&quot;//a[@id='challenges-link']//parent::li//preceding-sibling::*&quot;));
+        Console.WriteLine(&quot;lengthe of preceding-sibling node -&gt; &quot; + preceding_sb.Count);
+
+        System.Threading.Thread.Sleep(5000);
+        driver.Quit();
+    }
+}
+</code></pre>
+<h2 id="xpath-syntax-summary">XPath Syntax summary    <a id="xpath-summary"></a></h2>
+<p>XPath is used to locate elements on a web page.</p>
+<ol>
+<li><strong>Basic Syntax:</strong> <code>//tagName[@attribute='value']</code></li>
+<li><strong>Concatenation:</strong> <code>//tagName[@attribute='value'][@attribute='value']</code></li>
+<li><strong>Attribute Starts With:</strong> <code>//tagName[starts-with(@attribute,'value')]</code></li>
+<li><strong>Attribute Contains Text:</strong> <code>//tagName[contains(@attribute,'value')]</code></li>
+<li><strong>Text Value:</strong> <code>//tagName[text()='value']</code></li>
+<li><strong>Text Contains Text:</strong> <code>//tagName[contains(text(),'partialValue')]</code></li>
+<li><strong>Parent Element:</strong> <code>//tagName[@attribute='value']/..</code></li>
+<li><strong>Parent Tag:</strong> <code>//tagName[@attribute='value']/parent::tagName</code></li>
+<li><strong>Following Sibling:</strong> <code>//tagName[@attribute='value']/following-sibling::tagName</code></li>
+<li><strong>Preceding Sibling:</strong> <code>//tagName[@attribute='value']/preceding-sibling::tagName</code></li>
+</ol>
+<h1 id="some-important-operations">Some important OPerations:</h1>
+<h2 id="handeling-web-element-collections">Handeling Web element collections</h2>
+<pre><code class="language-csharp">  public void WebElementsCollections()
+        {
+            _driver.Url = &quot;https://www.actitime.com/&quot;;
+            IList&lt;IWebElement&gt; links = _driver.FindElements(By.CssSelector(&quot;a.main-menu__link&quot;));
+
+
+            foreach(WebElement link in links) {
+                String text = link.Text;
+                if (!text.Trim().Equals(&quot;&quot;))
+                {
+                    Console.WriteLine(link.Text);
+                    Console.WriteLine(link.GetAttribute(&quot;class&quot;));
+                    Console.WriteLine(&quot;-------------------&quot;);
+                }
+            }
+        }
+</code></pre>
+<h2 id="visible-vs-hidden-elements">Visible vs Hidden Elements</h2>
+<pre><code class="language-Csharp"> public void validateVisibleAndInvisibleElements()
+        {
+         driver.Navigate().GoToUrl(&quot;https://www.goodreads.com/&quot;);
+
+           IList&lt;IWebElement&gt; books = driver.FindElements(By.CssSelector(&quot;img[src$='.jpg']&quot;));
+
+            Console.WriteLine(books.Count());
+
+            foreach(WebElement book in books) {
+                if (book.Displayed) {
+                    Console.WriteLine(book.Displayed);
+                    Console.WriteLine(book.GetAttribute(&quot;alt&quot;));
+                    Console.WriteLine(&quot;---------------------&quot;);
+                }
+                }
+
+        }
+</code></pre>
+<h2 id="web-element-within-another-web-element">Web Element within Another Web Element <a id="web-element-within-another-web-element"></a></h2>
+<ul>
+<li><strong>Search the items and print the price of Element Which is inside a price ranges</strong></li>
+</ul>
+<pre><code class="language-Csharp"> public void validateElementInsideElement()
+        {
+            Thread.Sleep(6000);
+            driver.FindElement(By.Id(&quot;global-search-input&quot;)).Click();            
+            driver.FindElement(By.Id(&quot;global-search-input&quot;)).SendKeys(&quot;Mens Shoes&quot;);            
+            driver.FindElement(By.Id(&quot;global-search-submit&quot;)).Click();            
+            Thread.Sleep(5000);
+
+            // Locate the search result items
+            IList&lt;IWebElement&gt; items = driver.FindElements(By.CssSelector(&quot;div.search-result-gridview-item-wrapper&quot;));
+
+            //div.search-result-gridview-item-wrapper span.price-main:first-child
+
+            foreach(WebElement item in items) {
+                // locatin price inside the item
+                String itmPz = item.FindElement(By.CssSelector(&quot;span.price-main:first-child&quot;)).Text.Trim();
+                String itmPz2 = itmPz.Replace(&quot;$&quot;, &quot;&quot;).Replace(&quot; &quot;, &quot;&quot;);
+                double itmPz3 = Double.Parse(itmPz2);
+                if (itmPz3 &lt; 20.0 || itmPz3 &gt; 50.00) {
+                    IWebElement productTitle = item.FindElement(By.CssSelector(&quot;a.product-title-link&quot;));
+                    Console.WriteLine(productTitle.Text);
+                    Console.WriteLine(productTitle.GetAttribute(&quot;href&quot;));
+                    Console.WriteLine(itmPz);
+                    Console.WriteLine(&quot;-------------------------&quot;);
+                }
+            }            
+        }
+</code></pre>
+<h2 id="required-tools-and-frameworks">Required Tools and Frameworks</h2>
+<h2 id="synchronization-in-selenium">Synchronization in Selenium</h2>
+<h2 id="static-dropdown-handling">Static Dropdown Handling</h2>
+<h2 id="scrolling-the-browser">Scrolling the Browser</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

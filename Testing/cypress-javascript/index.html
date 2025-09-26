@@ -1,0 +1,1456 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Cypress Learning - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cypress-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cypress Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ Limitations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-and-project-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙ Setup and Project Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Test Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Test Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locators" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Locators
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Locators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css-selectors-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSS Selectors (default)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpath-plugin-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      XPath (plugin required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏳ Hooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏳ Hooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-before-each-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run before each test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Assertions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Assertions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-implicit-assertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Implicit assertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-explicit-assertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Explicit assertion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Explicit assertion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bdd-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      BDD Style
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdd-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      TDD Style
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-travel-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙ Time Travel Debugging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 Common Issues &amp; Fixes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚫 Common Issues &amp; Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-blank-screen-on-hovering-test-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Blank screen on hovering test steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-locating-unique-element-inside-selected-locator" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. locating unique element inside selected locator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-value-is-not-reflecting-due-to-chaining-and-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      If value is not reflecting due to chaining and sync
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#providing-request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Providing request body:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cypress-architecture-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Cypress Architecture &amp; Key Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Cypress Architecture &amp; Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cypress-vs-traditional-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cypress vs Traditional Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-browsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Browsers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cypress-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cypress Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cypress-installation-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Cypress Installation &amp; Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cypress-test-runner-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Cypress Test Runner &amp; CLI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Cypress Test Runner &amp; CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cypress-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Cypress Project Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗂️ Cypress Project Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-cypressconfigjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example cypress.config.js
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-identification-css-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Element Identification &amp; CSS Selectors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cucumber-bdd-integration-with-cypress" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Cucumber BDD Integration with Cypress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Cucumber BDD Integration with Cypress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-cucumber-bdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Cucumber BDD?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-gherkin-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Gherkin Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-definitions-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step Definitions Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-sharing-with-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Sharing with Hooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cypress-config-for-cucumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cypress Config for Cucumber
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-driven-testing-tags-and-cli-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Data-Driven Testing, Tags, and CLI Execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cucumber-html-reports-in-cypress" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Cucumber HTML Reports in Cypress
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Cucumber HTML Reports in Cypress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cypress-learning">Cypress Learning</h1>
+<hr />
+<h2 id="overview">✨ Overview</h2>
+<ul>
+<li><strong>Cypress</strong> is a <strong>web UI automation tool</strong> for modern JavaScript applications (e.g., React, Angular, Vue).</li>
+</ul>
+<h2 id="features">🔹 Features</h2>
+<ol>
+<li><strong>Time Travel</strong> – View DOM snapshots by hovering over each step.</li>
+<li><strong>Debuggability</strong> – Debug in the same browser window without re-running.</li>
+<li><strong>Automatic Waits</strong> – Cypress waits for DOM and elements automatically.</li>
+<li><strong>Consistent Results</strong> – Runs yield consistent behavior.</li>
+<li><strong>Auto Screenshots &amp; Videos</strong> – Automatically captures on failure.</li>
+<li><strong>Cross-Browser Testing</strong> – Runs on Chrome, Edge, Firefox, Electron.</li>
+</ol>
+<h2 id="limitations">❌ Limitations</h2>
+<ol>
+<li>Cannot automate Windows or mobile native apps.</li>
+<li>Limited community support.</li>
+<li>Only JavaScript/TypeScript supported.</li>
+<li>Difficult file read/write operations.</li>
+<li>Limited 3rd-party reporting integration.</li>
+</ol>
+<hr />
+<h2 id="setup-and-project-configuration">⚙ Setup and Project Configuration</h2>
+<ol>
+<li>Ensure <strong>Node.js</strong> is installed:</li>
+</ol>
+<pre><code class="language-bash">   npm -v
+````
+
+2. Initialize Node Project (if `package.json` not present):
+
+```bash
+    npm init
+</code></pre>
+<ol>
+<li>Install project dependencies:</li>
+</ol>
+<pre><code class="language-bash">    npm install
+</code></pre>
+<ol>
+<li>Install Cypress:</li>
+</ol>
+<pre><code class="language-bash">    npm install cypress --save-dev
+</code></pre>
+<ol>
+<li>Launch Cypress:</li>
+</ol>
+<p><code>bash
+   npx cypress open</code></p>
+<ul>
+<li>Select <strong>E2E Component Testing</strong></li>
+<li>Choose browser (e.g., Chrome)</li>
+<li>
+<p>Create or choose test file</p>
+</li>
+<li>
+<p>Write test cases in VS Code:</p>
+</li>
+<li>
+<p>Go to <code>cypress/e2e/</code></p>
+</li>
+<li>
+<p>Rename and update the file</p>
+</li>
+<li>
+<p>Run Tests:</p>
+</li>
+</ul>
+<p><code>bash
+   npx cypress open                     # Headed mode with test runner
+   npx cypress run                      # Headless mode
+   npx cypress run --headed            # CLI headed mode
+   npx cypress run --spec &lt;path&gt;       # Specific spec file
+   npx cypress run --spec &lt;path&gt; --browser edge --headed</code></p>
+<hr />
+<h2 id="test-structure">🔄 Test Structure</h2>
+<h3 id="test-format">Test Format</h3>
+<ul>
+<li><code>Spec File (.cy.ts)</code> → <code>describe()</code> block → <code>it()</code> blocks</li>
+</ul>
+<h3 id="sample">Sample</h3>
+<pre><code class="language-javascript">describe(&quot;Home Page&quot;, () =&gt; {
+  it(&quot;The h1 contains the correct text&quot;, () =&gt; {
+    cy.visit(&quot;http://localhost:3000&quot;)
+    cy.get(&quot;h1&quot;).should(&quot;contain&quot;, &quot;Welcome&quot;)
+  })
+})
+</code></pre>
+<h3 id="important-methods">Important Methods</h3>
+<ul>
+<li><code>describe("Test Suite Name", callback)</code></li>
+<li><code>it("Test Case Description", callback)</code></li>
+<li><code>.only()</code> → Run specific test or suite</li>
+<li><code>.eq(index)</code> → Selects element by index from matched set</li>
+</ul>
+<hr />
+<h2 id="locators">🔍 Locators</h2>
+<h3 id="css-selectors-default">CSS Selectors (default)</h3>
+<pre><code class="language-javascript">cy.get('tag#id')
+cy.get('tag.class')
+cy.get('tag[attribute=&quot;value&quot;]')
+cy.get('tag#id.class[attribute=&quot;value&quot;]')
+</code></pre>
+<h3 id="xpath-plugin-required">XPath (plugin required)</h3>
+<ol>
+<li>Install Plugin:</li>
+</ol>
+<p><code>bash
+   npm install -D cypress-xpath</code></p>
+<ol>
+<li>Include in <code>e2e.ts</code> :</li>
+</ol>
+<p><code>javascript
+   require('cypress-xpath')</code></p>
+<ol>
+<li>Include in <code>support file</code> to add IntelliSense:</li>
+</ol>
+<p><code>javascript
+   /// &lt;reference types="cypress-xpath" /&gt;</code></p>
+<ol>
+<li>Use:</li>
+</ol>
+<p><code>javascript
+   cy.xpath("//button[text()='Submit']")</code></p>
+<hr />
+<h2 id="hooks">⏳ Hooks</h2>
+<h3 id="run-before-each-test">Run before each test</h3>
+<pre><code class="language-javascript">beforeEach(() =&gt; {
+  // setup steps
+})
+</code></pre>
+<h3 id="run">run</h3>
+<pre><code class="language-javascript">before(() =&gt; {
+  // setup steps
+})
+</code></pre>
+<h3 id="run_1">run</h3>
+<pre><code class="language-javascript">after(() =&gt; {
+  // setup steps
+})
+</code></pre>
+<h3 id="run_2">run</h3>
+<pre><code class="language-javascript">aftereach(() =&gt; {
+  // setup steps
+})
+</code></pre>
+<hr />
+<h2 id="assertions">📊 Assertions</h2>
+<h3 id="1-implicit-assertion">1. Implicit assertion</h3>
+<ul>
+<li>Should</li>
+<li>Add</li>
+</ul>
+<pre><code class="language-javascript">cy.get(&quot;h1&quot;).should(&quot;contain&quot;, &quot;Welcome&quot;).and(&quot;be.visible&quot;)
+</code></pre>
+<ul>
+<li>Chaining: <code>should().should()</code> or <code>should().and()</code></li>
+<li>Common matchers: <code>eq</code>, <code>contain</code>, <code>include</code>, <code>have.length</code>, <code>have.value</code></li>
+</ul>
+<h3 id="2-explicit-assertion">2. Explicit assertion</h3>
+<h4 id="bdd-style">BDD Style</h4>
+<pre><code class="language-javascript">cy.get(&quot;h1&quot;).then(($el) =&gt; {
+  expect($el.text()).to.equal(&quot;Welcome&quot;)
+})
+</code></pre>
+<ul>
+<li>here return value from get is pass through funcation and compared inside function.</li>
+</ul>
+<h4 id="tdd-style">TDD Style</h4>
+<pre><code class="language-javascript">assert.equal(actual, expected)
+</code></pre>
+<hr />
+<h2 id="time-travel-debugging">⚙ Time Travel Debugging</h2>
+<ul>
+<li>Cypress allows <strong>hovering over commands</strong> in the Test Runner to view DOM snapshots of each step (like time-travel).</li>
+<li>Helps trace issues by inspecting past DOM states.</li>
+</ul>
+<hr />
+<h2 id="common-issues-fixes">🚫 Common Issues &amp; Fixes</h2>
+<h3 id="1-blank-screen-on-hovering-test-steps">1. Blank screen on hovering test steps</h3>
+<p><strong>Fix:</strong> Add <code>testIsolation: false</code> in <code>cypress.config.ts</code></p>
+<pre><code class="language-typescript">import { defineConfig } from &quot;cypress&quot;;
+
+export default defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {},
+    testIsolation: false,
+  },
+});
+</code></pre>
+<h3 id="2-locating-unique-element-inside-selected-locator">2. locating unique element inside selected locator</h3>
+<pre><code class="language-javascript">cy.get(&quot;userinformation&quot;).within( () =&gt;
+{
+  cy.get('user').contains(&quot;abhi&quot;);
+  cy.contains('Testing scopt').click({force:true});
+})
+</code></pre>
+<h3 id="if-value-is-not-reflecting-due-to-chaining-and-sync">If value is not reflecting due to chaining and sync</h3>
+<pre><code class="language-javascript">cy.get(&quot;userinformation&quot;).within( () =&gt;
+{
+  cy.get('user').contains(&quot;abhi&quot;);
+  cy.contains('Testing scopt').click({force:true});
+})
+</code></pre>
+<hr />
+<h2 id="providing-request-body">Providing request body:</h2>
+<ul>
+<li>direct data</li>
+<li>random data</li>
+<li>using Json file.<br />
+   store the file under fixture folder</li>
+</ul>
+<pre><code class="language-js">
+describe(&quot;Making robust testing&quot;, () =&gt;
+{
+
+    it(&quot;Adding Post with direct data&quot;, () =&gt;
+    {
+            const reqBody = 
+            {
+                title: 'LearningWithAbhi',
+                body: 'Lets go to me website and start practicing the automations',
+                userId: 1,
+            }          
+
+            cy.request(
+            {
+                method : 'POST',
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                body: reqBody
+
+
+            })
+
+            .then((response) =&gt;
+            {
+                expect(response.status).to.eql(201)
+                expect(response.body.title).to.eql(reqBody.title)
+            })
+
+    })
+
+
+    it(&quot;Adding Post with randomData&quot;, () =&gt;
+    {
+
+            const reqBody = {
+                title: Math.random().toString(5).substring(2),
+                body: Math.random().toString(5).substring(2) + 'the automations',
+                userId: 1,
+                }          
+
+            cy.request(
+            {
+                method : 'POST',
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                body: reqBody
+
+
+            })
+            .then((response) =&gt;
+                {
+                    expect(response.status).to.eql(201)
+                    expect(response.body.title).to.eql(reqBody.title)
+                })
+
+    })
+
+
+    it(&quot;Adding Post with fixtures&quot;, () =&gt;
+        {
+                cy.fixture('Testdata').then((data) =&gt;
+                {
+                    const requestBody = data;
+                    cy.request(
+                    {
+                            method : 'POST',
+                            url: 'https://jsonplaceholder.typicode.com/posts',
+                            body: requestBody                                
+
+                    })
+                    .then((response) =&gt;
+                    {
+                        expect(response.status).to.eql(201)
+                        expect(response.body.title).to.eql(requestBody.title + 'a')
+                    })
+
+
+                })             
+
+        })
+
+})
+
+</code></pre>
+<h2 id="best-practices">✨ Best Practices</h2>
+<ul>
+<li>Use <code>data-cy</code> attributes for selectors.</li>
+<li>Keep reusable functions in <code>commands.ts</code>.</li>
+<li>Add plugins in <code>support/e2e.ts</code>.</li>
+<li>Use <code>.only()</code> and <code>.skip()</code> for selective execution.</li>
+<li>Structure folders clearly: <code>e2e/</code>, <code>fixtures/</code>, <code>support/</code>.</li>
+</ul>
+<hr />
+<h2 id="cypress-architecture-key-concepts">🧠 Cypress Architecture &amp; Key Concepts</h2>
+<h3 id="cypress-vs-traditional-tools">Cypress vs Traditional Tools</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Selenium/Protractor</th>
+<th>Cypress</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execution</td>
+<td>Outside browser (via drivers)</td>
+<td>Inside browser</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Slower (network hops)</td>
+<td>Very fast</td>
+</tr>
+<tr>
+<td>DOM Access</td>
+<td>Indirect via driver</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>Network Control</td>
+<td>Limited</td>
+<td>Full control, mock support</td>
+</tr>
+<tr>
+<td>Auto-Wait</td>
+<td>Manual</td>
+<td>Built-in</td>
+</tr>
+<tr>
+<td>Browser Support</td>
+<td>Wide</td>
+<td>Chrome, Firefox, Electron, Edge</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Traditional tools use browser drivers and communicate over a network.</li>
+<li>Cypress executes test code inside the browser, eliminating drivers and network latency.</li>
+<li>Advantages: faster execution, direct DOM control, network interception, auto-waiting, real-time execution.</li>
+</ul>
+<h3 id="test-capabilities">Test Capabilities</h3>
+<ul>
+<li>Unit, Integration, and End-to-End (E2E) testing.</li>
+<li>Fits multiple SDLC stages.</li>
+</ul>
+<h3 id="supported-browsers">Supported Browsers</h3>
+<ul>
+<li>Chrome, Firefox, Edge, Electron (default, lightweight Chromium).</li>
+</ul>
+<h3 id="cypress-components">Cypress Components</h3>
+<ul>
+<li><strong>Test Runner</strong>: UI for running/debugging tests, time-travel, live reload.</li>
+<li><strong>Dashboard Service</strong>: Optional cloud service for historical results, videos, error logs.</li>
+</ul>
+<hr />
+<h2 id="cypress-installation-setup">🛠️ Cypress Installation &amp; Setup</h2>
+<ol>
+<li><strong>Install Node.js</strong>: Download from official site.<ul>
+<li>Verify: <code>node -v</code>, <code>npm -v</code></li>
+</ul>
+</li>
+<li><strong>Set NODE_HOME (Windows)</strong>: Add Node.js path to environment variables.</li>
+<li><strong>Install VS Code</strong>: Recommended editor.</li>
+<li><strong>Create Project Folder</strong>: <code>mkdir cypress-automation &amp;&amp; cd cypress-automation</code></li>
+<li><strong>Initialize npm Project</strong>: <code>npm init -y</code></li>
+<li><strong>Install Cypress</strong>: <code>npm install cypress --save-dev</code></li>
+<li><strong>Run Cypress</strong>: <code>npx cypress open</code> (creates <code>/cypress</code> folder structure)</li>
+<li><strong>Share Setup</strong>: Commit <code>package.json</code> and <code>package-lock.json</code>; teammates run <code>npm install</code>.</li>
+</ol>
+<hr />
+<h2 id="cypress-test-runner-cli">🧪 Cypress Test Runner &amp; CLI</h2>
+<ul>
+<li><strong>Open Test Runner</strong>: <code>npx cypress open</code> or <code>./node_modules/.bin/cypress open</code></li>
+<li><strong>Folder Structure</strong>: <code>/cypress/</code> with <code>downloads/</code>, <code>fixtures/</code>, <code>support/</code>, <code>cypress.config.js</code></li>
+<li><strong>Test Types</strong>: E2E or Component; select browser (Chrome, Firefox, Electron).</li>
+<li><strong>Write Tests</strong>: Place <code>.js</code> spec files in configured folder.</li>
+<li><strong>Configure Spec Path</strong>: In <code>cypress.config.js</code>, set <code>specPattern</code>.</li>
+<li><strong>Run Tests</strong>: Click spec file in UI; see step-by-step execution, DOM snapshots, time-travel debugging.</li>
+</ul>
+<h3 id="cli-commands">CLI Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open Cypress GUI</td>
+<td><code>npx cypress open</code></td>
+</tr>
+<tr>
+<td>Run all tests headless</td>
+<td><code>npx cypress run</code></td>
+</tr>
+<tr>
+<td>Run specific test file</td>
+<td><code>npx cypress run --spec "path/to/file.js"</code></td>
+</tr>
+<tr>
+<td>Run in headed mode</td>
+<td><code>npx cypress run --headed</code></td>
+</tr>
+<tr>
+<td>Run in Chrome</td>
+<td><code>npx cypress run --browser chrome</code></td>
+</tr>
+<tr>
+<td>Run in Edge</td>
+<td><code>npx cypress run --browser edge</code></td>
+</tr>
+<tr>
+<td>Run in Firefox</td>
+<td><code>npx cypress run --browser firefox</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cypress-project-structure">🗂️ Cypress Project Structure</h2>
+<table>
+<thead>
+<tr>
+<th>Folder/File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fixtures/</code></td>
+<td>Test data (JSON files)</td>
+</tr>
+<tr>
+<td><code>integration/</code></td>
+<td>Test scripts/spec files</td>
+</tr>
+<tr>
+<td><code>plugins/</code></td>
+<td>Event handlers (rarely used)</td>
+</tr>
+<tr>
+<td><code>support/</code></td>
+<td>Custom commands, utilities</td>
+</tr>
+<tr>
+<td><code>node_modules/</code></td>
+<td>Cypress dependencies</td>
+</tr>
+<tr>
+<td><code>cypress.config.js</code></td>
+<td>Global configuration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-cypressconfigjs">Example <code>cypress.config.js</code></h3>
+<pre><code class="language-js">const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+  e2e: {
+     specPattern: 'cypress/integration/examples/*.js',
+     screenshotsFolder: 'cypress/failures/screenshots',
+     videosFolder: 'cypress/failures/videos',
+     viewportWidth: 1000,
+     viewportHeight: 660
+  }
+})
+</code></pre>
+<hr />
+<h2 id="element-identification-css-selectors">🔍 Element Identification &amp; CSS Selectors</h2>
+<ul>
+<li>Cypress supports CSS selectors (not XPath).</li>
+<li>Inspect elements using browser DevTools.</li>
+<li>Selector strategies:</li>
+<li><code>#idName</code> (ID)</li>
+<li><code>.className</code> (Class)</li>
+<li><code>tag.class</code> or <code>tag#id</code> (Tag + Class/ID)</li>
+<li><code>[attribute="value"]</code> (Attribute)</li>
+<li><code>parent child</code> (Hierarchy)</li>
+<li>Validate selectors in DevTools: <code>document.querySelector('selector')</code></li>
+<li>Use Cypress Selector Playground for suggestions.</li>
+<li>Locate elements: <code>cy.get('css_selector')</code></li>
+</ul>
+<hr />
+<h2 id="cucumber-bdd-integration-with-cypress">🧠 Cucumber BDD Integration with Cypress</h2>
+<h3 id="why-use-cucumber-bdd">Why Use Cucumber BDD?</h3>
+<ul>
+<li>Gherkin syntax (Given-When-Then) for readable, collaborative test cases.</li>
+<li>Stakeholders can review scenarios.</li>
+</ul>
+<h3 id="setup-steps">Setup Steps</h3>
+<ol>
+<li><strong>Install Plugin</strong>:<br />
+<code>npm install --save-dev cypress-cucumber-preprocessor</code></li>
+<li><strong>VS Code Extension</strong>:<br />
+    Install "Cucumber (Gherkin) Full Support".</li>
+<li><strong>Create Feature File</strong>:<br />
+    Place <code>.feature</code> files in <code>cypress/e2e/BDD/</code>.</li>
+<li><strong>Step Definitions</strong>:<br />
+    Create JS files in matching folders (e.g., <code>BDD/ecommerce/ecommerceStepDef.js</code>).</li>
+</ol>
+<h3 id="example-gherkin-syntax">Example Gherkin Syntax</h3>
+<pre><code class="language-gherkin">Feature: End-to-End E-Commerce Validation
+
+  Scenario: E-commerce Product Delivery
+     Given I am on E-commerce page
+     When I log in to the application
+     And I add items to cart
+     And I validate the total price limit
+     Then Select the country, submit, and verify Thank You
+</code></pre>
+<h3 id="step-definitions-example">Step Definitions Example</h3>
+<pre><code class="language-js">import { Given, When, Then } from &quot;@badeball/cypress-cucumber-preprocessor&quot;;
+
+Given(&quot;I am on the e-commerce page&quot;, () =&gt; {
+  // navigation code
+});
+When(&quot;I log in to the application&quot;, function () {
+  // login code using this.data
+});
+</code></pre>
+<h3 id="data-sharing-with-hooks">Data Sharing with Hooks</h3>
+<pre><code class="language-js">import { Before } from &quot;@badeball/cypress-cucumber-preprocessor&quot;;
+Before(function () {
+  cy.fixture(&quot;example&quot;).then((data) =&gt; {
+     this.data = data;
+  });
+});
+</code></pre>
+<ul>
+<li>Use <code>function ()</code> syntax for step definitions to access shared state via <code>this</code>.</li>
+</ul>
+<h3 id="cypress-config-for-cucumber">Cypress Config for Cucumber</h3>
+<pre><code class="language-js">const { defineConfig } = require(&quot;cypress&quot;);
+const browserify = require(&quot;@cypress/browserify-preprocessor&quot;);
+const { addCucumberPreprocessorPlugin } = require(&quot;@badeball/cypress-cucumber-preprocessor&quot;);
+const { preprendTransformerToOptions } = require(&quot;@badeball/cypress-cucumber-preprocessor/browserify&quot;);
+
+async function setupNodeEvents(on, config) {
+  await addCucumberPreprocessorPlugin(on, config);
+  on(&quot;file:preprocessor&quot;, browserify(preprendTransformerToOptions(config, browserify.defaultOptions)));
+  return config;
+}
+
+module.exports = defineConfig({
+  e2e: {
+     setupNodeEvents,
+     specPattern: &quot;cypress/e2e/BDD/*.feature&quot;
+  }
+});
+</code></pre>
+<hr />
+<h2 id="data-driven-testing-tags-and-cli-execution">🧪 Data-Driven Testing, Tags, and CLI Execution</h2>
+<ul>
+<li><strong>Data Tables in Feature Files</strong>:
+  <code>gherkin
+  When I login to application portal
+     | username             | password |
+     | Rahul Shetty Academy | learning |</code></li>
+<li><strong>Access in Step Definitions</strong>:
+  <code>js
+  When('I login to application portal', function (dataTable) {
+     const username = dataTable.rawTable[1][0];
+     const password = dataTable.rawTable[1][1];
+     // login logic
+  });</code></li>
+<li>Use <code>Scenario Outline</code> for data-driven tests.</li>
+<li><strong>Tags</strong>:<br />
+  Add <code>@smoke</code> to scenarios, run with <code>npx cypress run --env tags=@smoke</code>.</li>
+</ul>
+<hr />
+<h2 id="cucumber-html-reports-in-cypress">📊 Cucumber HTML Reports in Cypress</h2>
+<h3 id="steps">Steps</h3>
+<ol>
+<li><strong>Enable JSON Output</strong> in <code>package.json</code>:
+    <code>json
+    "cypress-cucumber-preprocessor": {
+      "json": {
+         "enabled": true,
+         "output": "cypress/cucumber-reports/results.json"
+      }
+    }</code></li>
+<li><strong>Install Cucumber JSON Formatter</strong>:<br />
+    Download and place binary in project root.</li>
+<li><strong>Run Tests</strong>:<br />
+<code>npx cypress run --spec "cypress/e2e/BDD/yourFile.feature"</code></li>
+<li><strong>Install HTML Reporter</strong>:<br />
+<code>npm install multiple-cucumber-html-reporter --save-dev</code></li>
+<li><strong>Create Report Generator Script</strong> (<code>generate-html-report.js</code>):
+    <code>js
+    const reporter = require("multiple-cucumber-html-reporter");
+    reporter.generate({
+      jsonDir: "cypress/cucumber-reports",
+      reportPath: "cypress/cucumber-reports",
+      metadata: {
+         browser: { name: "chrome", version: "113" },
+         device: "Local test machine",
+         platform: { name: "macOS", version: "11.2.3" },
+      },
+      customData: {
+         title: "Run info",
+         data: [
+            { label: "Project", value: "Rahul Shetty Academy Project" },
+            { label: "Release", value: "1.2.3" },
+            { label: "Execution Start Time", value: new Date().toLocaleString() },
+         ],
+      },
+    });</code></li>
+<li><strong>Generate HTML Report</strong>:<br />
+<code>node generate-html-report.js</code></li>
+<li><strong>Open Report</strong>:<br />
+<code>cypress/cucumber-reports/index.html</code></li>
+</ol>
+<hr />
+<h2 id="summary">✅ Summary</h2>
+<ul>
+<li>Cypress offers fast, browser-native automation with modern architecture.</li>
+<li>Supports BDD via Cucumber for readable, collaborative tests.</li>
+<li>Data-driven testing, tagging, and reporting are fully supported.</li>
+<li>HTML reports provide visual feedback for stakeholders.</li>
+<li>Always use official documentation for plugin setup and troubleshooting.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

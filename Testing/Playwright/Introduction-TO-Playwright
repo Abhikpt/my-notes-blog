@@ -1,0 +1,27 @@
+## Table of Contents
+- [Introduction](#introduction)
+- [Start automation with :](#start-automation-with-)
+    - [Playwright using C#](#playwright-using-c)
+    - [Playwright using javaScript](#playwright-using-javascript)
+
+# **Introduction**
+- Playwright is a Node.js library for browser automation built by Microsoft.
+- Supports Chromium, Firefox, WebKit (Safari engine).
+- Runs on Windows, Linux, macOS. Supports CI, headless/headed modes.
+- Supports multiple languages including TypeScript, JavaScript, Python, Java, and .NET (C#).
+
+- Features:
+  - **Auto-waiting** for elements to be actionable
+  - **Mobile emulation** for Chrome and Safari
+  - **Tracing, screenshots, and video capture** for debugging
+  - **Login state saving** to skip repetitive logins
+  - **Powerful tooling**: Codegen, Inspector, Trace Viewer
+  - **Support multiple tabs and multiple users**
+  - **browser Context** Isolate browser Context for each user
+  - **Built-in Codegen** to auto-generate tests
+
+
+
+## Start automation with :
+1. [Playwright using C#](/Testing/Playwright/Playwright-csharp.md)
+2. [Playwright using javaScript](/Testing/Playwright/Playwright-javascript.md)

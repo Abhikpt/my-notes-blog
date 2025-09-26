@@ -1,0 +1,3595 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Csharpprograms - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Csharpprograms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-basic-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      C# Basic Rules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C# Basic Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naming Conventions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Method:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemconsolewriteline" class="md-nav__link">
+    <span class="md-ellipsis">
+      System.Console.WriteLine():
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net-framework-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      .NET Framework Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".NET Framework Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-types-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitive Types in C
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators in C
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators in C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Categories:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      .NET Core
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Studio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-systemconsole-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The System.Console Class
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables in C
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Statements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional-control-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Control Statements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#looping-control-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Looping Control Statements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jumping-control-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jumping Control Statements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple-if
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple-if">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-else
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="If-else">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Else-if
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Else-if">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested-if
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested-if">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch-case
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Switch-case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      While
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="While">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do-while
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Do-while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      For
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    <span class="md-ellipsis">
+      Break
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Break">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Continue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested-for
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested-for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Goto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-oop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to OOP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to OOP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programming-model-for-scalable-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programming Model for Scalable Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Members:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-of-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts of Class:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-class-association" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object &amp; Class Association
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-class-and-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Class and Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a Class and Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Object
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points to Remember
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax-of-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax of Field
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-modifiers-of-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Modifiers of Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-memory-in-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Memory in Heap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects-in-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objects in Heap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-fields-vs-static-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance Fields vs Static Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constant Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readonly-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Readonly Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points-to-remember_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points to Remember
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Points to Remember">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Member Variable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Keyword
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oop-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      OOP Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OOP Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encapsulation:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encapsulation:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collections-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collections in C
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collections in C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-of-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features of Collections:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-collections-instead-of-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Collections Instead of Arrays?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Operations:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-categories-of-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Categories of Collections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Categories of Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-indexed-based-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Indexed-Based Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-key-value-pair-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Key-Value Pair Collections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-prioritized-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Prioritized Collections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-specialized-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Specialized Collections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-a-dictionary-instead-of-an-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use a Dictionary Instead of an Array?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-predicate-and-delegate-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Predicate and Delegate in C
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Predicate and Delegate in C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-delegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Delegate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-predicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Predicate?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicate-using-lambda-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicate Using Lambda Expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-collections-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      C# Collections Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-sharp-coding-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      c sharp coding questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="c sharp coding questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-of-contnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      table of contnet:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-with-ans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions with Ans
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../README.md">🏠 Home</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#c-basic-rules">C# Basic Rules</a></li>
+<li><a href="#naming-conventions">Naming Conventions</a></li>
+<li><a href="#main-method">Main Method</a></li>
+<li>
+<p><a href="#systemconsolewriteline">System.Console.WriteLine()</a></p>
+</li>
+<li>
+<p><a href="#net-framework-overview">.NET Framework Overview</a></p>
+</li>
+<li>
+<p><a href="#key-components">Key Components</a></p>
+</li>
+<li>
+<p><a href="#primitive-types-in-c">Primitive Types in C#</a></p>
+</li>
+<li>
+<p><a href="#operators-in-c">Operators in C#</a></p>
+</li>
+<li>
+<p><a href="#categories">Categories</a></p>
+</li>
+<li>
+<p><a href="#net-core">.NET Core</a></p>
+</li>
+<li>
+<p><a href="#visual-studio">Visual Studio</a></p>
+</li>
+<li>
+<p><a href="#the-systemconsole-class">The <code>System.Console</code> Class</a></p>
+</li>
+<li>
+<p><a href="#variables-in-c">Variables in C#</a></p>
+</li>
+<li>
+<p><a href="#control-statements">Control Statements</a></p>
+</li>
+<li><a href="#conditional-control-statements">Conditional Control Statements</a></li>
+<li><a href="#looping-control-statements">Looping Control Statements</a></li>
+<li>
+<p><a href="#jumping-control-statements">Jumping Control Statements</a></p>
+</li>
+<li>
+<p><a href="#introduction-to-oop">Introduction to OOP</a></p>
+</li>
+<li><a href="#class">Class</a></li>
+<li><a href="#objects">Objects</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#object--class-association">Object &amp; Class Association</a></li>
+<li>
+<p><a href="#creating-a-class-and-object">Creating a Class and Object</a></p>
+</li>
+<li>
+<p><a href="#fields">Fields</a></p>
+</li>
+<li><a href="#access-modifiers-of-fields">Access Modifiers of Fields</a></li>
+<li><a href="#static-fields">Static Fields</a></li>
+<li><a href="#instance-fields-vs-static-fields">Instance Fields vs Static Fields</a></li>
+<li><a href="#constant-fields">Constant Fields</a></li>
+<li>
+<p><a href="#readonly-fields">Readonly Fields</a></p>
+</li>
+<li>
+<p><a href="#member-variable">Member Variable</a></p>
+</li>
+<li>
+<p><a href="#property">Property</a></p>
+</li>
+<li><a href="#using-get-and-set-methods">Using <code>get</code> and <code>set</code> Methods</a></li>
+<li><a href="#simplified-get-and-set-properties">Simplified <code>get</code> and <code>set</code> Properties</a></li>
+<li><a href="#computed-property">Computed Property</a></li>
+<li><a href="#read-only-properties">Read-Only Properties</a></li>
+<li>
+<p><a href="#write-only-properties">Write-Only Properties</a></p>
+</li>
+<li>
+<p><a href="#static-keyword">Static Keyword</a></p>
+</li>
+<li>
+<p><a href="#constructor">Constructor</a></p>
+</li>
+<li>
+<p><a href="#methods">Methods</a></p>
+</li>
+<li><a href="#modifiers">Modifiers</a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li>
+<p><a href="#return-types">Return Types</a></p>
+</li>
+<li>
+<p><a href="#named-parameters">Named Parameters</a></p>
+</li>
+<li>
+<p><a href="#oop-principles">OOP Principles</a></p>
+</li>
+<li><a href="#encapsulation">Encapsulation</a></li>
+<li>
+<p><a href="#best-practices">Best Practices</a></p>
+</li>
+<li>
+<p><a href="#collections-in-c">Collections in C#</a></p>
+</li>
+<li><a href="#general-categories-of-collections">General Categories of Collections</a></li>
+<li>
+<p><a href="#why-use-a-dictionary-instead-of-an-array">Why Use a Dictionary Instead of an Array?</a></p>
+</li>
+<li>
+<p><a href="#understanding-predicate-and-delegate-in-c">Understanding Predicate and Delegate in C#</a></p>
+</li>
+<li><a href="#what-is-a-delegate">What is a Delegate?</a></li>
+<li><a href="#what-is-a-predicate">What is a Predicate?</a></li>
+<li>
+<p><a href="#predicate-using-lambda-expression">Predicate Using Lambda Expression</a></p>
+</li>
+<li>
+<p><a href="#c-collections-comparison">C# Collections Comparison</a></p>
+</li>
+<li>
+<p><a href="#c-sharp-coding-questions">C# Coding Questions</a></p>
+</li>
+<li><a href="#101">Different Ways of Printing an Array/List</a></li>
+<li><a href="#102">Different String Comparison Methods</a></li>
+<li><a href="#103">Reverse the Number</a></li>
+<li><a href="#104">Hollow Right Angle Triangle</a></li>
+<li><a href="#105">Mirror Right Angle Triangle</a></li>
+<li><a href="#106">Down Mirror Right Angle Triangle</a></li>
+<li><a href="#107">Fibonacci Series Program in C#</a></li>
+<li><a href="#108">Adding All Digits in a Number</a></li>
+<li><a href="#109">Reverse a Number</a></li>
+<li><a href="#110">Print the Reverse of a String</a></li>
+<li><a href="#111">Count Number of Repeated Characters in a Sentence</a></li>
+<li><a href="#112">Find the Index of the First Non-Repeating Character</a></li>
+<li><a href="#113">Reverse a String Without Using Built-in Methods</a></li>
+<li><a href="#114">Reverse Each Word in a Given String</a></li>
+<li><a href="#115">Count Vowels and Their Occurrences in a String</a></li>
+<li><a href="#116">Left Rotation of Array by 1</a></li>
+<li><a href="#117">Reverse an Array</a></li>
+<li><a href="#118">Generate Random Numbers and Strings</a></li>
+<li><a href="#119">Find Two Prime Numbers Whose Sum Equals a Given Prime Number</a></li>
+<li><a href="#120">Print a Pattern</a></li>
+</ol>
+<h2 id="c-basic-rules">C# Basic Rules</h2>
+<h3 id="naming-conventions">Naming Conventions:</h3>
+<ol>
+<li><strong>camelCase</strong>: For variables (e.g., <code>customerName</code>).</li>
+<li><strong>PascalCase</strong>: For classes, structures, namespaces, fields, methods, and properties (e.g., <code>CustomerDetails</code>).</li>
+<li><strong>IPascalCase</strong>: For interfaces (e.g., <code>ICustomerName</code>).</li>
+<li><strong>_camelCase</strong>: For private fields (e.g., <code>_accountNumber</code>).</li>
+</ol>
+<h3 id="main-method">Main Method:</h3>
+<ul>
+<li>Entry point of the program.</li>
+<li>Must be static.</li>
+</ul>
+<h3 id="systemconsolewriteline">System.Console.WriteLine():</h3>
+<ul>
+<li><code>System</code>: Namespace in the Base Class Library (BCL).</li>
+<li><code>Console</code>: Predefined class inside the <code>System</code> namespace.</li>
+<li><code>WriteLine()</code>: Method defined in the <code>Console</code> class.</li>
+</ul>
+<hr />
+<h2 id="net-framework-overview">.NET Framework Overview</h2>
+<h3 id="key-components">Key Components:</h3>
+<ol>
+<li><strong>Common Language Runtime (CLR)</strong>:</li>
+<li>Execution engine for .NET applications.</li>
+<li>
+<p>Handles memory management, garbage collection, and security.</p>
+</li>
+<li>
+<p><strong>Base Class Library (BCL)</strong>:</p>
+</li>
+<li>
+<p>Predefined classes for I/O operations, type conversion, threading, etc.</p>
+</li>
+<li>
+<p><strong>ADO.NET</strong>:</p>
+</li>
+<li>
+<p>Classes for database connectivity and operations.</p>
+</li>
+<li>
+<p><strong>WinForms</strong>:</p>
+</li>
+<li>
+<p>Classes for Windows GUI applications.</p>
+</li>
+<li>
+<p><strong>ASP.NET</strong>:</p>
+</li>
+<li>Classes for web applications.</li>
+</ol>
+<hr />
+<h2 id="primitive-types-in-c">Primitive Types in C</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Size</th>
+<th>Range</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>4 bytes</td>
+<td>-2,147,483,648 to 2,147,483,647</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>4 bytes</td>
+<td>±1.5 × 10⁻⁴⁵ to ±3.4 × 10³⁸</td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>8 bytes</td>
+<td>±5.0 × 10⁻³²⁴ to ±1.7 × 10³⁰⁸</td>
+<td>0.0d</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>1 bit</td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>2 bytes</td>
+<td>Unicode characters</td>
+<td><code>\0</code></td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td>N/A</td>
+<td>Sequence of characters</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="operators-in-c">Operators in C</h2>
+<h3 id="categories">Categories:</h3>
+<ol>
+<li><strong>Arithmetic Operators</strong>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+<li><strong>Assignment Operators</strong>: <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
+<li><strong>Comparison Operators</strong>: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+<li><strong>Logical Operators</strong>: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code></li>
+<li><strong>Concatenation Operator</strong>: <code>+</code> (for strings)</li>
+<li><strong>Ternary Operator</strong>: <code>condition ? consequent : alternative</code></li>
+</ol>
+<hr />
+<h2 id="net-core">.NET Core</h2>
+<ul>
+<li>Introduced in 2016.</li>
+<li>Cross-platform framework for building desktop, web, mobile, and IoT applications.</li>
+<li>Open-source and lightweight.</li>
+<li>Versions: 1.0, 1.1, 2.0, 2.1, 2.2, 3.0, 3.1.</li>
+</ul>
+<hr />
+<h2 id="visual-studio">Visual Studio</h2>
+<p>An Integrated Development Environment (IDE) for .NET applications.</p>
+<p><strong>Features:</strong>
+- IntelliSense
+- Syntax highlighting
+- Debugging tools
+- GUI designer</p>
+<hr />
+<h2 id="the-systemconsole-class">The <code>System.Console</code> Class</h2>
+<p>A static class in the <code>System</code> namespace for performing I/O operations in console applications.</p>
+<p><strong>Key Methods:</strong>
+- <code>Write(value)</code>: Displays a value.
+- <code>WriteLine(value)</code>: Displays a value and moves to the next line.
+- <code>ReadLine()</code>: Reads a string input.
+- <code>ReadKey()</code>: Waits for a key press.
+- <code>Clear()</code>: Clears the console.</p>
+<hr />
+<h2 id="variables-in-c">Variables in C</h2>
+<p>Variables are named memory locations used to store data during program execution.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-csharp">data_type variable_name = value;
+</code></pre>
+<p><strong>Rules:</strong>
+1. No spaces or special characters (except <code>_</code>).
+2. Cannot use keywords as variable names.
+3. Must be declared before use.</p>
+<h2 id="control-statements">Control Statements</h2>
+<h3 id="conditional-control-statements">Conditional Control Statements</h3>
+<ul>
+<li><strong>if</strong> (simple-if, if-else, else-if, nested-if)</li>
+<li><strong>switch-Case</strong></li>
+</ul>
+<h3 id="looping-control-statements">Looping Control Statements</h3>
+<ul>
+<li><strong>while</strong></li>
+<li><strong>do-While</strong></li>
+<li><strong>for</strong></li>
+</ul>
+<h3 id="jumping-control-statements">Jumping Control Statements</h3>
+<ul>
+<li><strong>goto</strong></li>
+<li><strong>break</strong></li>
+<li><strong>continue</strong></li>
+</ul>
+<hr />
+<h3 id="simple-if">Simple-if</h3>
+<h4 id="syntax">Syntax</h4>
+<pre><code class="language-csharp">if (condition)
+{
+  // true block here
+}
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="language-csharp">if (x &lt; 10)
+{
+  System.Console.WriteLine(&quot;x is smaller than 10&quot;);
+}
+</code></pre>
+<hr />
+<h3 id="if-else">If-else</h3>
+<h4 id="syntax_1">Syntax</h4>
+<pre><code class="language-csharp">if (condition)
+{
+  // true block here
+}
+else
+{
+  // false block here
+}
+</code></pre>
+<h4 id="example_1">Example</h4>
+<pre><code class="language-csharp">if (x &gt; 10)
+{
+  System.Console.WriteLine(&quot;x is larger than 10&quot;);
+}
+else
+{
+  System.Console.WriteLine(&quot;x is smaller than or equal to 10&quot;);
+}
+</code></pre>
+<hr />
+<h3 id="else-if">Else-if</h3>
+<h4 id="syntax_2">Syntax</h4>
+<pre><code class="language-csharp">if (condition1)
+{
+  // true block 1 here
+}
+else if (condition2)
+{
+  // true block 2 here
+}
+else
+{
+  // false block here
+}
+</code></pre>
+<h4 id="example_2">Example</h4>
+<pre><code class="language-csharp">if (a &gt; 10)
+{
+  System.Console.WriteLine(&quot;a is greater than 10&quot;);
+}
+else if (a &lt; 10)
+{
+  System.Console.WriteLine(&quot;a is less than 10&quot;);
+}
+else
+{
+  System.Console.WriteLine(&quot;a is equal to 10&quot;);
+}
+</code></pre>
+<hr />
+<h3 id="nested-if">Nested-if</h3>
+<h4 id="syntax_3">Syntax</h4>
+<pre><code class="language-csharp">if (condition1)
+{
+  if (condition2)
+  {
+    // true block here
+  }
+  else
+  {
+    // false block 2 here
+  }
+}
+else
+{
+  // false block 1 here
+}
+</code></pre>
+<h4 id="example_3">Example</h4>
+<pre><code class="language-csharp">if (a &gt;= 10)
+{
+  if (a &gt; 10)
+  {
+    System.Console.WriteLine(&quot;a is greater than 10&quot;);
+  }
+  else
+  {
+    System.Console.WriteLine(&quot;a is equal to 10&quot;);
+  }
+}
+else
+{
+  System.Console.WriteLine(&quot;a is less than 10&quot;);
+}
+</code></pre>
+<hr />
+<h3 id="switch-case">Switch-case</h3>
+<h4 id="syntax_4">Syntax</h4>
+<pre><code class="language-csharp">switch (variable)
+{
+  case value1: statement1; break;
+  case value2: statement2; break;
+  case value3: statement3; break;
+  default: statement; break;
+}
+</code></pre>
+<h4 id="example_4">Example</h4>
+<pre><code class="language-csharp">switch (x)
+{
+  case 1: System.Console.WriteLine(&quot;one&quot;); break;
+  case 2: System.Console.WriteLine(&quot;two&quot;); break;
+  case 3: System.Console.WriteLine(&quot;three&quot;); break;
+  default: System.Console.WriteLine(&quot;none&quot;); break;
+}
+</code></pre>
+<hr />
+<h3 id="while">While</h3>
+<h4 id="syntax_5">Syntax</h4>
+<pre><code class="language-csharp">initialization;
+while (condition)
+{
+  // while block
+  // incr / decr here
+}
+</code></pre>
+<h4 id="example_5">Example</h4>
+<pre><code class="language-csharp">int i = 1;
+while (i &lt;= 10)
+{
+  System.Console.WriteLine(i);
+  i++;
+}
+</code></pre>
+<hr />
+<h3 id="do-while">Do-while</h3>
+<h4 id="syntax_6">Syntax</h4>
+<pre><code class="language-csharp">initialization;
+do
+{
+  // do-while block
+  // incr / decr here
+} while (condition);
+</code></pre>
+<h4 id="example_6">Example</h4>
+<pre><code class="language-csharp">int i = 1;
+do
+{
+  System.Console.WriteLine(i);
+  i++;
+} while (i &lt;= 10);
+</code></pre>
+<hr />
+<h3 id="for">For</h3>
+<h4 id="syntax_7">Syntax</h4>
+<pre><code class="language-csharp">for (initialization; condition; incrementation)
+{
+  // for block
+}
+</code></pre>
+<h4 id="example_7">Example</h4>
+<pre><code class="language-csharp">for (int i = 1; i &lt;= 10; i++)
+{
+  System.Console.WriteLine(i);
+}
+</code></pre>
+<hr />
+<h3 id="break">Break</h3>
+<h4 id="syntax_8">Syntax</h4>
+<pre><code class="language-csharp">for (initialization; condition1; incrementation)
+{
+  if (condition2)
+  {
+    break;
+  }
+  // for block code here
+}
+</code></pre>
+<h4 id="example_8">Example</h4>
+<pre><code class="language-csharp">for (int i = 0; i &lt;= 10; i++)
+{
+  if (i == 6)
+  {
+    break;
+  }
+  System.Console.WriteLine(i);
+}
+// Output: 0, 1, 2, 3, 4, 5
+</code></pre>
+<hr />
+<h3 id="continue">Continue</h3>
+<h4 id="syntax_9">Syntax</h4>
+<pre><code class="language-csharp">for (initialization; condition1; incrementation)
+{
+  if (condition2)
+  {
+    continue;
+  }
+  // for block code here
+}
+</code></pre>
+<h4 id="example_9">Example</h4>
+<pre><code class="language-csharp">for (int i = 0; i &lt;= 10; i++)
+{
+  if (i == 6)
+  {
+    continue;
+  }
+  System.Console.WriteLine(i);
+}
+// Output: 0, 1, 2, 3, 4, 5, 7, 8, 9, 10
+</code></pre>
+<hr />
+<h3 id="nested-for">Nested-for</h3>
+<h4 id="syntax_10">Syntax</h4>
+<pre><code class="language-csharp">for (initialization; condition1; incrementation)
+{
+  for (initialization; condition2; incrementation)
+  {
+    // inner-loop code here
+  }
+  // outer-loop code here
+}
+</code></pre>
+<h4 id="example_10">Example</h4>
+<pre><code class="language-csharp">for (int i = 0; i &lt; 5; i++)
+{
+  for (int j = 0; j &lt; 5; j++)
+  {
+    System.Console.WriteLine(j);
+  }
+}
+// Output: 0, 1, 2, 3, 4 (repeated 5 times)
+</code></pre>
+<hr />
+<h3 id="goto">Goto</h3>
+<h4 id="syntax_11">Syntax</h4>
+<pre><code class="language-csharp">goto label;
+// some code
+label:
+// code to execute
+</code></pre>
+<h4 id="example_11">Example</h4>
+<pre><code class="language-csharp">int x = 10;
+if (x == 10)
+{
+  goto Label;
+}
+System.Console.WriteLine(&quot;This will not execute.&quot;);
+Label:
+System.Console.WriteLine(&quot;Goto executed.&quot;);
+</code></pre>
+<h1 id="introduction-to-oop">Introduction to OOP</h1>
+<h2 id="programming-model-for-scalable-applications">Programming Model for Scalable Applications</h2>
+<ul>
+<li>Used in most popular languages such as Java, Python, JavaScript, C++, etc.</li>
+<li>The goal of OOP is to group data and its operations as a single unit called an "Object".</li>
+</ul>
+<hr />
+<h2 id="class">Class</h2>
+<ul>
+<li>A class is a blueprint for creating objects that encapsulate data and behaviors.</li>
+<li>A class is a model of objects.</li>
+<li>A class (a.k.a "type") represents the structure (list of fields and methods) of data you want to store in similar objects.</li>
+<li>Objects are created based on a "Class".</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">class Car {
+    string regNo;
+    string carModel;
+    int carYear;
+}
+</code></pre>
+<h3 id="key-points">Key Points:</h3>
+<ul>
+<li>A class represents the structure of data you want to store in an object.</li>
+<li>It is not a collection of objects.</li>
+<li>Classes can have only two types of access modifiers: <code>public</code> and <code>internal</code>.</li>
+</ul>
+<p><strong>Scenario:</strong>
+Imagine you are sitting at a table with two laptops, one Lenovo and one Dell:
+- You are an object of the <code>Person</code> class.
+- Lenovo and Dell are two objects of the <code>Laptop</code> class.</p>
+<h3 id="class-members">Class Members:</h3>
+<ol>
+<li><strong>Fields</strong></li>
+<li><strong>Methods</strong></li>
+<li><strong>Constructors</strong></li>
+<li><strong>Properties</strong></li>
+<li><strong>Events</strong></li>
+<li><strong>Delegates</strong></li>
+</ol>
+<h3 id="concepts-of-class">Concepts of Class:</h3>
+<ol>
+<li><strong>Namespace</strong>: Organizes and groups related classes to avoid naming conflicts.</li>
+<li><strong>Class Declaration</strong>: A blueprint for creating objects.</li>
+<li><strong>Access Modifiers</strong>:</li>
+<li><code>public</code>: Accessible anywhere.</li>
+<li><code>private</code>: Accessible only within the class.</li>
+<li><code>protected</code>: Accessible within the class and derived classes.</li>
+<li><strong>Fields</strong>: Variables defined at the class level.</li>
+<li><strong>Constants</strong>: Fixed values that cannot be modified.</li>
+<li><strong>Constructor</strong>: Initializes fields or sets up the object.</li>
+<li><strong>Properties</strong>: Provide controlled access to private fields.</li>
+<li><strong>Events</strong>: Enable communication between objects.</li>
+<li><strong>Methods</strong>: Perform operations or actions.</li>
+<li><strong>Destructors</strong>: Cleanup when an object is destroyed.</li>
+</ol>
+<p><strong>Sample Code:</strong></p>
+<pre><code class="language-csharp">using System;
+
+namespace OOPConceptsDemo
+{
+   public class MyClass
+   {
+      private string _name;
+      public int Id;
+      public const string Organization = &quot;TechWorld&quot;;
+
+      public string Name
+      {
+        get { return _name; }
+        set { _name = value; }
+      }
+
+      public int Age { get; set; }
+
+      public MyClass(int id, string name, int age)
+      {
+        Id = id;
+        _name = name;
+        Age = age;
+      }
+
+      public event Action OnDataUpdated;
+
+      public void UpdateData(string newName, int newAge)
+      {
+        _name = newName;
+        Age = newAge;
+        OnDataUpdated?.Invoke();
+      }
+
+      public void DisplayInfo()
+      {
+        Console.WriteLine($&quot;Id: {Id}, Name: {_name}, Age: {Age}, Organization: {Organization}&quot;);
+      }
+
+      ~MyClass()
+      {
+        Console.WriteLine(&quot;Object is being destroyed.&quot;);
+      }
+   }
+
+   class Program
+   {
+      static void Main(string[] args)
+      {
+        MyClass person = new MyClass(1, &quot;Alice&quot;, 25);
+        person.OnDataUpdated += () =&gt; Console.WriteLine(&quot;Data has been updated!&quot;);
+        person.DisplayInfo();
+        person.UpdateData(&quot;Bob&quot;, 30);
+        person.DisplayInfo();
+      }
+   }
+}
+</code></pre>
+<h2 id="objects">Objects</h2>
+<ul>
+<li>An object is a small unit (entity) in the program that represents a real-world person or thing.</li>
+<li>A blueprint of a class.</li>
+<li>Instance of a class.</li>
+<li>
+<p>Has behavior and properties.</p>
+</li>
+<li>
+<p><strong>Examples</strong>: You, Your laptop.</p>
+</li>
+<li>Any physical thing can be considered an object.</li>
+<li>An object is an instance (example) of a "class".</li>
+<li>Objects store a set of fields (details about the object).</li>
+</ul>
+<hr />
+<h2 id="methods">Methods</h2>
+<ul>
+<li>A method is a collection of statements to perform certain operations (processes or work), such as performing calculations, displaying output, or checking conditions.</li>
+<li>A method should be a member (part) of a class.</li>
+<li>Code statements are not allowed outside the class; they are allowed inside the method only.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">class Car {
+    int calculateEmi(int carPrice, int noOfMonths, int interestRate) {
+        // Perform calculation here
+        return emi;
+    }
+}
+</code></pre>
+<hr />
+<h2 id="object-class-association">Object &amp; Class Association</h2>
+<ul>
+<li>Objects store fields.</li>
+<li>Objects associate with all methods of their class, meaning objects can call methods of their class.</li>
+<li>A class declares a list of fields and defines a list of methods.</li>
+</ul>
+<hr />
+<h2 id="creating-a-class-and-object">Creating a Class and Object</h2>
+<h3 id="creating-a-class">Creating a Class</h3>
+<p>Define the structure of the object.</p>
+<h3 id="creating-an-object">Creating an Object</h3>
+<ol>
+<li>
+<p><strong>Creating a Reference Variable</strong>:
+   <code>csharp
+   ClassName referenceVariable;</code></p>
+</li>
+<li>
+<p><strong>Create Object and Store its Reference</strong>:
+   <code>csharp
+   referenceVariableName = new ClassName();</code></p>
+</li>
+</ol>
+<hr />
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<ul>
+<li>An object is a programmatic representation of a person or thing.</li>
+<li>All objects are created based on classes and stored in the 'heap'.</li>
+<li>For each application execution, a new heap will be created (and only one).</li>
+<li>All reference variables (local variables of methods) are stored in the stack. For each method call, a new stack will be created.</li>
+<li>A method is a collection of statements to perform some operation or calculation.</li>
+<li>A class supports two access modifiers: <code>internal</code> and <code>public</code>.</li>
+<li>A class supports four modifiers: <code>static</code>, <code>abstract</code>, <code>sealed</code>, and <code>partial</code>.</li>
+<li>Objects store actual data (group of fields) and can access methods of the class.</li>
+<li>A reference variable stores the address of an (only one) object.</li>
+</ul>
+<hr />
+<h2 id="fields">Fields</h2>
+<ul>
+<li>Variables that are declared in the class and stored in the objects.</li>
+<li>Fields are isolated for each object.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">class Car {
+    string regNo;
+    string carModel;
+    int carYear;
+}
+</code></pre>
+<h3 id="syntax-of-field">Syntax of Field</h3>
+<pre><code class="language-csharp">AccessModifier DataType FieldName;
+</code></pre>
+<hr />
+<h2 id="access-modifiers-of-fields">Access Modifiers of Fields</h2>
+<ul>
+<li>Access Modifier (a.k.a. "Access Specifier" or "Visibility Modifier") specifies the accessibility of fields, determining where the fields can be accessed.</li>
+<li>They provide security for the fields.</li>
+</ul>
+<hr />
+<h2 id="static-fields">Static Fields</h2>
+<ul>
+<li>Static fields are stored outside the object.</li>
+<li>Static fields are common to all objects of a class.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">class BankAccount {
+    long accountNumber;
+    string accountHolderName;
+    double currentBalance;
+    static string bankName;
+}
+</code></pre>
+<h3 id="class-memory-in-heap">Class Memory in Heap</h3>
+<ul>
+<li><strong>Static Field</strong>: <code>bankName: Bank of Dummyland</code></li>
+</ul>
+<h3 id="objects-in-heap">Objects in Heap</h3>
+<ul>
+<li><strong>Object 1</strong>:</li>
+<li><code>accountNumber: 1001</code></li>
+<li><code>accountHolderName: Scott</code></li>
+<li><code>currentBalance: 5000</code></li>
+<li><strong>Object 2</strong>:</li>
+<li><code>accountNumber: 1002</code></li>
+<li><code>accountHolderName: Bob</code></li>
+<li><code>currentBalance: 6000</code></li>
+</ul>
+<hr />
+<h2 id="instance-fields-vs-static-fields">Instance Fields vs Static Fields</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>Instance Fields</strong></th>
+<th><strong>Static Fields</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Storage</strong></td>
+<td>Stored in Objects</td>
+<td>Stored in Class's memory</td>
+</tr>
+<tr>
+<td><strong>Related to</strong></td>
+<td>Represents data related to objects</td>
+<td>Represents common data for all objects</td>
+</tr>
+<tr>
+<td><strong>Declaration</strong></td>
+<td>Declared without <code>static</code> keyword</td>
+<td>Declared with <code>static</code> keyword</td>
+</tr>
+<tr>
+<td><strong>Accessible with</strong></td>
+<td>Accessible with object (reference var)</td>
+<td>Accessible with class name only</td>
+</tr>
+<tr>
+<td><strong>Memory Allocation</strong></td>
+<td>Allocated separately for each object</td>
+<td>Allocated once for the entire program</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="constant-fields">Constant Fields</h2>
+<ul>
+<li>Constant fields are like static fields, common to all objects of the class.</li>
+<li>The value of a constant field cannot be changed.</li>
+<li>Constant fields are accessible with the class name (not with the object).</li>
+<li>Constant fields are not stored in the object or memory; they are replaced with their value during compilation.</li>
+<li>Constants must be initialized in-line with their declaration (with a literal value only).</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-csharp">AccessModifier const DataType FieldName = value;
+</code></pre>
+<hr />
+<h2 id="readonly-fields">Readonly Fields</h2>
+<ul>
+<li>Readonly fields are like instance fields, stored in every object individually.</li>
+<li>The value of a readonly field cannot be changed.</li>
+<li>Readonly fields are accessible with a reference variable (object).</li>
+<li>Readonly fields must be initialized either "in-line with declaration" or "in the constructor".</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-csharp">AccessModifier readonly DataType FieldName = value;
+</code></pre>
+<hr />
+<h2 id="key-points-to-remember_1">Key Points to Remember</h2>
+<ul>
+<li>Fields are variables declared in the class but stored in objects.</li>
+<li>Access modifiers of fields: <code>private</code>, <code>protected</code>, <code>private protected</code>, <code>internal</code>, <code>protected internal</code>, <code>public</code>.</li>
+<li>Modifiers of fields: <code>static</code>, <code>const</code>, <code>readonly</code>.</li>
+<li>Instance fields are individual for each object; static fields are common (one-time) for all objects.</li>
+<li>Constants must be initialized along with the declaration; readonly fields must be initialized either "along with declaration" or in the "instance constructor".</li>
+</ul>
+<hr />
+<h3 id="member-variable">Member Variable</h3>
+<p>A member variable is a field inside a class but outside of a method.</p>
+<p>```csharp
+  internal class Pen
+  {
+    private string _brand = "";       // member variable
+    private string _model = "";      // member variable</p>
+<pre><code>public Pen(string brand, string model)
+{
+   _brand = brand;
+   _model = model;        
+}
+
+public void GetPenDetails()
+{
+   Console.WriteLine($"Pen {_brand} is created with model {_model}");
+}
+</code></pre>
+<p>}
+  ```</p>
+<hr />
+<p>### Property
+  - Properties are created to protect member variables.
+  - They help access and control member variables from outside the class using <code>get</code> and <code>set</code> methods.</p>
+<p>#### 1. Using <code>get</code> and <code>set</code> methods to change member variable values
+  This approach includes additional logic for accessing or modifying the value.</p>
+<p><strong>Example:</strong>
+  ```csharp
+  private double _salary;
+  public double Salary
+  {
+     get { return _salary * 0.95; } // Apply a 5% deduction
+     set { _salary = value; }
+  }</p>
+<p>private string _password;
+  public string Password
+  {
+     get { return "****"; } // Mask the password
+     set { _password = value; }
+  }</p>
+<p>private string _name;
+  public string Name
+  {
+     get { return _name; }
+     set
+     {
+        if (!string.IsNullOrWhiteSpace(value))
+          _name = value;
+     }
+  }
+  ```</p>
+<p>#### 2. Simplified <code>get</code> and <code>set</code> properties
+  <code>csharp
+  public int Age { get; set; }
+  public string Name { get; set; }</code></p>
+<p>#### 3. Computed Property
+  A computed property dynamically calculates its value based on other properties or fields.</p>
+<p><strong>Example:</strong>
+  ```csharp
+  public class AreaCalculator
+  {
+     public double Length { get; set; }
+     public double Width { get; set; }</p>
+<pre><code> // Computed property (read-only)
+ public double GetArea
+ {
+    get { return Length * Width; }
+ }
+</code></pre>
+<p>}
+  ```</p>
+<p>#### 1. Working with Read-Only Properties
+  ```csharp
+  using System;</p>
+<p>namespace Coding.Exercise
+  {
+     public class MyClass
+     {
+        private readonly string _value;</p>
+<pre><code>    public string Value
+    {
+      get { return _value; }
+    }
+
+    public MyClass(string value)
+    {
+      _value = value;
+    }
+ }
+
+ public class Exercise
+ {
+    public void PrintReadOnlyProperty()
+    {
+      MyClass obj = new MyClass("Read-Only Property Value");
+      Console.WriteLine(obj.Value);
+    }
+ }
+</code></pre>
+<p>}
+  ```</p>
+<p>#### 2. Working with Write-Only Properties
+  ```csharp
+  public class MyClass
+  {
+     private string _password;</p>
+<pre><code> public string Password
+ {
+    set { _password = value; }
+ }
+</code></pre>
+<p>}
+  ```</p>
+<p>#### 3. Working with Keys (e.g., CustomerID)
+  ```csharp
+  public class Customer
+  {
+     public int CustomerID { get; private set; }</p>
+<pre><code> public Customer(int id)
+ {
+    CustomerID = id;
+ }
+</code></pre>
+<p>}
+  ```</p>
+<h2 id="static-keyword">Static Keyword</h2>
+<ul>
+<li>Used to call a property or method without creating an object of the class.</li>
+<li>Accessed using <code>ClassName.MethodName</code> or <code>ClassName.PropertyName</code>.</li>
+<li>Cannot be called using an object of the class.</li>
+<li>Declaring a member as <code>static</code> allows it to be accessed directly using the class name.</li>
+<li>Static members include:</li>
+<li>Static variables</li>
+<li>Static methods</li>
+<li>Static constructors</li>
+<li>Static classes</li>
+</ul>
+<hr />
+<p>### Constructor
+  - A method with the same name as the class name.
+  - Called when an object is instantiated.
+  - Cannot be called again once the object is created.
+  - Used to pass data to the class.</p>
+<p><strong>Types of Constructors:</strong>
+  1. <strong>Default Constructor</strong>: Constructor without parameters.
+  2. <strong>Custom Constructor</strong>: Constructor with parameters.</p>
+<p><strong>Example:</strong>
+  ```csharp
+  public class Customer
+  {
+     public string Name { get; set; }
+     public string? Address { get; set; }
+     public string? ContactNumber { get; set; }</p>
+<pre><code> // Default constructor
+ public Customer()
+ {
+    Name = "new customer";
+    Address = "unknown";
+    ContactNumber = "NA";    
+ }
+
+ // Custom constructor
+ public Customer(string name, string address, string contact)
+ {
+    Name = name;
+    Address = address;
+    ContactNumber = contact;
+ }
+
+ // Custom constructor
+ public Customer(string name)
+ {
+    Name = name;
+ }
+</code></pre>
+<p>}
+  ```</p>
+<hr />
+<p>### Methods
+  Methods are defined within a class to perform operations or actions.</p>
+<p>#### Common Features:
+  1. <strong>Modifiers</strong>:
+    - Access Modifiers: <code>public</code>, <code>private</code>, <code>protected</code>, <code>internal</code>, etc.
+    - Behavior Modifiers: <code>static</code>, <code>virtual</code>, <code>abstract</code>, <code>sealed</code>, <code>override</code>.</p>
+<ol>
+<li>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><strong>Optional Parameters</strong>:
+  <code>csharp
+  public void Greet(string name = "Guest")
+  {
+    Console.WriteLine($"Hello, {name}!");
+  }</code></li>
+<li><strong>Params</strong>:
+  <code>csharp
+  public void PrintNumbers(params int[] numbers)
+  {
+    foreach (var number in numbers)
+       Console.WriteLine(number);
+  }</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Return Types</strong>:</p>
+<ul>
+<li>Can return any type, including <code>void</code>, primitive types, or complex types.</li>
+<li>Can use <code>Task</code> or <code>Task&lt;T&gt;</code> for asynchronous methods.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p>### Named Parameters / Arguments
+  -  The named arguments enable us to specify an argument for a parameter by matching the argument with its name rather than with its position in the parameter list.
+  - Useful when a method has many parameters or optional parameters.</p>
+<p><strong>Example:</strong>
+  ```csharp
+  public class EmployeeTest
+  {
+     string EmployeeName { get; set; }
+     int EmployeeAge { get; set; }</p>
+<pre><code> public void MethodWithOptionalParameter(string nam = "DefaultN", int age = 99)
+ {   
+    EmployeeName = nam;
+    EmployeeAge = age;
+ }
+
+ public void GetEmployeDetails()
+ {
+    Console.WriteLine(EmployeeName + " has age: " + EmployeeAge);
+ }
+
+ public static void MethodPracticeMain()
+ {
+    EmployeeTest emp1 = new EmployeeTest();
+
+    emp1.MethodWithOptionalParameter();  // Call method with optional parameter
+    emp1.GetEmployeDetails();
+
+    emp1.MethodWithOptionalParameter(age: 35, nam: "Abhishek");  // Call method with named parameter
+    emp1.GetEmployeDetails();
+ }
+</code></pre>
+<p>}
+  ```</p>
+<hr />
+<h2 id="oop-principles">OOP Principles</h2>
+<h3 id="encapsulation">Encapsulation:</h3>
+<ul>
+<li>Protects important data inside a class.</li>
+<li>Hides private or unwanted data from outside the class.</li>
+</ul>
+<p><strong>Access Modifiers:</strong>
+ Access modifiers manage how classes and class members are accessed.</p>
+<p>#### For Classes:
+  1. <code>internal</code>
+  2. <code>public</code>
+  3. <code>private</code> (only for nested classes)</p>
+<ul>
+<li><code>private</code>: Accessible only within the class.</li>
+<li><code>public</code>: Accessible from anywhere.</li>
+<li><code>protected</code>: Accessible within the class and derived classes.</li>
+<li><code>internal</code>: Accessible within the same assembly.</li>
+<li><code>protected internal</code>: Accessible within the same assembly or derived classes.</li>
+<li><code>private protected</code>: Accessible within the containing class or derived classes in the same assembly.</li>
+</ul>
+<h4 id="note">Note:</h4>
+<ul>
+<li>For classes we canuse only <code>internal</code>,  <code>public</code>, and <code>private</code> Access modifier.</li>
+<li><code>private</code> acees modifier use only for nested classes</li>
+</ul>
+<hr />
+<h3 id="best-practices">Best practices:</h3>
+<ol>
+<li><strong>Encapsulation</strong>: Use private methods to hide implementation details.</li>
+<li><strong>Reusability</strong>: Use static or extension methods for utility functions.</li>
+<li><strong>Simplicity</strong>: Avoid overusing modifiers like <code>virtual</code> unless necessary.</li>
+<li><strong>Consistency</strong>: Use meaningful names and follow naming conventions (PascalCase).</li>
+</ol>
+<hr />
+<h2 id="collections-in-c">Collections in C</h2>
+<ul>
+<li>Collections in C# are a set of predefined classes available in the <code>System.Collections</code> namespace. These classes provide more capabilities and flexibility than traditional arrays.</li>
+<li>Collections are nothing but groups of records that can be treated as one logical unit.</li>
+</ul>
+<h4 id="examples">Examples:</h4>
+<ul>
+<li>A <strong>Country Collection</strong> can contain items like <code>CountryCode</code> and <code>CountryName</code>.</li>
+<li>A <strong>Product Collection</strong> might store <code>ProductId</code> and <code>ProductName</code>.</li>
+<li>An <strong>Employee Collection</strong> could hold <code>EmployeeId</code> and <code>EmployeeName</code>.</li>
+<li>A <strong>Book Collection</strong> might include <code>ISBN</code> and <code>BookTitle</code>.</li>
+</ul>
+<h3 id="key-features-of-collections">Key Features of Collections:</h3>
+<ul>
+<li><strong>Dynamic Size:</strong> Collections can grow or shrink dynamically as needed.</li>
+<li><strong>Insert/Remove at Any Position:</strong> You can insert or remove elements from anywhere in the collection.</li>
+<li><strong>Rich Functionality:</strong> Collections provide built-in methods to store, retrieve, update, delete, search, and sort objects.</li>
+<li><strong>Efficient and Reliable:</strong> They are well-tested and optimized for performance.</li>
+</ul>
+<h3 id="why-use-collections-instead-of-arrays">Why Use Collections Instead of Arrays?</h3>
+<ul>
+<li>Arrays have a fixed size, whereas collections can dynamically adjust.</li>
+<li>Collections provide methods that make complex operations simpler.</li>
+<li>Collections standardize the way objects are handled, promoting cleaner and more maintainable code.</li>
+</ul>
+<h3 id="common-operations">Common Operations:</h3>
+<p>With collections, you can easily:
+- Store and retrieve multiple objects
+- Search through elements
+- Sort and filter data
+- Perform batch operations like removing or updating elements</p>
+<blockquote>
+<p>In simple terms, a <strong>collection in C#</strong> can be considered a more powerful and flexible form of array that is specifically designed to handle groups of objects efficiently.</p>
+</blockquote>
+<h3 id="general-categories-of-collections">General Categories of Collections</h3>
+<p>Collections are classified into 4 types.</p>
+<h4 id="1-indexed-based-collection">1. Indexed-Based Collection</h4>
+<p>In indexed-based collections, an index is autogenerated while adding any element to the collection, such as <code>arrays</code>, <code>lists</code>, or <code>ArrayLists</code>. The <code>index number</code> can be used to identify the records.</p>
+<p><strong>Example of Country Collection:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Internal Index</th>
+<th>Country Code</th>
+<th>Country Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>IND</td>
+<td>India</td>
+</tr>
+<tr>
+<td>1</td>
+<td>AUT</td>
+<td>Austria</td>
+</tr>
+<tr>
+<td>2</td>
+<td>BLR</td>
+<td>Belarus</td>
+</tr>
+<tr>
+<td>3</td>
+<td>BTN</td>
+<td>Bhutan</td>
+</tr>
+<tr>
+<td>4</td>
+<td>JPN</td>
+<td>Japan</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-csharp">Array[0] = &quot;India&quot;;
+List[1] = &quot;AUT&quot;;
+</code></pre>
+<h4 id="2-key-value-pair-collections">2. Key-Value Pair Collections</h4>
+<p>Key-value pair collections include <code>Hashtable</code>, <code>Dictionary</code>, and <code>SortedList</code>. In this type of collection, <code>keys</code> are used to identify elements instead of <code>indexes</code>.</p>
+<p><strong>Example of Country Collection:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Internal Index</th>
+<th>Country Code</th>
+<th>Country Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>IND</td>
+<td>India</td>
+</tr>
+<tr>
+<td>1</td>
+<td>AUT</td>
+<td>Austria</td>
+</tr>
+<tr>
+<td>2</td>
+<td>BLR</td>
+<td>Belarus</td>
+</tr>
+<tr>
+<td>3</td>
+<td>BTN</td>
+<td>Bhutan</td>
+</tr>
+<tr>
+<td>4</td>
+<td>JPN</td>
+<td>Japan</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-csharp">Hashtable[&quot;IND&quot;] = &quot;India&quot;;
+</code></pre>
+<h4 id="3-prioritized-collections">3. Prioritized Collections</h4>
+<p>Prioritized collections allow access to elements in a specific sequence. Examples include <code>Stack</code> and <code>Queue</code>.</p>
+<ul>
+<li><strong>Queue</strong>: First In First Out (FIFO)</li>
+<li><strong>Stack</strong>: Last In First Out (LIFO)</li>
+</ul>
+<h4 id="4-specialized-collections">4. Specialized Collections</h4>
+<p>Specialized collections are designed for specific purposes. For example, a <code>HybridDictionary</code> starts as a list and then becomes a hashtable.</p>
+<h3 id="why-use-a-dictionary-instead-of-an-array">Why Use a Dictionary Instead of an Array?</h3>
+<p>Using a <code>Dictionary&lt;int, Employee&gt;</code> over a simple array of <code>Employee</code> objects offers several advantages:</p>
+<ol>
+<li><strong>Key-based Access</strong>:</li>
+<li>A dictionary allows efficient access using a key.</li>
+<li>
+<p>Example:
+     <code>csharp
+     Employee emp = employees[2]; // Instantly get the employee with ID 2</code></p>
+</li>
+<li>
+<p><strong>Handling Non-Sequential and Sparse Data</strong>:</p>
+</li>
+<li>
+<p>Dictionaries do not require contiguous or sequential keys, making them memory-efficient for sparse data.</p>
+</li>
+<li>
+<p><strong>Flexibility in Modifying the Collection</strong>:</p>
+</li>
+<li>
+<p>Adding or removing entries in a dictionary is efficient and does not require shifting elements.</p>
+</li>
+<li>
+<p><strong>Uniqueness of Keys</strong>:</p>
+</li>
+<li>
+<p>Ensures no two employees have the same ID, preventing data integrity issues.</p>
+</li>
+<li>
+<p><strong>Performance</strong>:</p>
+</li>
+<li>For large datasets, dictionaries offer significant performance advantages for lookups, additions, and deletions.</li>
+</ol>
+<hr />
+<h2 id="understanding-predicate-and-delegate-in-c">Understanding Predicate and Delegate in C</h2>
+<h3 id="what-is-a-delegate">What is a Delegate?</h3>
+<ul>
+<li>A delegate is a type that represents references to methods with a specific signature.</li>
+<li>It allows methods to be passed as parameters.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">delegate void DisplayMessage(string message);
+
+static void ShowMessage(string msg) {
+    Console.WriteLine(msg);
+}
+
+DisplayMessage del = ShowMessage;
+del(&quot;Hello, this is a delegate example!&quot;);
+</code></pre>
+<hr />
+<h3 id="what-is-a-predicate">What is a Predicate?</h3>
+<ul>
+<li>A <code>Predicate&lt;T&gt;</code> is a built-in generic delegate that represents a method returning a <code>bool</code> (i.e., it checks a condition).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-csharp">static bool IsEven(int number) {
+    return number % 2 == 0;
+}
+
+List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6 };
+List&lt;int&gt; evenNumbers = numbers.FindAll(IsEven);
+evenNumbers.ForEach(n =&gt; Console.WriteLine(n));
+</code></pre>
+<hr />
+<h3 id="predicate-using-lambda-expression">Predicate Using Lambda Expression</h3>
+<ul>
+<li>Instead of a separate method, you can use a lambda expression for <code>Predicate&lt;T&gt;</code>:</li>
+</ul>
+<pre><code class="language-csharp">List&lt;int&gt; evenNumbers = numbers.FindAll(n =&gt; n % 2 == 0);
+</code></pre>
+<hr />
+<h2 id="c-collections-comparison">C# Collections Comparison</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Collection Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Key-Value Pair</strong></th>
+<th><strong>Ordering</strong></th>
+<th><strong>Allows Duplicates</strong></th>
+<th><strong>Dynamic Size</strong></th>
+<th><strong>Thread-Safe</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Array</strong></td>
+<td>Fixed-size collection of elements</td>
+<td>No</td>
+<td>Indexed</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>List<T></strong></td>
+<td>Dynamic-size collection</td>
+<td>No</td>
+<td>Indexed</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Dictionary<TKey, TValue></strong></td>
+<td>Collection of key-value pairs, unique keys</td>
+<td>Yes</td>
+<td>Unordered</td>
+<td>Yes (for values)</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>HashSet<T></strong></td>
+<td>Collection of unique elements</td>
+<td>No</td>
+<td>Unordered</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Queue<T></strong></td>
+<td>FIFO (First In, First Out) collection</td>
+<td>No</td>
+<td>Insertion order</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Stack<T></strong></td>
+<td>LIFO (Last In, First Out) collection</td>
+<td>No</td>
+<td>Reverse insertion order</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>LinkedList<T></strong></td>
+<td>Doubly linked list, allowing insertion/deletion</td>
+<td>No</td>
+<td>Insertion order</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>SortedList<TKey, TValue></strong></td>
+<td>Key-value pair collection sorted by key</td>
+<td>Yes</td>
+<td>Sorted by key</td>
+<td>Yes (for values)</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>ObservableCollection<T></strong></td>
+<td>Dynamic collection with change notifications</td>
+<td>No</td>
+<td>Indexed</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>ConcurrentDictionary<TKey, TValue></strong></td>
+<td>Thread-safe key-value pair collection</td>
+<td>Yes</td>
+<td>Unordered</td>
+<td>Yes (for values)</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>ConcurrentQueue<T></strong></td>
+<td>Thread-safe FIFO collection</td>
+<td>No</td>
+<td>Insertion order</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>ConcurrentStack<T></strong></td>
+<td>Thread-safe LIFO collection</td>
+<td>No</td>
+<td>Reverse insertion order</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>BlockingCollection<T></strong></td>
+<td>Thread-safe collection with producer-consumer</td>
+<td>No</td>
+<td>Unordered</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h1 id="c-sharp-coding-questions">c sharp coding questions</h1>
+<h2 id="table-of-contnet">table of contnet:</h2>
+<ol>
+<li><a href="#101">Different way of printing an array/list</a></li>
+<li><a href="#102">Different string comparison methods</a></li>
+<li><a href="#103">Reverse the number</a></li>
+<li><a href="#104">Hollow Right Angle triangle</a></li>
+<li><a href="#105">Mirror right Angle triangle</a></li>
+<li><a href="#106">Down Mirror right Angle triangle</a></li>
+<li><a href="#107">Fibonacci Series Program in C#</a></li>
+<li><a href="#108">adding all of digit in a number:</a></li>
+<li><a href="#109">Write a code to reverse a number</a></li>
+<li><a href="#110">print the reverse of a string</a></li>
+<li><a href="#111">Count number of repeated chars in a sentence</a></li>
+<li><a href="#112">find the index of the first character that does not occur in a given string</a></li>
+<li><a href="#113">Reverse a String in C# without using Built-in method:</a></li>
+<li><a href="#114">Reverse Each Word in a Given String</a></li>
+<li><a href="#115">C# Find the count of vowels and their occurrences in a given string.</a></li>
+<li><a href="#116">Left Rotation of Array by 1 in C# </a></li>
+<li><a href="#117">Reverse an Array:</a></li>
+<li><a href="#118">Generate the random number and random string</a></li>
+<li><a href="#119">C# program to find two prime numbers whose sum equals the given prime number</a></li>
+<li><a href="#120">Print the below style BlackBerry lackBerry lackBerr ackBerr ackBer ckBer ckBe kBe kB B</a></li>
+</ol>
+<h2 id="questions-with-ans">Questions with Ans</h2>
+<ol>
+<li>Different way of printing an array/list: <a id="101"></a></li>
+</ol>
+<pre><code class="language-csharp">public static void Main(string[] args)
+    {    
+
+      Console.WriteLine(&quot;Print using for loop: &quot;);
+      int[] arr1 = {1, 2, 3, 4, 5};
+      for (int i = 0; i &lt; arr1.Length; i++)
+      {
+          Console.Write(arr1[i] + &quot; &quot;);
+      }
+
+      Console.WriteLine(&quot;\nPrint using foreach loop: &quot;);
+      int[] arr2 = {1, 2, 3, 4, 5};
+      foreach (int item in arr2)
+      {
+          Console.Write(item + &quot; &quot;);
+      }
+
+      Console.WriteLine(&quot;\nPrint using string.Join: &quot;);
+      int[] arr3 = {1, 2, 3, 4, 5};
+      Console.WriteLine(string.Join(&quot;, &quot;, arr3));
+
+      Console.WriteLine(&quot;\nPrint using Array.Foreach:&quot;);
+      int[] arr4 = {1, 2, 3, 4, 5};
+      Array.ForEach(arr4, Console.WriteLine);
+
+    }
+</code></pre>
+<ol>
+<li>Different string comparison methods:  <a id="102"></a></li>
+</ol>
+<pre><code class="language-csharp">public class Program
+  {
+    public static void Main(string[] args)
+    {
+      String s1 =&quot;Abhishek&quot;;
+      String s2 = &quot;Abhishek&quot;;
+      String s3 = &quot;abhishek&quot;;     
+
+      Console.WriteLine(s1.Equals(s2));    // true
+      Console.WriteLine(s1 == s2);    // true
+      Console.WriteLine(string.Compare(s1,s2));    // 0
+      Console.WriteLine(string.Equals(s1,s2));  //True
+      Console.WriteLine(s1.Contains(&quot;bhis&quot;));  //True
+      Console.WriteLine(s1.EndsWith(&quot;bhishe&quot;));  //false
+      Console.WriteLine(s1.StartsWith(&quot;abhi&quot;, StringComparison.OrdinalIgnoreCase));  //true
+
+      Console.WriteLine(string.Compare(s1,s3));    // 1
+      Console.WriteLine(s1.Equals(s3));   // false
+
+    }
+  }
+</code></pre>
+<ol>
+<li>Reverse the number:  <a id="103"></a></li>
+</ol>
+<pre><code class="language-csharp">public static void Main(string[] args)
+    {
+      int num = 1234;
+      int rev = 0;      
+      while(num &gt;= 1)
+      {
+        int rem = num%10;
+        rev = rev*10 + rem;
+        num = num/10;
+      }    
+      Console.WriteLine(rev);      //4321
+    }
+</code></pre>
+<ol>
+<li>Hollow Right Angle triangle:  <a id="104"></a></li>
+</ol>
+<pre><code class="language-csharp">Int rows = 7
+public static void HollowRightTriangle(int rows)
+    {
+        for(int i = 1; i&lt;= rows; i++)
+      {
+        for(int j= 1 ; j &lt;= i ; j++)
+        {
+          if(j==1 || i==j || i==rows  )   //use i for last row
+          Console.Write(&quot;*&quot;);
+          else
+          Console.Write(&quot; &quot;);
+        }
+        Console.WriteLine();
+      }
+    }
+</code></pre>
+<ol>
+<li>Mirror right Angle triangle:  <a id="105"></a></li>
+</ol>
+<pre><code class="language-csharp">public static void MirrorRightAngleTriangle()
+    {    
+      for(int i = 0; i&lt;5 ; i++)
+      {      
+        for(int j= 5 ; j &gt;= i ; j --)
+        {
+          Console.Write(&quot; &quot;);
+        }      
+        for(int k= 0; k&lt;=i ; k++)
+        {
+          Console.Write(&quot;*&quot;);
+        }      
+        Console.WriteLine(&quot;&quot;);
+      }
+    }
+</code></pre>
+<ol>
+<li>Down Mirror right Angle triangle:  <a id="106"></a></li>
+</ol>
+<pre><code class="language-csharp">  public static void DownMirrorRightAngleTriangle()
+    {    
+      for(int i = 0; i&lt;5 ; i++)
+      {
+        for(int k= 0; k&lt;=i ; k++)
+        {
+          Console.Write(&quot; &quot;);
+        }
+          for(int j= 5 ; j &gt; i ; j --)
+        {
+          Console.Write(&quot;*&quot;);
+        }
+        Console.WriteLine(&quot;&quot;);
+      }
+    }
+</code></pre>
+<ol>
+<li>Fibonacci Series Program in C#   <a id="107"></a></li>
+</ol>
+<pre><code class="language-csharp">public static void FibonacciSeriesWithResursiveMethod(int First, int Second, int count)
+    {    
+      Console.Write(First + &quot; &quot;);    
+      if (count &lt;= 10 )
+      {
+        FibonacciSeriesWithResursiveMethod(Second, Second + First, count+1 );
+      }
+    }
+
+// Or 
+
+public static void FibonacciSeries(int fst, int sec,  int count)
+    {
+        Console.Write(fst + &quot; &quot; + sec);
+      for(int i=0; i&lt;count;  i++)
+      {
+      var NextNum = fst + sec;
+        Console.Write( &quot; &quot; + NextNum );
+        fst = sec;
+        sec = NextNum;
+      }
+    }
+</code></pre>
+<ol>
+<li>adding all of digit in a number:  <a id="108"></a></li>
+</ol>
+<pre><code class="language-csharp">Number = 123475;
+public static void AddDigintInNumber(int number)
+    {
+      int num =number , sum = 0;      
+       while (num&gt;0)
+      {
+      sum = num%10 + sum;
+      num = num/10;
+      }
+      Console.WriteLine(sum);     //22
+    }
+</code></pre>
+<p>Output:  22</p>
+<ol>
+<li>Write a code to reverse a number  <a id="109"></a></li>
+</ol>
+<pre><code class="language-csharp">public static int ReversNumberWhile(int num)
+      {
+        int rev = 0 ;
+         while (num &gt; 0)
+         {
+          rev = rev * 10 + num%10;    //0 + 6 = 6
+          num = num / 10;
+          }          
+        return rev ;
+
+      }
+
+// Or
+
+    public static int ReversNumberFor(int num)
+      {
+        int rev = 0 ;
+         for(int i =1; num&gt;=1; i++)
+            {
+              rev = rev*10 + num%10 ;
+              num = num/10;
+            }          
+        return rev ;        
+      }
+</code></pre>
+<ol>
+<li>print the reverse of a string  <a id="110"></a></li>
+</ol>
+<pre><code class="language-csharp">  string s = &quot;Abhishek&quot;;
+  string revrsString = &quot;&quot; ;
+
+  for(int i=s.Length-1 ; i&gt;= 0 ; i--)
+      {
+       revrsString = revrsString + s[i];
+      }
+      Console.WriteLine($&quot;Reverse string is: {revrsString}&quot;);
+
+Or
+
+  string s = &quot;Abhishek&quot;;
+  string revrsString = &quot;&quot; ;
+
+foreach(char chr in s)
+      {
+        revrsString = chr + revrsString;
+        Console.WriteLine(revrsString);
+      }
+
+Or
+
+  string s = &quot;Abhishek&quot;;
+  string revrsString = &quot;&quot; ;
+
+  for(int i=0; i &lt;= s.Length-1  ; i++)
+      {
+       revrsString = s[i] + revrsString ;
+      }
+      Console.WriteLine($&quot;Reverse string is: {revrsString}&quot;);
+</code></pre>
+<ol>
+<li>Count number of repeated chars in a sentence  <a id="111"></a></li>
+</ol>
+<pre><code class="language-csharp">CSharp Program:
+      string inputString = &quot;i am a java and Js lover&quot; ;      
+      int[] count = new int[256];   //must be 256 to cover all ASCI code
+
+      foreach(char c in inputString)
+        {
+          // increase the count of char in count array
+          count[c]++;
+
+           //Console.WriteLine(count[c] + &quot; &quot; + c);
+        }
+      Console.WriteLine(&quot;\n character count details&quot;) ;
+      for (int i = 0; i &lt; 256; i++)
+         {
+              if (count[i] &gt;= 1) {
+                  Console.WriteLine($&quot;Character: {(char)i}, Count: {count[i]}&quot;);
+              }
+         }
+
+
+Or
+
+ string str= &quot;i am a java and Js lover&quot; ;    
+private static Dictionary&lt;char, int&gt; CountCharacters(string str)
+    {
+        Dictionary&lt;char, int&gt; charCount = new Dictionary&lt;char, int&gt;();
+        foreach (char c in str)
+        {
+            if (charCount.ContainsKey(c))
+            {
+                charCount[c]++;
+            }
+            else
+            {
+                charCount[c] = 1;
+            //charCount.Add(c, 1);
+            }
+        }
+          return charCount;
+    }
+
+Or 
+
+Take a character -&gt; count it by iterating it  -&gt; make this char to empty -&gt; repeat the process until no char in message
+
+message = &quot;Remove the empty spaces from the message&quot;;
+while (message.Length &gt; 0)
+            {
+                Console.Write(message[0] + &quot; : &quot;);
+                int count = 0;
+                for (int j = 0; j &lt; message.Length; j++)
+                {
+                    if (message[0] == message[j])
+                    {
+                        count++;
+                    }
+                }
+                Console.WriteLine(count);
+                message = message.Replace(message[0].ToString(), string.Empty);
+            }
+
+Java program:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {      
+
+      String s = &quot;Hi abhishek how are you&quot;;
+      int [] count = new int[255];
+      s = s.toLowerCase();
+
+      for(char c : s.toCharArray())
+      {
+        count[c]++;
+      }
+
+      for(int i =0 ; i&lt;= 255 ; i++)
+      {
+        if(count[i] &gt; 1)
+          System.out.println(&quot;character: &quot; + (char)i + &quot; count is : &quot; + count[i] );
+      }
+      System.out.println(&quot;Hello, World!&quot;);
+  }
+}
+</code></pre>
+<ol>
+<li>find the index of the first character that does not occur in a given string <a id="112"></a></li>
+</ol>
+<pre><code class="language-csharp">javacode
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+       String str = &quot;swiss&quot;;
+
+        // Call the function to find the index
+        int index = firstNonRepeatingIndex(str);
+
+        if (index != -1) {
+            System.out.println(&quot;First non-repeating character is at index: &quot; + index);
+        } else {
+            System.out.println(&quot;No unique character found.&quot;);
+        }
+    }
+
+    public static int firstNonRepeatingIndex(String str) {
+        // Step 1: Count the occurrences of each character
+        HashMap&lt;Character, Integer&gt; charCount = new HashMap&lt;&gt;();
+
+        // Traverse the string and populate the map with character counts
+        for (char c : str.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        // Step 2: Find the first character that appears only once
+        for (int i = 0; i &lt; str.length(); i++) {
+            if (charCount.get(str.charAt(i)) == 1) {
+                return i; // Return the index of the first unique character
+            }
+        }
+
+        return -1; // Return -1 if no unique character is found
+  }
+}
+</code></pre>
+<ol>
+<li>
+<p>Reverse a String in C# without using Built-in method: <a id="113"></a></p>
+</li>
+<li>
+<p>Method 1:</p>
+</li>
+</ol>
+<pre><code class="language-csharp">string originalString = &quot;Removed&quot;;
+string reverseString = string.Empty;
+for (int i = originalString.Length - 1; i &gt;= 0; i--)
+  {
+  reverseString += originalString[i];
+  }
+Console.Write($&quot;Reverse String is : {reverseString} &quot;);
+Console.ReadLine();
+</code></pre>
+<ul>
+<li>Method 02: </li>
+</ul>
+<pre><code class="language-csharp">string originalString = &quot;Removed&quot;;
+string reverseString = string.Empty;
+foreach (char c in originalString)
+            {
+                reverseString = c + reverseString;
+            }
+Console.Write($&quot;Reverse String is : {reverseString} &quot;);
+Console.ReadLine();
+</code></pre>
+<ul>
+<li>Method 03: using existing method
+String -&gt; convert into a array -&gt; reverse the array using array method -&gt; convert the array to string back</li>
+</ul>
+<pre><code class="language-csharp">string originalString = &quot;Removed&quot;;
+char[] stringArray = originalString.ToCharArray();
+Array.Reverse(stringArray);
+string reverseString = new string(stringArray);
+Console.Write($&quot;Reverse String is : {reverseString} &quot;);
+Console.ReadLine();
+</code></pre>
+<ol>
+<li>
+<p>Reverse Each Word in a Given String <a id="114"></a></p>
+</li>
+<li>
+<p>Method 01:
+Split the string into words -&gt; reverse the words -&gt; join back the words</p>
+</li>
+</ol>
+<pre><code class="language-csharp">    public static void ReverseStringsWord(string Str)
+    {      
+        string[] Words = Str.Split(' ');      
+        for(int i = 0 ; i&lt; Words.Length ; i++ )
+        {
+          string reverseWord = string.Empty;
+          foreach(char c in Words[i])
+          {
+            reverseWord =  c + reverseWord;  // reversing the word
+          }
+          Words[i]= reverseWord;   // update revesre word
+        }        
+       String ReverseString = string.Join(' ', Words);
+       Console.WriteLine(ReverseString);        
+   }
+</code></pre>
+<ul>
+<li>Method 02:  Using LINQ method</li>
+</ul>
+<pre><code class="language-csharp">string originalString =&quot;I am an Automation ENG&quot;
+
+string reverseWordString = string.Join(&quot; &quot;, originalString
+.Split(' ')
+.Select(x =&gt; new String(x.Reverse().ToArray())));
+</code></pre>
+<pre><code class="language-java">Java code:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+      String s = &quot;i am experienced in Selenium with Java&quot; ;      
+      String[] word = s.split(&quot; &quot;);
+
+      for(int i=0 ; i&lt; word.length ; i++)
+      {
+
+          String rev = &quot;&quot; ;
+          for (char c : word[i].toCharArray())
+          {
+            rev = c + rev ;
+          }          
+          word[i] = rev;
+      }
+
+      String reverseString = String.join(&quot; &quot;, word);
+     System.out.println(reverseString);
+  }
+}
+</code></pre>
+<ol>
+<li>C# Find the count of vowels and their occurrences in a given string. <a id="115"></a></li>
+</ol>
+<pre><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace HelloWorld
+{
+  public class Program
+  {
+    public static void Main(string[] args)
+    {
+      string str = &quot;Abhishek is attending interivew&quot;;
+
+      Dictionary&lt;char, int&gt; count = new Dictionary&lt;char, int&gt;();
+    //  List&lt;char&gt; vowel = new List&lt;char&gt;(){'a', 'e', 'i', 'o', 'u'}; 
+      String vowels = &quot;aeiouAEIOU&quot; ;
+      foreach(char c in str.ToLower() )
+      {
+        if(count.ContainsKey(c))
+        {
+          count[c]++;
+        }
+        else    
+        count.Add(c,1);
+      } 
+
+      foreach(KeyValuePair&lt;char, int&gt; i in count)
+      {
+        if( vowels.Contains(i.Key) )
+        {
+          Console.WriteLine(i.Key + &quot;=&quot; + i.Value);
+        }
+      }
+    }
+
+  }
+}
+</code></pre>
+<ol>
+<li>Left Rotation of Array by 1 in C#  <a id="116"></a>
+In this rotation of the array, each element will be shifted to the left side by position 1. This basically means the value of index 1 will be shifted to index 0, index 2 value will be shifted to index 1, and so on.</li>
+</ol>
+<p><strong>Algorithm to write code:</strong>
+Step1: Create a Temp variable to store the value at index 0.
+Step2: Sift all the elements of array to left side by position 1 i.e. arr[i] = arr[i+1];
+Step3: Store the value of temp at the last index of array i.e. arr[(arr.Length – 1)] = x;</p>
+<ol>
+<li>Reverse an Array: <a id="117"></a></li>
+</ol>
+<p><strong>Algorithm:</strong>
+1.  Step1: Create two variables named startIndex and endIndex and initialize values with 0 and (n-1) respectively. (n is the length of the array).
+2.  Step2: Swap the values of startIndex with endIndex and increment the value of startIndex by 1 (means +1) and decrement the value of endIndex by 1 (means -1).
+3.  Step3: Repeat Step2 until the startIndex value is less than the endIndex value.
+4.  Step4: Print the array as a reversed array.</p>
+<pre><code class="language-csharp">using System;
+using System.Collections.Generic;
+
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace HelloWorld
+{
+  public class Program
+  {
+    public static void Main(string[] args)
+    {
+      int[]   arry = {1,3,4,6,2,5,12}; 
+
+      SwapElements(arry, 0, arry.Length-1); 
+
+      Console.WriteLine(string.Join(&quot;, &quot;, arry));      
+    }  
+
+    static void SwapElements(int[] arr, int startIndex, int endIndex)
+        {
+            while (startIndex &lt; endIndex)
+            {
+                int temp = arr[startIndex];
+                arr[startIndex] = arr[endIndex];
+                arr[endIndex] = temp;
+                startIndex++;
+                endIndex--;
+            }
+        }
+  }
+}
+</code></pre>
+<ol>
+<li>Generate the random number and random string <a id="118"></a></li>
+</ol>
+<pre><code class="language-csharp">namespace CSHARPCONCEPTS.TrickyQuestions;
+
+public class TrickyQuestions
+{   
+    public static void Main()
+    {
+         for(int i = 0 ; i&lt; 10; i++)
+        Console.WriteLine(RandomNumberGenerator(1,56)); 
+
+Console.WriteLine(&quot;Generated random string is:- &quot; +RandomStringGenerator(6));         // 
+
+    }
+
+    // random number generator
+    public static double RandomNumberGenerator(int minValue = 0 , int maxValue  = 0)
+    {
+        Random random = new Random();
+        if(maxValue == 0 &amp;&amp; minValue == 0)
+        // create random number without any restriction
+        return random.NextDouble();        
+
+        else if (minValue ==0 &amp;&amp; maxValue != 0)
+        // create random number below the maxnumber
+        return random.Next(maxValue); 
+
+        else
+        // created  number between min and max
+        return random.Next(minValue,maxValue);         
+
+    }
+
+    public static string RandomStringGenerator(int length)
+    {
+        Random rand =  new Random();
+        string charToBeUse = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&amp;*()1234567890&quot;;
+        Char [] resultChar = new char[charToBeUse.Length];
+
+        for(int i = 0 ; i&lt; length ; i++)
+        {
+            // taking character from give string by using randmon number, value will less to length
+            resultChar[i] = charToBeUse[rand.Next(charToBeUse.Length)];
+        }  
+        return  new string(resultChar);
+    }
+
+}
+</code></pre>
+<ol>
+<li>C# program to find two prime numbers whose sum equals the given prime number <a id="119"></a></li>
+</ol>
+<p>•   Check if the given number is prime.
+•   Find two prime numbers (p1 and p2) such that:
+•   p1+ p2 = given Prime Number
+•   Print the pair of prime numbers.</p>
+<p><strong>Csharp:</strong></p>
+<pre><code class="language-csharp">using System;
+
+class PrimeSumFinder
+{
+    // Function to check if a number is prime
+    static bool IsPrime(int num)
+    {
+        if (num &lt; 2) return false;
+        for (int i = 2; i * i &lt;= num; i++)
+        {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
+    // Function to find two prime numbers whose sum equals the given prime
+    static void FindPrimeSum(int primeNumber)
+    {
+        if (!IsPrime(primeNumber))
+        {
+            Console.WriteLine($&quot;{primeNumber} is not a prime number.&quot;);
+            return;
+        }
+
+        bool found = false;
+
+        for (int i = 2; i &lt;= primeNumber / 2; i++)
+        {
+            int j = primeNumber - i;
+
+            if (IsPrime(i) &amp;&amp; IsPrime(j))
+            {
+                Console.WriteLine($&quot;Prime numbers: {i} + {j} = {primeNumber}&quot;);
+                found = true;
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine($&quot;No two prime numbers sum to {primeNumber}.&quot;);
+        }
+    }
+
+    static void Main()
+    {
+        Console.Write(&quot;Enter a prime number: &quot;);
+        int primeNumber = int.Parse(Console.ReadLine());
+
+        FindPrimeSum(primeNumber);
+    }
+}
+</code></pre>
+<ol>
+<li>Print the below style  <a id="120"></a></li>
+<li>BlackBerry</li>
+<li>lackBerry</li>
+<li>lackBerr</li>
+<li>ackBerr</li>
+<li>ackBer</li>
+<li>ckBer</li>
+<li>ckBe</li>
+<li>kBe</li>
+<li>kB</li>
+<li>B</li>
+</ol>
+<pre><code class="language-csharp">using System;
+public class HelloWorld
+{
+      public static void Main(string[] args)
+    {
+        string s = &quot;BlackBerry&quot;;
+        int start = 0;
+        int end = s.Length;
+
+        while (start &lt; end)
+        {
+            for (int j = start; j &lt; end; j++)
+            {
+                Console.Write(s[j]);
+            }
+            Console.WriteLine();
+
+            // Alternately increment start and decrement end
+            if ((start + end) % 2 == 0)
+                start++;
+            else
+                end--;
+        }
+    }
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

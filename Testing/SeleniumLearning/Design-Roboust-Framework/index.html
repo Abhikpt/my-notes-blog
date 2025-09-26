@@ -1,0 +1,1645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Design Roboust Framework - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#design-the-roboust-framewrok-using-c-nunit-bdd-pom" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Design Roboust Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of contents:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nunit-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      NUnit Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NUnit Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features-of-nunit-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features of NUnit Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-flow-of-nunit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Flow of NUnit Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotations-in-nunit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations in NUnit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nunit-assert-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      NUnit Assert Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraint-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constraint Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helper-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper Classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-object-model-pom-in-selenium-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Object Model (POM) in Selenium C#
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Object Model (POM) in Selenium C#">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-login-using-pom-and-without-pom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Login using POM and without POM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of Login using POM and without POM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-feature-without-pom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login Feature without POM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Login Feature without POM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problems-with-this-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems with this approach:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-feature-with-pom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login Feature with POM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-factory-in-selenium-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Factory in Selenium C#
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Factory in Selenium C#">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-pagefactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Pagefactory:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../../README.md">🏠 Home</a></p>
+<h1 id="design-the-roboust-framewrok-using-c-nunit-bdd-pom">Design the Roboust Framewrok (using C# Nunit BDD POM )</h1>
+<h2 id="table-of-contents">Table of contents:</h2>
+<ol>
+<li><a href="#framework-structure">Framework Structure</a></li>
+<li><a href="#nunit-frm">Nunit Framewrok</a></li>
+<li><a href="#page-object-model">Page Object Model (POM)</a></li>
+<li><a href="#page-factory">Page Factory</a></li>
+<li><a href="#Data-Driven-testing">Data-Driven Testing in C</a></li>
+<li><a href="#working-config-file">Working with Config file</a></li>
+<li><a href="#reading-test-data">Reading Test Data</a></li>
+<li><a href="#random-data-generation">Random Data Generation</a></li>
+<li><a href="#parallel-testing">Parallel Testing</a></li>
+<li><a href="#generating-reports">Generating Reports - Extent Reports</a></li>
+<li><a href="#selenium-grid">Selenium Grid and Parallel Testing</a></li>
+<li><a href="#specflow-bdd">SpecFlow: Behavior-Driven Development</a></li>
+<li><a href="#file-configuration">Environment and Configuration File Management</a> </li>
+<li><a href="#JavaScriptExecutor-Selenium">JavaScriptExecutor</a></li>
+<li><a href="">My Project files</a><ul>
+<li><a href="#selenium-extension-methods">Selenium Extension Methods</a></li>
+<li><a href="#page-object-model">Page Object Model</a></li>
+<li><a href="#driverwait-and-lazy-initialization">DriverWait and Lazy Initialization</a></li>
+<li><a href="#dependency-injection">Dependency Injection</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="nunit-framework">NUnit Framework  <a id="nunit-frm"></a></h2>
+<p>NUnit is a popular unit-testing framework for .NET.</p>
+<h3 id="features-of-nunit-framework">Features of NUnit Framework</h3>
+<ul>
+<li><strong>Multiple Asserts:</strong> <code>Assert.Multiple()</code> allows raising multiple assertions in a single test.</li>
+<li><strong>Parallel Execution:</strong> Supports parallelism at test method and test fixture levels.</li>
+<li><strong>Test-Driven Development (TDD):</strong> Facilitates TDD practices.</li>
+<li><strong>Author Attribution:</strong> Enables multiple authors to be attributed to the code.</li>
+<li><strong>Annotations:</strong> Uses annotations to speed up test development and execution.</li>
+</ul>
+<h3 id="execution-flow-of-nunit-test">Execution Flow of NUnit Test</h3>
+<p>A basic process flow of a Selenium Testing program with NUnit involves the following steps:</p>
+<h3 id="annotations-in-nunit">Annotations in NUnit</h3>
+<ul>
+<li><strong>TestFixture:</strong><ul>
+<li>A class-level attribute indicating that the class contains NUnit test methods.</li>
+<li>Can only be placed on classes, not methods.</li>
+<li>Supports parameterized TestFixtures via constructors.</li>
+<li>If no arguments are provided, the class must have a default constructor.</li>
+<li>Multiple <code>TestFixture</code> attributes can be used on a single class.</li>
+<li><code>TestFixture</code> attribute can be inherited.</li>
+</ul>
+</li>
+<li><strong>TestCase:</strong><ul>
+<li>Marks a method as a test method.</li>
+<li>Passes arguments/parameters to the test method.</li>
+<li><strong>TestCase attribute properties:</strong><ul>
+<li><strong>Parameterized:</strong> <code>[TestCase(20)]</code> - Passes arguments/parameters to the method.</li>
+<li><strong>ExpectedResult:</strong> <code>[TestCase(parameter, ExpectedResult = false)]</code> - Validates the return type of the method.</li>
+<li><strong>Author:</strong> <code>[TestCase(Author = "Abhishek")]</code> - Assigns the author of the test case.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="nunit-assert-examples">NUnit Assert Examples</h3>
+<p>Assert methods compare the actual result with the expected result. If they match, the test case passes; otherwise, it fails.</p>
+<h3 id="constraint-model">Constraint Model</h3>
+<p>NUnit provides a constraint model using the <code>That</code> method to improve test method readability. The <code>That</code> method applies constraints to the actual value.</p>
+<h3 id="helper-classes">Helper Classes</h3>
+<p>Helper classes provide constraints for assertions:</p>
+<ul>
+<li><code>Is</code></li>
+<li><code>Has</code></li>
+<li><code>Contains</code></li>
+<li><code>Does</code></li>
+<li><code>Throws</code></li>
+</ul>
+<h3 id="important-points">Important Points</h3>
+<ul>
+<li>The <code>Keys</code> class provides keyboard keys like RETURN, F1, ALT, etc.<ul>
+<li>Example (Python): <code>from selenium.webdriver.common.keys import Keys</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="page-object-model-pom-in-selenium-c">Page Object Model (POM) in Selenium C#  <a id="page-object-model"></a></h2>
+<p>POM is a design pattern used to improve the maintainability of Selenium test code.</p>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Separation of test code and page-specific code (locators, layout).</li>
+<li>Centralized repository for page services/operations.</li>
+</ul>
+<h3 id="example-of-login-using-pom-and-without-pom">Example of Login using POM and without POM</h3>
+<h4 id="login-feature-without-pom">Login Feature without POM</h4>
+<pre><code class="language-csharp">public class Login
+{
+    public void testLogin()
+    {
+        // Fill login data on sign-in page
+        driver.findElement(By.name(&quot;user_name&quot;)).sendKeys(&quot;userName&quot;);
+        driver.findElement(By.name(&quot;password&quot;)).sendKeys(&quot;my supersecret password&quot;);
+        driver.findElement(By.name(&quot;sign-in&quot;)).click();
+
+        // Verify h1 tag is &quot;Hello userName&quot; after login
+        driver.findElement(By.tagName(&quot;h1&quot;)).isDisplayed();
+        assertThat(driver.findElement(By.tagName(&quot;h1&quot;)).getText(), is (&quot;Hello userName&quot;));
+    }
+}
+</code></pre>
+<h5 id="problems-with-this-approach">Problems with this approach:</h5>
+<ul>
+<li>No separation between test methods and locators.</li>
+<li>Locators are scattered across multiple tests.</li>
+</ul>
+<h4 id="login-feature-with-pom">Login Feature with POM</h4>
+<ul>
+<li>Create a directory containing page classes/page objects.</li>
+<li>Create another directory containing test scripts/actual code implementation.</li>
+</ul>
+<pre><code class="language-csharp">public class SignInPage
+{
+    protected WebDriver driver;
+    private By usernameBy = By.name(&quot;user_name&quot;);
+    private By passwordBy = By.name(&quot;password&quot;);
+    private By signinBy = By.name(&quot;sign_in&quot;);
+
+    public SignInPage(WebDriver driver)
+    {
+        this.driver = driver;
+        if (!driver.getTitle().equals(&quot;Sign In Page&quot;))
+        {
+            throw new IllegalStateException(&quot;This is not Sign In Page, current page is: &quot; + driver.getCurrentUrl());
+        }
+    }
+
+    public HomePage loginValidUser(string userName, string password)
+    {
+        driver.findElement(usernameBy).sendKeys(userName);
+        driver.findElement(passwordBy).sendKeys(password);
+        driver.findElement(signinBy).click();
+        return new HomePage(driver);
+    }
+}
+</code></pre>
+<h2 id="page-factory-in-selenium-c">Page Factory in Selenium C# <a id="page-factory"></a></h2>
+<ul>
+<li>Page Factory is a design pattern that enhances POM.</li>
+<li>It Initializes page class elements without FindElement.</li>
+<li>It Uses @FindsBy annotation to find elements.</li>
+<li>PageFactory.InitElements() must be use to initializes web elements.</li>
+</ul>
+<h3 id="example-pagefactory">Example Pagefactory:</h3>
+<pre><code class="language-csharp">using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
+
+public class LoginPage
+{
+    private readonly IWebDriver driver;
+
+    public LoginPage(IWebDriver driver)
+    {
+        this.driver = driver;
+        PageFactory.InitElements(driver, this);
+    }
+
+    [FindsBy(How = How.Id, Using = &quot;username&quot;)]
+    public IWebElement UsernameInput { get; set; }
+
+    [FindsBy(How = How.Id, Using = &quot;password&quot;)]
+    public IWebElement PasswordInput { get; set; }
+
+    [FindsBy(How = How.Id, Using = &quot;loginButton&quot;)]
+    public IWebElement LoginButton { get; set; }
+
+    public void Login(string username, string password)
+    {
+        UsernameInput.SendKeys(username);
+        PasswordInput.SendKeys(password);
+        LoginButton.Click();
+    }
+}
+</code></pre>
+<h1 id="data-driven-testing-in-c">Data-Driven Testing in C# <a id="Data-Driven-testing"></a></h1>
+<p>Data-driven testing involves running the same test multiple times with different sets of input data.</p>
+<h2 id="techniques-for-data-driven-testing">Techniques for Data-Driven Testing</h2>
+<ol>
+<li>
+<p><strong>NUnit Attributes and Parameterized Methods:</strong></p>
+<ul>
+<li>Using <code>[TestCase()]</code> attribute to provide parameters for test methods.</li>
+</ul>
+</li>
+<li>
+<p><strong>Product Model:</strong></p>
+<ul>
+<li>When dealing with complex product details, using a product model as a parameter can simplify test data management.</li>
+<li>Instead of passing individual parameters, pass a model object containing all relevant data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Random Data Generation using AutoFixture:</strong></p>
+<ul>
+<li>Install the <code>AutoFixture.NUnit3</code> NuGet package.</li>
+<li>Use the <code>[AutoData]</code> attribute to generate random data for test parameters.</li>
+</ul>
+</li>
+<li>
+<p><strong>SpecFlow Scenario Outline:</strong></p>
+<ul>
+<li>Use SpecFlow's scenario outlines to supply data from feature files.</li>
+</ul>
+</li>
+<li>
+<p><strong>External Data Files (CSV, Excel, etc.):</strong></p>
+<ul>
+<li>Read test data from external files like CSV or Excel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Passing Complete Models:</strong></p>
+<ul>
+<li>Create a model, assign values to its properties, and pass the model to the test method to create requests.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using <code>appsettings.json</code>:</strong></p>
+<ul>
+<li>Extract configuration data from <code>appsettings.json</code> files.</li>
+</ul>
+</li>
+</ol>
+<h2 id="working-with-config-file-appsettingsjson">Working with Config file (<code>appsettings.json</code>) <a id="working-config-file"></a></h2>
+<p>Steps to read test settings from a configuration file:</p>
+<ol>
+<li>
+<p><strong>Create <code>appsettings.json</code>:</strong></p>
+<ul>
+<li>Create a JSON file named <code>appsettings.json</code> to store configuration data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure <code>appsettings.json</code> to Copy to Bin Directory:</strong></p>
+<ul>
+<li><strong>Option 1 (Visual Studio):</strong><ul>
+<li>Select the file in Solution Explorer.</li>
+<li>Go to Properties.</li>
+<li>Set "Copy to Output Directory" to "Copy always".</li>
+</ul>
+</li>
+<li>
+<p><strong>Option 2 (Project File):</strong></p>
+<ul>
+<li>Add the following configuration to your project file (<code>.csproj</code>):</li>
+</ul>
+<p><code>xml
+&lt;ItemGroup&gt;
+  &lt;None Update="appsettings.json"&gt;
+    &lt;CopyToOutputDirectory&gt;Always&lt;/CopyToOutputDirectory&gt;
+  &lt;/None&gt;
+&lt;/ItemGroup&gt;</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Create <code>ConfigReader.cs</code>:</strong></p>
+<ul>
+<li>Create a <code>ConfigReader.cs</code> file to read data from <code>appsettings.json</code> and map it to a model (e.g., <code>TestSetting</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Access Data:</strong></p>
+<ul>
+<li>Use the <code>ConfigReader.ReadConfig()</code> method to access the data.</li>
+</ul>
+<p><code>csharp
+TestSetting testSetting = ConfigReader.ReadConfig();</code></p>
+</li>
+</ol>
+<pre><code class="language-csharp">//ConfigReader.cs
+using System;
+using System.IO;
+using System.Reflection;
+using System.Text;
+using LWASpecflow.Utilities;
+using Newtonsoft.Json;
+
+namespace LWASpecflow.Utilities;
+
+  public class ConfigReader
+  {
+
+        public static TestSetting ReadConfig()
+          {
+              string accessFile = File.ReadAllText(GetprojectDir() + &quot;/appsettings.json&quot;) ;   
+              return JsonConvert.DeserializeObject&lt;TestSetting&gt;(accessFile) ;
+          }
+
+      public static string GetprojectDir()
+      {
+          String biDirctorty = Environment.CurrentDirectory; 
+           String workingDir = Directory.GetParent(biDirctorty).Parent.Parent.ToString();
+          string projectDir  =  workingDir + &quot;\\Utilities&quot;;
+          return projectDir;
+      }
+  }
+</code></pre>
+<h2 id="reading-test-data-from-external-sources-excel-csv-etc">Reading Test Data from External Sources (Excel, CSV, etc.) <a id="reading-test-data"></a></h2>
+<p>Data-driven testing involves reading test data from external sources.</p>
+<ul>
+<li>
+<p>Data sources include:</p>
+<ul>
+<li>Excel files</li>
+<li>CSV files</li>
+<li>Databases</li>
+<li>XML files</li>
+<li>ODBC sources</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading Data from Database:</strong></p>
+<ul>
+<li>Use <code>TestContext</code> object and <code>[DataSource]</code> attribute.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data-Driven Testing with XML:</strong></p>
+<ul>
+<li>Read test data from XML files.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data-Driven Testing with CSV:</strong></p>
+<ul>
+<li>Read test data from CSV files.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configuration File Data Source:</strong></p>
+<ul>
+<li>Use configuration files to define data sources.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading and Writing Excel using OLEDB:</strong></p>
+<ul>
+<li>OLEDB is a COM-based API for accessing data from various sources (databases, spreadsheets, text files).</li>
+</ul>
+<p><strong>Implementation Steps:</strong></p>
+<ol>
+<li>Create an Excel file named <code>ProductTestData</code> with a sheet named <code>AddProduct</code>.</li>
+<li>Ensure file fields match the <code>ProductData</code> model.</li>
+<li>Create an <code>ExcelOperation</code> class.</li>
+</ol>
+<p><strong><code>ExcelOperation.cs</code>:</strong></p>
+<p>```csharp
+using System.Data.OleDb;
+using FrameworkDesign.Config;
+using FrameWorkDesign.DataSet;
+using Dapper;</p>
+<p>namespace FrameWorkDesign.Utilities;</p>
+<p>public class ExcelOperation
+{
+    private readonly OleDbCommand connection;</p>
+<pre><code>public static string TestDataFileConnection()
+{
+    var fileLocation = ConfigReader.ReadConfig().ProductDataFile;
+    var conString = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = {0}; Extended Properties=Excel 12.0;", fileLocation);
+    return conString;
+}
+
+public static ProductData GetTestData(string testName)
+{
+    var connection = new OleDbConnection(TestDataFileConnection());
+    connection.Open();
+    var query = string.Format("select * from [AddProduct$] where keyName = '{0}'", testName);
+    var value = connection.Query&lt;ProductData&gt;(query).FirstOrDefault();
+    connection.Close();
+    return value;
+}
+</code></pre>
+<p>}
+```</p>
+<ol>
+<li>Access the retrieved data:</li>
+</ol>
+<p><code>csharp
+ProductData productData = ExcelOperation.GetTestData("YourTestName");
+// Access productData properties</code></p>
+</li>
+</ul>
+<h2 id="autofixture-random-data-generation">AutoFixture (Random Data Generation) <a id="random-data-generation"></a></h2>
+<p>AutoFixture is a .NET library for automatically generating test data.</p>
+<ol>
+<li>
+<p><strong>Creating Objects Automatically:</strong></p>
+<p><code>csharp
+var fixture = new Fixture();
+var person = fixture.Create&lt;Person&gt;();</code></p>
+</li>
+<li>
+<p><strong>Creating Lists or Collections:</strong></p>
+<p><code>csharp
+var people = fixture.CreateMany&lt;Person&gt;(5);</code></p>
+</li>
+<li>
+<p><strong>Customizing Object Creation:</strong></p>
+<p><code>csharp
+var fixture = new Fixture();
+var person = fixture.Build&lt;Person&gt;()
+    .With(p =&gt; p.Name, "John Doe")
+    .Create();</code></p>
+</li>
+<li>
+<p><strong>Auto-Data Tests with xUnit:</strong></p>
+<p>```csharp
+using AutoFixture.Xunit2;</p>
+<p>public class PersonTests
+{
+    [Theory, AutoData]
+    public void Person_HasValidProperties(Person person)
+    {
+        Assert.NotNull(person.Name);
+        Assert.InRange(person.Age, 0, 120);
+    }
+}
+```</p>
+</li>
+</ol>
+<h1 id="parallel-testing-and-reporting-in-c">Parallel Testing and Reporting in C# <a id="parallel-testing"></a></h1>
+<h2 id="parallelizable">Parallelizable</h2>
+<p>When running multiple tests in parallel, WebDriver instances can interfere with each other, leading to data mismatches. To prevent this, we use thread-safe WebDriver instances.</p>
+<ul>
+<li>
+<p><strong>Thread Safety:</strong></p>
+<ul>
+<li>Initialize WebDriver using <code>ThreadLocal&lt;IWebDriver&gt;</code>:
+    <code>csharp
+    public ThreadLocal&lt;IWebDriver&gt; driver = new ThreadLocal&lt;IWebDriver&gt;();</code></li>
+<li>Access the WebDriver instance using <code>driver.Value</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Parallelization Annotations:</strong></p>
+<ol>
+<li>
+<p><strong>Parallel Data Sets within a Test Method:</strong></p>
+<ul>
+<li><code>[Parallelizable(ParallelScope.All)]</code></li>
+<li>Place before the test method to run all data sets in parallel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Parallel Test Methods within a Class:</strong></p>
+<ul>
+<li><code>[Parallelizable(ParallelScope.Children)]</code></li>
+<li>Place before the class to run all test methods in the class in parallel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Parallel Test Files within a Project:</strong></p>
+<ul>
+<li><code>[Parallelizable(ParallelScope.Self)]</code></li>
+<li>Place before the class in each test file to run all test files in the project in parallel.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="running-project-through-terminal">Running Project Through Terminal</h2>
+<ul>
+<li>
+<p><strong>Running the Test Project:</strong></p>
+<ul>
+<li>Navigate to the project directory in the terminal.</li>
+<li>Run the following command:
+    <code>bash
+    dotnet test CSharpSelFramework.csproj</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Filtering Tests by Category:</strong></p>
+<ul>
+<li>To execute tests based on category annotations (e.g., "Smoke"):
+    <code>bash
+    dotnet test CSharpSelFramework.csproj --filter TestCategory=Smoke</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="setting-parameters-from-terminal">Setting Parameters from Terminal</h2>
+<ul>
+<li>
+<p><strong>Retrieving Parameters:</strong></p>
+<ul>
+<li>Use <code>TestContext.Parameters["parameterName"]</code> to fetch parameters from the terminal.
+    <code>csharp
+    browserName = TestContext.Parameters["browserName"];</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Passing Parameters at Runtime:</strong></p>
+<ul>
+<li>Use the <code>--TestRunParameters.Parameter</code> option to set parameters:
+    <code>bash
+    dotnet test CSharpSelFramework.csproj --filter TestCategory=Smoke --TestRunParameters.Parameter(name=browserName, value=chrome)</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Default Null Parameters:</strong></p>
+<ul>
+<li>If no parameter is provided at runtime, the parameter value will be <code>null</code>.
+    <code>bash
+    dotnet test CSharpSelFramework.csproj --filter TestCategory=Smoke</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="generating-reports-extent-reports">Generating Reports - Extent Reports <a id="generating-reports"></a></h2>
+<ul>
+<li>
+<p><strong>What:</strong></p>
+<ul>
+<li>Extent Reports is a multi-language test reporting tool that provides detailed information about test execution.</li>
+</ul>
+</li>
+<li>
+<p><strong>Why:</strong></p>
+<ul>
+<li>Generates customizable HTML test reports.</li>
+<li>Supports .NET and Java.</li>
+<li>Visualizes test execution status.</li>
+<li>Customizable report appearance through XML configuration.</li>
+<li>Captures screenshots for failed test steps.</li>
+</ul>
+</li>
+<li>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>OnNodeAdded()</code>, <code>OnTestStarted()</code>, <code>OnScreenCaptureAdded()</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Reporters:</strong></p>
+<ul>
+<li><code>ExtentAventReporter</code> (pro)</li>
+<li><code>ExtentBDDReporter</code> (pro)</li>
+<li><code>ExtentCardsReporter</code> (pro)</li>
+<li><code>ExtentEmailReporter</code> (pro)</li>
+<li><code>ExtentHtmlReporter</code> (version 4)</li>
+<li><code>ExtentV3HtmlReporter</code> (version 3)</li>
+<li><code>ExtentKlovReporter</code></li>
+<li><code>ExtentLoggerReporter</code></li>
+<li><code>ExtentTabularReporter</code> (pro)</li>
+</ul>
+</li>
+<li>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>
+<p><strong>Initialize Report:</strong>
+    <code>csharp
+    var logger = new ExtentLoggerReporter("user/build/name/");
+    var avent = new ExtentAventReporter("/user/build/");</code></p>
+</li>
+<li>
+<p><strong>Attach Reporters:</strong>
+    <code>csharp
+    var extent = new ExtentReports();
+    extent.AttachReporter(reporterType); // reporterType = logger</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="generating-reports-using-specflow-commands">Generating Reports using SpecFlow Commands</h2>
+<ul>
+<li>
+<p><strong>Install SpecFlow.Plus.livingDoc.CLI:</strong>
+    <code>bash
+    dotnet tool install --global Specflow.Plus.livingDoc.CLI</code></p>
+</li>
+<li>
+<p><strong>Navigate to Project Output Directory:</strong></p>
+<ul>
+<li>Go to <code>[project]\bin\Debug\net6.0</code>.
+    <code>bash
+    cd C:\project\Selenium with C#\FlipkartAutomation-sfs\FlipkartAutomation\bin\Debug\net6.0</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Generate Report:</strong></p>
+<ul>
+<li>Use the following command:
+    <code>bash
+    livingdoc test-assembly SpecflowBDDFramework.dll -t TestExecution.json</code></li>
+</ul>
+</li>
+<li>
+<p><strong>View Generated Report:</strong></p>
+<ul>
+<li>The HTML report will be generated in the same directory.</li>
+</ul>
+</li>
+</ul>
+<h2 id="selenium-grid-and-parallel-testing">Selenium Grid and Parallel Testing <a id="selenium-grid"></a></h2>
+<p>Selenium Grid allows running WebDriver scripts on remote machines to enable parallel testing and cross-browser testing.</p>
+<ul>
+<li>
+<p><strong>Goals:</strong></p>
+<ul>
+<li>Run tests in parallel on multiple machines.</li>
+<li>Test on different browser versions.</li>
+<li>Enable cross-platform testing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>Java 11 or higher installed.</li>
+<li>Browsers installed.</li>
+<li>Browser drivers:<ul>
+<li>Selenium Manager (recommended): <code>java -jar selenium-server-&lt;version&gt;.jar standalone --selenium-manager true</code></li>
+<li>Manually installed and added to PATH.</li>
+</ul>
+</li>
+<li>Selenium Server JAR file (download from latest release).</li>
+</ul>
+</li>
+<li>
+<p><strong>Start the Grid:</strong>
+    <code>bash
+    java -jar selenium-server-&lt;version&gt;.jar standalone</code></p>
+</li>
+<li>
+<p><strong>Point WebDriver Tests:</strong></p>
+<ul>
+<li>Configure WebDriver to connect to <code>http://localhost:4444</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>(Optional) Check Grid Status:</strong></p>
+<ul>
+<li>Open <code>http://localhost:4444</code> in a browser.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Configure WebDriver:</strong></p>
+<p>```csharp
+public IWebDriver GetRemoteWebDriver(BrowserType browserType)
+{
+    IWebDriver driver;</p>
+<pre><code>switch (browserType)
+{
+    case BrowserType.ChromeDriver:
+        driver = new RemoteWebDriver(_testsetting.GridUri, new ChromeOptions());
+        break;
+    case BrowserType.EdgeDriver:
+        driver = new RemoteWebDriver(_testsetting.GridUri, new EdgeOptions());
+        break;
+    case BrowserType.FireFoxDriver:
+        driver = new RemoteWebDriver(_testsetting.GridUri, new FirefoxOptions());
+        break;
+    default:
+        driver = new RemoteWebDriver(_testsetting.GridUri, new ChromeOptions());
+        break;
+}
+
+return driver;
+</code></pre>
+<p>}
+```</p>
+</li>
+</ul>
+<h1 id="specflow-behavior-driven-development-for-net">SpecFlow: Behavior-Driven Development for .NET <a id="specflow-bdd"></a></h1>
+<h2 id="what-is-specflow">What is SpecFlow?</h2>
+<ul>
+<li>SpecFlow is a Behavior-Driven Development (BDD) framework for .NET, similar to Cucumber.</li>
+<li>It uses Gherkin, a plain-text language, which supports over 70 languages.</li>
+<li>It is cross-platform, running on macOS, Linux, and Windows.</li>
+<li>SpecFlow integrates with popular IDEs like Visual Studio, VS Code, and Rider.</li>
+</ul>
+<h2 id="why-use-specflow">Why Use SpecFlow?</h2>
+<ul>
+<li>SpecFlow uses simple English language, enabling clear communication between QAs, developers, BAs, and POs.</li>
+<li>It fosters a shared understanding across the team.</li>
+<li>It aids in documenting the entire Software Development Life Cycle (SDLC).</li>
+</ul>
+<h2 id="specflow-ecosystem">SpecFlow Ecosystem</h2>
+<p>The SpecFlow ecosystem supports the entire SDLC, from requirements gathering to project delivery.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Tool/Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Business Analyst, Product Owner</td>
+<td>SpecFlow Online Gherkin Editor</td>
+</tr>
+<tr>
+<td>Developers, QA Leads, Automation Testers</td>
+<td>SpecFlow plugins for IDEs</td>
+</tr>
+<tr>
+<td>DevOps/QA/Developers</td>
+<td>Azure DevOps SpecFlow LivingDoc</td>
+</tr>
+<tr>
+<td>Client (Stakeholder)</td>
+<td>SpecFlow LivingDoc (offline/hosted)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="specflow-in-the-sdlc">SpecFlow in the SDLC</h2>
+<ul>
+<li><strong>Requirement Gathering:</strong><ul>
+<li><strong>Gherkin Language:</strong><ul>
+<li>Purpose: Write requirements in plain English using the Given-When-Then format.</li>
+<li>Benefit: Ensures all stakeholders understand the requirements.</li>
+</ul>
+</li>
+<li><strong>Collaboration:</strong><ul>
+<li>Tools: Integrates with Azure DevOps and Git.</li>
+<li>Benefit: Facilitates collaboration between BAs, developers, and testers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Development:</strong><ul>
+<li><strong>SpecFlow:</strong><ul>
+<li>Integration: Works with Visual Studio and other .NET tools.</li>
+<li>Functionality: Converts Gherkin scenarios into executable code.</li>
+</ul>
+</li>
+<li><strong>SpecFlow+ Runner:</strong><ul>
+<li>Purpose: Advanced test execution and reporting.</li>
+<li>Benefit: Provides detailed insights and control over test runs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Testing:</strong><ul>
+<li><strong>Automated Testing:</strong><ul>
+<li>CI/CD Integration: Supports automated acceptance tests in CI/CD pipelines.</li>
+<li>Benefit: Ensures consistent test execution.</li>
+</ul>
+</li>
+<li><strong>SpecFlow+ LivingDoc:</strong><ul>
+<li>Purpose: Generates living documentation from feature files.</li>
+<li>Benefit: Keeps documentation up-to-date.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Project Delivery:</strong><ul>
+<li><strong>Continuous Feedback:</strong><ul>
+<li>Tools: SpecFlow+ LivingDoc and SpecMap.</li>
+<li>Benefit: Provides continuous feedback on requirements and tests.</li>
+</ul>
+</li>
+<li><strong>Documentation:</strong><ul>
+<li>LivingDoc: Keeps stakeholders informed with up-to-date documentation.</li>
+<li>Benefit: Ensures the final product meets requirements.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="feature-files-and-components">Feature Files and Components</h2>
+<pre><code class="language-gherkin">Feature: Checkout Process
+  As a customer
+  I want to complete a purchase
+  So that I can receive my ordered items
+
+  Background:
+    Given I am logged in to the e-commerce website
+    And my shopping cart is empty
+
+  Scenario: Add Items to Cart
+    Given I am on the product page
+    When I add &quot;Product A&quot; to my cart
+    And I add &quot;Product B&quot; to my cart
+    Then my cart should contain 2 items
+
+  Scenario Outline: Checkout with Different Payment Methods
+    Given my cart contains &quot;&lt;item_count&gt;&quot; items
+    When I proceed to checkout
+    And I select &quot;&lt;payment_method&gt;&quot; as payment method
+    Then I should receive a confirmation email
+
+    Examples:
+      | item_count | payment_method  |
+      | 1          | Credit Card     |
+      | 2          | PayPal          |
+      | 3          | Bank Transfer   |
+
+</code></pre>
+<ul>
+<li><strong>Feature:</strong>
+Defines the feature being tested.
+Provides a high-level description.</li>
+<li><strong>Scenario:</strong>
+Outlines a specific test case or scenario.
+Describes a sequence of steps.</li>
+<li><strong>Scenario Outline:</strong>
+Used for multiple data sets for the same scenario.
+Uses placeholders for input values.</li>
+<li><strong>Background:</strong>
+Defines steps executed before each scenario.
+Avoids repeating setup steps.</li>
+</ul>
+<h3 id="value-types">Value Types</h3>
+<ul>
+<li>Passing Numbers:</li>
+</ul>
+<pre><code class="language-gherkin">Given The first number is 20
+</code></pre>
+<ul>
+<li>Passing Strings:</li>
+</ul>
+<pre><code class="language-gherkin">When I add &quot;Product A&quot; to my cart
+</code></pre>
+<h3 id="working-with-specflow-tables">Working with SpecFlow Tables</h3>
+<p>SpecFlow's Table object represents tabular data from feature files.</p>
+<h4 id="data-table">Data Table:</h4>
+<p>Passes multiple values or records into step definitions.</p>
+<pre><code class="language-gherkin">Scenario: Add multiple users
+  Given I have the following users
+    | FirstName | LastName  |
+    | John      | Doe       |
+    | Jane      | Smith     |
+  When I add these users to the system
+  Then I should see these users in the user list
+
+</code></pre>
+<p>** Accessing data tables</p>
+<pre><code class="language-gherkin">[Given(@&quot;I have the following users&quot;)]
+public void GivenIHaveTheFollowingUsers(Table table)
+{
+    foreach (var row in table.Rows)
+    {
+        string firstName = row[&quot;FirstName&quot;];
+        string lastName = row[&quot;LastName&quot;];
+        Console.WriteLine($&quot;FirstName: {firstName}, LastName: {lastName}&quot;);
+    }
+}
+</code></pre>
+<h4 id="examples-table">Examples Table:</h4>
+<p>Defines input/output combinations for Scenario Outlines.</p>
+<pre><code class="language-gherkin">Scenario Outline: Log in with multiple users
+  Given I am on the login page
+  When I enter username &quot;&lt;username&gt;&quot; and password &quot;&lt;password&gt;&quot;
+  Then I should see the dashboard for &quot;&lt;username&gt;&quot;
+
+  Examples:
+    | username | password |
+    | user1    | pass1    |
+    | user2    | pass2    |
+</code></pre>
+<p>** Accessing the Examples Table:</p>
+<pre><code class="language-gherkin">[When(@&quot;I enter username &quot;&quot;(.*)&quot;&quot; and password &quot;&quot;(.*)&quot;&quot;&quot;)]
+public void WhenIEnterUsernameAndPassword(string username, string password)
+{
+    Console.WriteLine($&quot;Username: {username}, Password: {password}&quot;);
+}
+</code></pre>
+<h4 id="handling-tables">Handling Tables</h4>
+<p><strong>Converting Tables to Custom Objects:</strong></p>
+<pre><code class="language-csharp">var users = table.CreateSet&lt;User&gt;();
+
+public class User
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+</code></pre>
+<p><strong>Converting Table to List or dictionary:</strong></p>
+<pre><code class="language-csharp">var settings = table.Rows.ToDictionary(row =&gt; row[&quot;Setting&quot;], row =&gt; row[&quot;Value&quot;]);
+</code></pre>
+<p><strong>Using CreateDynamicInstance():</strong>
+Creates a dynamic object from a single table row.</p>
+<pre><code class="language-Gherkin">Scenario: Create a product from a single row table
+  Given I have the following product
+    | ProductID | Name   | Price |
+    | 123       | Laptop | 1000  |
+</code></pre>
+<pre><code class="language-csharp">[Given(@&quot;I have the following product&quot;)]
+public void GivenIHaveTheFollowingProduct(Table table)
+{
+    var product = table.CreateDynamicInstance();
+    Console.WriteLine($&quot;ProductID: {product.ProductID}, Name: {product.Name}, Price: {product.Price}&quot;);
+}
+</code></pre>
+<p><strong>Using CreateDynamicSet():</strong></p>
+<p>Creates a collection of dynamic objects from table rows.</p>
+<pre><code class="language-Ghrkin">Scenario: Create multiple products from a table
+  Given I have the following products
+    | ProductID | Name       | Price |
+    | 123       | Laptop     | 1000  |
+    | 456       | Smartphone | 500   |
+</code></pre>
+<pre><code class="language-csharp">[Given(@&quot;I have the following products&quot;)]
+public void GivenIHaveTheFollowingProducts(Table table)
+{
+    var products = table.CreateDynamicSet();
+    foreach (var product in products)
+    {
+        Console.WriteLine($&quot;ProductID: {product.ProductID}, Name: {product.Name}, Price: {product.Price}&quot;);
+    }
+}
+</code></pre>
+<h4 id="specflow-hooks">SpecFlow Hooks</h4>
+<ul>
+<li>Hooks are methods that run at specific points in the test execution lifecycle.</li>
+<li>Used for setup, teardown, and configuration.</li>
+<li>Common hook types: <code>BeforeTestRun</code>, <code>AfterTestRun</code>, <code>BeforeFeature</code>, <code>AfterFeature</code>, <code>BeforeScenario</code>, <code>AfterScenario</code>, <code>BeforeStep</code>,  <code>AfterStep</code>.</li>
+</ul>
+<pre><code class="language-csharp">using TechTalk.SpecFlow;
+
+namespace LWASpecflow.Hooks
+{
+    [Binding]
+    public sealed class TestInitializer
+    {
+        [BeforeScenario(&quot;@tag1&quot;)]
+        public void BeforeScenariowithTag() { }
+
+        [BeforeScenario(Order = 1)]
+        public void FirstBeforeScenario() { }
+
+        [BeforeScenario]
+        public void BeforeScenario() { }
+
+        [BeforeTestRun]
+        public static void BeforeTestRun() { }
+
+        [AfterScenario]
+        public void AfterScenario() { }
+    }
+}
+</code></pre>
+<ul>
+<li><code>BeforeFeature</code>/<code>AfterFeature</code> and <code>BeforeTestRun</code>/<code>AfterTestRun</code> methods must be static.</li>
+</ul>
+<h3 id="working-with-tables-single-and-multiple-columns">Working with Tables (Single and Multiple Columns)</h3>
+<ul>
+<li>Single Column Data:</li>
+</ul>
+<pre><code class="language-Gherkin">Scenario: List of single column data
+  Given the following items:
+    | Item   |
+    | Apple  |
+    | Banana |
+    | Cherry |
+</code></pre>
+<pre><code class="language-csharp">[Given(@&quot;the following items:&quot;)]
+public void GivenTheFollowingItems(Table table)
+{
+    List&lt;string&gt; items = table.Rows.Select(row =&gt; row[&quot;Item&quot;]).ToList();
+    foreach (var item in items)
+    {
+        Console.WriteLine(item);
+    }
+}
+</code></pre>
+<ul>
+<li>Multiple Column Data::</li>
+</ul>
+<pre><code class="language-Gherkin">Scenario: List of key-value pairs
+  Given the following items:
+    | Key1   | Value1 |
+    | Apple  | 1      |
+    | Banana | 2      |
+    | Cherry | 3      |
+</code></pre>
+<pre><code class="language-csharp">[Given(@&quot;the following items:&quot;)]
+public void GivenTheFollowingItems(Table table)
+{
+    Dictionary&lt;string, string&gt; items = table.Rows.ToDictionary(row =&gt; row[&quot;Key1&quot;], row =&gt; row[&quot;Value1&quot;]);
+    foreach (var item in items)
+    {
+        Console.WriteLine($&quot;Key: {item.Key}, Value: {item.Value}&quot;);
+    }
+}
+</code></pre>
+<h4 id="specflow-reports">SpecFlow Reports</h4>
+<ul>
+<li>SpecFlow+ LivingDoc generates HTML test execution reports.</li>
+<li>Provides summaries and detailed scenario execution reports.</li>
+<li>
+<p>Generating Reports (Excluding Test Results)</p>
+</li>
+<li>
+<p>Install SpecFlow.Plus.LivingDoc.CLI:</p>
+</li>
+</ul>
+<pre><code class="language-bash">dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+dotnet tool update --global SpecFlow.Plus.LivingDoc.CLI // optional
+</code></pre>
+<ol>
+<li>Generate Living Documentation:</li>
+<li>From test assembly:</li>
+</ol>
+<pre><code class="language-bash">livingdoc test-assembly C:\Work\MyProject.Specs\bin\Debug\netcoreapp3.1\MyProject.Specs.dll -t C:\Work\MyProject.Specs\bin\debug\netcoreapp3.1\TestExecution.json
+</code></pre>
+<ul>
+<li>From feature files:</li>
+</ul>
+<pre><code class="language-bash">livingdoc feature-folder C:\Work\MyProject.Specs -t C:\Work\MyProject.Specs\bin\debug\netcoreapp3.1\TestExecution.json
+</code></pre>
+<h2 id="extent-reporting-with-specflow">Extent Reporting with SpecFlow</h2>
+<ul>
+<li>
+<p>Extent Reports supports BDD frameworks.</p>
+</li>
+<li>
+<p><strong>Steps:</strong></p>
+</li>
+<li>Install ExtentReports package.</li>
+<li>Add FeatureContext for feature details in hooks class.</li>
+<li>Initialize ExtentReports in hooks class.</li>
+</ul>
+<pre><code class="language-csharp">[BeforeTestRun]
+public static void InitializeExtentReports()
+{
+    var reportPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + &quot;TestReport.html&quot;;
+    _extentReports = new ExtentReports();
+    var SparkReport = new ExtentSparkReporter(reportPath);
+    _extentReports.AttachReporter(SparkReport);
+}
+</code></pre>
+<ol>
+<li>Flush the report after test run.</li>
+</ol>
+<pre><code class="language-csharp">[AfterTestRun]
+public static void closeExtentReports()
+{
+    _extentReports.Flush();
+}
+</code></pre>
+<h3 id="creating-extent-report-ui-with-step-definitions">Creating Extent Report UI with Step Definitions</h3>
+<p>Defining and Logging in Reports in hook files.</p>
+<pre><code class="language-csharp">[BeforeScenario()]
+public void InitializeDriver()
+{
+    var feature = _extentReports.CreateTest&lt;Feature&gt;(_featureContext.FeatureInfo.Title);
+    _scenario = feature.CreateNode&lt;Scenario&gt;(_scenarioContext.ScenarioInfo.Title);
+}
+
+[AfterStep]
+public void AfterTestSteps()
+{
+    if (_scenarioContext.TestError == null)
+    {
+        switch (_scenarioContext.StepContext.StepInfo.StepDefinitionType)
+        {
+            case TechTalk.SpecFlow.Bindings.StepDefinitionType.Given:
+                _scenario.CreateNode&lt;Given&gt;(_scenarioContext.StepContext.StepInfo.Text);
+                break;
+            case TechTalk.SpecFlow.Bindings.StepDefinitionType.When:
+                _scenario.CreateNode&lt;Given&gt;(_scenarioContext.StepContext.StepInfo.Text);
+                break;
+            case TechTalk.SpecFlow.Bindings.StepDefinitionType.Then:
+                _scenario.CreateNode&lt;Given&gt;(_scenarioContext.StepContext.StepInfo.Text);
+                break;
+        }
+    }
+    else
+    {
+        switch (_scenarioContext.StepContext.StepInfo.StepDefinitionType)
+        {
+            case TechTalk.SpecFlow.Bindings.StepDefinitionType.Given:
+                _scenario.CreateNode&lt;Given&gt;(_scenarioContext.StepContext.StepInfo.Text).Fail();
+                break;
+            case TechTalk.SpecFlow.Bindings.StepDefinitionType.When:
+                _scenario.CreateNode&lt;Given&gt;(_scenarioContext.StepContext.StepInfo.Text).Fail();
+                break;
+            case TechTalk.SpecFlow.Bindings.StepDefinitionType.Then:
+                _scenario.CreateNode&lt;Given&gt;(_scenarioContext.StepContext.StepInfo.Text).Fail();
+                break;
+        }
+    }
+}
+</code></pre>
+<h2 id="environment-and-configuration-file-management">Environment and Configuration File Management <a id="file-configuration"></a></h2>
+<ol>
+<li>
+<p><strong>Getting Path and Configuring Project to Store Files:</strong></p>
+<p><code>csharp
+string workingDir = Environment.CurrentDirectory;
+string projectDir = Directory.GetParent(workingDir).Parent.Parent.ToString();</code></p>
+</li>
+<li>
+<p><strong>Accessing Data from <code>App.config</code>:</strong></p>
+<ul>
+<li>
+<p>Use the <code>ConfigurationManager</code> class.</p>
+</li>
+<li>
+<p><strong>AppSettings:</strong></p>
+<p><code>csharp
+var appSettings = ConfigurationManager.AppSettings;
+string browserName = ConfigurationManager.AppSettings["browser"];</code></p>
+</li>
+<li>
+<p><strong>ConnectionStrings:</strong></p>
+<p><code>csharp
+var connectionString = ConfigurationManager.ConnectionStrings["Key"].ConnectionString;</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="javascriptexecutor-in-selenium">JavaScriptExecutor in Selenium <a id="JavaScriptExecutor-Selenium"></a></h2>
+<ul>
+<li>JavaScriptExecutor allows executing JavaScript code in the browser context.</li>
+<li>Useful for operations not directly supported by Selenium.</li>
+<li>Provides two methods <code>ExecuteScript</code> and <code>ExecuteAsyncScript</code>.</li>
+</ul>
+<h3 id="steps-to-use">steps to use:</h3>
+<ol>
+<li><strong>Import the package:</strong> import org.openqa.selenium.JavascriptExecutor;</li>
+<li><strong>Create a reference:</strong> JavascriptExecutor js = (JavascriptExecutor)driver;</li>
+<li><strong>Call the method:</strong> js.executeScript(script, args);</li>
+</ol>
+<h3 id="executescript">ExecuteScript</h3>
+<p>Executes JavaScript in the current window or frame.
+Returns values of types: WebElement, List, String, Long, Boolean.</p>
+<pre><code class="language-csharp">using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+class Program
+{
+    static void Main()
+    {
+        IWebDriver driver = new ChromeDriver();
+        driver.Navigate().GoToUrl(&quot;[https://example.com](https://example.com)&quot;);
+        IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+        IWebElement elementToScrollTo = driver.FindElement(By.Id(&quot;elementId&quot;));
+        js.ExecuteScript(&quot;arguments[0].scrollIntoView(true);&quot;, elementToScrollTo);
+
+        js.ExecuteScript(&quot;arguments[0].style.backgroundColor = 'yellow';&quot;, elementToScrollTo);
+
+        string title = (string)js.ExecuteScript(&quot;return document.title;&quot;);
+        Console.WriteLine(&quot;Page Title: &quot; + title);
+
+        IWebElement button = driver.FindElement(By.Id(&quot;buttonId&quot;));
+        js.ExecuteScript(&quot;arguments[0].click();&quot;, button);
+
+        IWebElement inputField = driver.FindElement(By.Id(&quot;inputFieldId&quot;));
+        js.ExecuteScript(&quot;arguments[0].value='New Value';&quot;, inputField);
+
+        driver.Quit();
+    }
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

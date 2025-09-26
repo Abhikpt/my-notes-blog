@@ -1,0 +1,327 @@
+[🏠 Home](../README.md)
+
+# 🧪 Flipkart Automation Framework - Full Flow (Playwright + C# + BDD + POM)
+
+## 📌 Tech Stack
+
+- **Automation Tool:** [Playwright](https://playwright.dev/dotnet/)
+- **Language:** C#
+- **BDD Framework:** [SpecFlow](https://specflow.org/)
+- **Testing Framework:** NUnit
+- **Design Pattern:** Page Object Model (POM)
+- **Browser Control:** Chromium via Playwright
+
+---
+
+## 🧱 Project Structure
+
+```bash
+FlipkartAutomation/
+├── Features/
+│   ├── Login.feature
+│   ├── SearchProduct.feature
+│   └── AddToCart.feature
+├── StepDefinitions/
+│   ├── LoginSteps.cs
+│   ├── SearchProductSteps.cs
+│   └── AddToCartSteps.cs
+├── Pages/
+│   ├── LoginPage.cs
+│   ├── HomePage.cs
+│   ├── SearchResultsPage.cs
+│   ├── ProductPage.cs
+│   └── CartPage.cs
+├── Drivers/
+│   └── PlaywrightDriver.cs
+├── Hooks/
+│   └── Hooks.cs
+├── Utilities/
+│   └── ConfigReader.cs
+├── appsettings.json
+├── FlipkartAutomation.csproj
+└── playwright.config.ts
+```
+
+---
+
+## 📦 Installation & Setup
+
+### 1. Install NuGet Packages
+
+```bash
+dotnet add package Microsoft.Playwright
+dotnet add package SpecFlow
+dotnet add package SpecFlow.NUnit
+dotnet add package SpecFlow.Tools.MsBuild.Generation
+dotnet add package NUnit
+dotnet add package NUnit3TestAdapter
+```
+
+### 2. Install Playwright Browsers
+
+```bash
+playwright install
+```
+
+---
+
+## ⚙️ Driver Initialization
+
+```csharp
+// Drivers/PlaywrightDriver.cs
+public class PlaywrightDriver
+{
+    private static IPage _page;
+    private static IBrowser _browser;
+    private static IPlaywright _playwright;
+
+    public static async Task<IPage> Initialize()
+    {
+        if (_page == null)
+        {
+            _playwright = await Playwright.CreateAsync();
+            _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });
+            var context = await _browser.NewContextAsync();
+            _page = await context.NewPageAsync();
+        }
+        return _page;
+    }
+
+    public static async Task CloseBrowser()
+    {
+        if (_browser != null)
+        {
+            await _browser.CloseAsync();
+            _page = null;
+        }
+    }
+}
+```
+
+---
+
+## 📃 Page Object Model (POM)
+
+### 🧩 LoginPage.cs
+
+```csharp
+public class LoginPage
+{
+    private readonly IPage _page;
+
+    public LoginPage(IPage page) => _page = page;
+
+    public async Task Login(string username, string password)
+    {
+        await _page.Locator("input[class*='_2IX_2-']").FillAsync(username);
+        await _page.Locator("input[type='password']").FillAsync(password);
+        await _page.Locator("button[type='submit']").ClickAsync();
+    }
+}
+```
+
+### 🧩 HomePage.cs
+
+```csharp
+public class HomePage
+{
+    private readonly IPage _page;
+    public HomePage(IPage page) => _page = page;
+
+    public async Task SearchProduct(string productName)
+    {
+        await _page.Locator("input[name='q']").FillAsync(productName);
+        await _page.Locator("button[type='submit']").ClickAsync();
+    }
+}
+```
+
+### 🧩 SearchResultsPage.cs
+
+```csharp
+public class SearchResultsPage
+{
+    private readonly IPage _page;
+    public SearchResultsPage(IPage page) => _page = page;
+
+    public async Task ClickOnFirstProduct()
+    {
+        var firstProduct = _page.Locator("div._1AtVbE:nth-of-type(3) a");
+        await firstProduct.First.ClickAsync();
+        await _page.WaitForTimeoutAsync(2000);
+    }
+}
+```
+
+### 🧩 ProductPage.cs
+
+```csharp
+public class ProductPage
+{
+    private readonly IPage _page;
+    public ProductPage(IPage page) => _page = page;
+
+    public async Task SwitchToProductTab()
+    {
+        var pages = _page.Context.Pages;
+        if (pages.Count > 1)
+            await pages[1].BringToFrontAsync();
+    }
+
+    public async Task AddToCart()
+    {
+        var addToCartBtn = _page.Locator("button:has-text('Add to cart')");
+        await addToCartBtn.ClickAsync();
+    }
+}
+```
+
+### 🧩 CartPage.cs
+
+```csharp
+public class CartPage
+{
+    private readonly IPage _page;
+    public CartPage(IPage page) => _page = page;
+
+    public async Task<bool> IsProductInCart(string expectedProductName)
+    {
+        var product = await _page.Locator("a._2Kn22P").InnerTextAsync();
+        return product.Contains(expectedProductName);
+    }
+}
+```
+
+---
+
+## 🧪 Feature File - `AddToCart.feature`
+
+```gherkin
+Feature: Product Purchase Flow
+
+  Scenario: User adds a product to cart from search results
+    Given I navigate to Flipkart
+    And I login with username "test_user" and password "test_password"
+    When I search for "iPhone 14"
+    And I select the first product
+    And I add the product to the cart
+    Then I should see the product in the cart
+```
+
+---
+
+## 🔧 Step Definitions - `AddToCartSteps.cs`
+
+```csharp
+[Binding]
+public class AddToCartSteps
+{
+    private IPage _page;
+    private LoginPage _loginPage;
+    private HomePage _homePage;
+    private SearchResultsPage _searchPage;
+    private ProductPage _productPage;
+    private CartPage _cartPage;
+
+    [Given(@"I navigate to Flipkart")]
+    public async Task GivenINavigateToFlipkart()
+    {
+        _page = await PlaywrightDriver.Initialize();
+        await _page.GotoAsync("https://www.flipkart.com/");
+        _loginPage = new LoginPage(_page);
+        _homePage = new HomePage(_page);
+        _searchPage = new SearchResultsPage(_page);
+        _productPage = new ProductPage(_page);
+        _cartPage = new CartPage(_page);
+    }
+
+    [And(@"I login with username ""(.*)"" and password ""(.*)""")]
+    public async Task AndILogin(string username, string password)
+    {
+        await _loginPage.Login(username, password);
+    }
+
+    [When(@"I search for ""(.*)""")]
+    public async Task WhenISearchFor(string product)
+    {
+        await _homePage.SearchProduct(product);
+    }
+
+    [When(@"I select the first product")]
+    public async Task WhenISelectFirstProduct()
+    {
+        await _searchPage.ClickOnFirstProduct();
+        await _productPage.SwitchToProductTab();
+    }
+
+    [When(@"I add the product to the cart")]
+    public async Task WhenIAddToCart()
+    {
+        await _productPage.AddToCart();
+    }
+
+    [Then(@"I should see the product in the cart")]
+    public async Task ThenIShouldSeeProductInCart()
+    {
+        var result = await _cartPage.IsProductInCart("iPhone");
+        Assert.IsTrue(result, "Product not found in cart.");
+    }
+}
+```
+
+---
+
+## 🧼 Hooks - `Hooks.cs`
+
+```csharp
+[Binding]
+public class Hooks
+{
+    [AfterScenario]
+    public async Task AfterScenario()
+    {
+        await PlaywrightDriver.CloseBrowser();
+    }
+}
+```
+
+---
+
+## 🚀 Future Enhancements
+
+- ✅ Add **BasePage.cs** for reusable actions (click, wait, etc.)
+- ✅ Use **ScenarioContext** for passing shared state.
+- ✅ Add **data-driven tests** with Scenario Outlines.
+- ✅ Implement **Serilog or NLog** for test logging.
+- ✅ Integrate with **ExtentReports or SpecFlow+ LivingDoc** for reporting.
+- ✅ Run tests in **parallel** using Playwright Contexts.
+- ✅ Add **secure config management** (user creds, timeouts) using `appsettings.json`.
+
+---
+
+## 📂 Example AppSettings.json
+
+```json
+{
+  "Flipkart": {
+    "BaseUrl": "https://www.flipkart.com/",
+    "Username": "test_user",
+    "Password": "test_password"
+  }
+}
+```
+
+---
+
+## 🛠️ Running Tests
+
+Use this command to build and run all tests:
+
+```bash
+dotnet build
+dotnet test
+```
+
+---
+
+Let me know if you'd like this as a downloadable `.md` file or zipped starter project!

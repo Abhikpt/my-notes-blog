@@ -1,0 +1,1202 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>introduction to Devops - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              introduction to Devops
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#team-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Team Responsibilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolution-of-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧬 Evolution of DevOps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧬 Evolution of DevOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-waterfall-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Waterfall Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-agile-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Agile Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-microsoft-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Microsoft DevOps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 DevOps Core Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-tools-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      DevOps Tools Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Repositories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      ☁️ GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      ☁️ Azure Repos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-amazon-web-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS (Amazon web services):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics-of-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basics of deployment:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics of deployment:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-understand-the-types-of-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Understand the Types of Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deployment-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Deployment Environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-deployment-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deployment Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-deployment-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Deployment Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cicd-in-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. CI/CD in Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-deployment-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Deployment Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-software-server-vs-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application / Software server vs Servers:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application / Software server vs Servers:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-server-options-by-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Server Options by Language
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Server Options by Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      C
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 Azure DevOps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Azure DevOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-devops-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete DevOps Automation:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete DevOps Automation:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd-continuous-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      CD (Continuous delivery):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-ci-with-azure-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building CI with Azure pipelines:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building CI with Azure pipelines:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features-of-azure-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features of Azure Pipelines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Pipelines:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-terms-tool-on-ado-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic terms / tool on ADO board:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-azure-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Azure Pipelines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-a-basic-yaml-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of a Basic YAML Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of a Basic YAML Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breakdown-of-the-yaml-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breakdown of the YAML Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-your-webapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish your webapp:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publish your webapp:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosting-a-static-website-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hosting a static Website on GitHub:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-blazer-app-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish blazer App on GitHub;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../README.md">🏠 Home</a></p>
+<h2 id="table-of-contents">📑 Table of Contents</h2>
+<ul>
+<li><a href="#-introduction">📌 Introduction</a></li>
+<li><a href="#-team-responsibilities">🔄 Team Responsibilities</a></li>
+<li><a href="#-evolution-of-devops">🧬 Evolution of DevOps</a></li>
+<li><a href="#1-waterfall-model">Waterfall Model</a></li>
+<li><a href="#2-agile-method">Agile Method</a></li>
+<li><a href="#3-microsoft-devops">Microsoft DevOps</a></li>
+<li><a href="#-devops-core-concepts">🚀 DevOps Core Concepts</a></li>
+<li><a href="#devops-tools-overview">DevOps Tools Overview</a></li>
+<li><a href="#-repositories">🔄 Repositories</a></li>
+<li><a href="#github">☁️ GitHub</a></li>
+<li><a href="#azure-repos">☁️ Azure Repos</a></li>
+<li><a href="#aws-amazon-web-services">AWS (Amazon web services)</a></li>
+<li><a href="/Devops/github.md">Git tools and commands</a></li>
+<li><a href="#basics-of-deployment">Basics of Deployment</a></li>
+<li><a href="#application--software-server-vs-servers">Application / Software Server vs Servers</a></li>
+<li><a href="#-azure-devops">🔗 Azure DevOps</a></li>
+<li><a href="#-working-with-azure-devops">☁️ Working with Azure DevOps</a></li>
+<li><a href="#-azure-devops-work-process-boards">🗂️ Azure DevOps Work Process (Boards)</a></li>
+<li><a href="#-azure-repos-version-control">📚 Azure Repos: Version Control</a></li>
+<li><a href="#complete-devops-automation">Complete DevOps Automation</a></li>
+<li><a href="#building-ci-with-azure-pipelines">Building CI with Azure Pipelines</a></li>
+<li><a href="#azure-pipelines">Azure Pipelines</a></li>
+<li><a href="#basic-terms--tool-on-ado-board">Basic Terms / Tools on ADO Board</a></li>
+<li><a href="#setting-up-azure-pipelines">Setting Up Azure Pipelines</a></li>
+<li><a href="#example-of-a-basic-yaml-pipeline">Example of a Basic YAML Pipeline</a></li>
+<li><a href="#publish-your-webapp">Publish Your Webapp</a></li>
+<li><a href="#hosting-a-static-website-on-github">Hosting a Static Website on GitHub</a></li>
+<li><a href="#publish-blazor-app-on-github">Publish Blazor App on GitHub</a></li>
+</ul>
+<h2 id="introduction">📌 Introduction</h2>
+<ul>
+<li>Combined <strong>Development</strong> and <strong>Operations</strong> teams work on a single platform.</li>
+<li>Implements <strong>automation</strong> at every stage of the software lifecycle.</li>
+<li>Enables a single team to handle the entire application lifecycle:</li>
+<li>Development</li>
+<li>Testing</li>
+<li>Deployment</li>
+<li>Operations</li>
+</ul>
+<hr />
+<h2 id="team-responsibilities">🔄 Team Responsibilities</h2>
+<table>
+<thead>
+<tr>
+<th>Development Team (Offshore)</th>
+<th>Operation Team (Mainly Onshore)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Developer</td>
+<td>Deploy</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>Maintenance</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>Monitoring</td>
+</tr>
+<tr>
+<td>QA</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="evolution-of-devops">🧬 Evolution of DevOps</h2>
+<h3 id="1-waterfall-model">1. <strong>Waterfall Model</strong></h3>
+<ul>
+<li>Complete development first, then deployment.</li>
+<li>Difficult to accommodate changes.</li>
+<li>Large gap between development and operations.</li>
+</ul>
+<h3 id="2-agile-method">2. <strong>Agile Method</strong></h3>
+<ul>
+<li>Build small, build often.</li>
+<li>Enables frequent changes and feedback.</li>
+<li>Still maintains a gap between dev and ops teams.</li>
+<li>Provide frequent business deliverables on a <strong>monthly or sprint basis</strong>.</li>
+<li>Each sprint includes:</li>
+<li>Development → Build → Test → Deploy</li>
+<li>This iterative process is known as <strong>Scrum</strong>.</li>
+<li><strong>Agile</strong> is a methodology; <strong>Scrum</strong> is one of its implementations.</li>
+</ul>
+<h3 id="3-microsoft-devops">3. <strong>Microsoft DevOps</strong></h3>
+<ul>
+<li>Supports incremental development and continuous changes.</li>
+<li>Developers and operations work on a <strong>single integrated platform</strong>.</li>
+</ul>
+<hr />
+<h2 id="devops-core-concepts">🚀 DevOps Core Concepts</h2>
+<ul>
+<li>All steps (develop → build → test → deploy → monitor) are <strong>continuous</strong>.</li>
+<li>Integrates development and operations into a unified, automated pipeline.</li>
+</ul>
+<h2 id="devops-tools-overview">DevOps Tools Overview</h2>
+<p>This table summarizes popular tools used in various stages of the DevOps lifecycle.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Source Control</strong></th>
+<th><strong>Continuous Integration</strong></th>
+<th><strong>Configuration Management</strong></th>
+<th><strong>Deployment Automation</strong></th>
+<th><strong>Containers</strong></th>
+<th><strong>Orchestration</strong></th>
+<th><strong>Cloud Platforms</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Git</td>
+<td>Jenkins</td>
+<td>Puppet</td>
+<td>Jenkins</td>
+<td>Docker</td>
+<td>Kubernetes</td>
+<td>AWS</td>
+</tr>
+<tr>
+<td>Bitbucket</td>
+<td>Bamboo</td>
+<td>Chef</td>
+<td>VSTS</td>
+<td>Vagrant</td>
+<td>Mesos</td>
+<td>Azure</td>
+</tr>
+<tr>
+<td></td>
+<td>TeamCity</td>
+<td>Ansible</td>
+<td>Octopus Deploy</td>
+<td></td>
+<td>Swarm</td>
+<td>GCP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="repositories">🔄 Repositories</h2>
+<ul>
+<li>Store code for apps, packages, or websites.</li>
+<li>GitHub repositories support automation with <strong>GitHub Actions</strong>.</li>
+</ul>
+<h3 id="github">☁️ GitHub</h3>
+<ul>
+<li><strong>GitHub</strong> is a <strong>company</strong> that offers:</li>
+<li>Cloud Git repositories</li>
+<li>Services to manage and collaborate on code</li>
+<li>GitHub hosts your Git repositories in the cloud, enabling <strong>remote collaboration</strong> and <strong>workflow automation</strong>.</li>
+</ul>
+<h3 id="azure-repos">☁️ Azure Repos</h3>
+<p>Azure Repos is a set of version control tools provided by Azure DevOps.</p>
+<p>🚀 Getting Started:
+- Click "New Repository" to create one.
+- Initialize the repository.
+- Create a branch for the repo to manage changes separately.</p>
+<h3 id="aws-amazon-web-services">AWS (Amazon web services):</h3>
+<p>Before: 
+Our capital expenditure was more around 2 crores in following arrangement:</p>
+<p>•   That’s why cloud platform come in picture.
+•   Cloud is a technology/service in which we share or access our resources (storage, server) from remote location. It must be required internet for any kind of access.
+•   Example of cloud: google drive</p>
+<h2 id="basics-of-deployment">Basics of deployment:</h2>
+<p>Application deployment is the process of making an application available for users to access and use. It involves transferring the built application from the development environment to a server or cloud platform where it can be run and accessed by users. Here’s a basic overview of the deployment process:  </p>
+<h3 id="1-understand-the-types-of-deployment">1.  Understand the Types of Deployment</h3>
+<p>•   Manual Deployment: The developer manually copies application files to the target server and configures the necessary settings. This method is more error-prone but is suitable for simple applications.
+•   Automated Deployment: Tools like Jenkins, GitHub Actions, or Azure DevOps automate the deployment process to minimize errors and improve efficiency.</p>
+<h3 id="2-deployment-environments">2.  Deployment Environments</h3>
+<p>Applications are deployed to different environments for different purposes:
+•   Development Environment: Used by developers to code and test new features.
+•   Testing/Staging Environment: A replica of production where QA can test the application before it goes live.
+•   Production Environment: The live environment accessible by end-users.</p>
+<h3 id="3-deployment-steps">3.  Deployment Steps</h3>
+<p>Here are the typical steps involved in deploying an application:  </p>
+<p>a. <strong>Build the Application</strong><br />
+ • Build Process: Compile the source code into a format that can be run by a server (e.g., an executable or a set of static files).
+•   Package: Bundle the built application into a package or an archive (e.g., .zip, .tar, .war, .dll).  </p>
+<p>b. <strong>Prepare the Target Server</strong><br />
+•   Provisioning: Set up the server (physical or virtual) where the application will run. This could be a dedicated server, a cloud instance, or a container.
+•   Configure Dependencies: Install necessary dependencies such as runtimes (e.g., .NET Core, Java, Node.js), libraries, and other services the application needs.  </p>
+<p>c. <strong>Transfer Files</strong><br />
+•   Transfer the built files to the target server using tools like:
+o   FTP/SFTP: For file transfer between local machines and remote servers.
+o   SSH: Secure shell for accessing servers and copying files (scp).
+o   Deployment Tools: Tools like rsync, Ansible, or container registries for Docker images.   </p>
+<p>d. <strong>Configuration</strong><br />
+•   Environment-Specific Configurations: Set environment-specific configurations, such as database connection strings, API keys, etc.
+•   Environment Variables: Use environment variables to avoid hard-coding sensitive information in your codebase.   </p>
+<p>e. <strong>Start the Application</strong><br />
+•   Web Servers: Deploy the application to a web server like Apache, NGINX, IIS, or Kestrel for serving HTTP requests.
+•   Containers: Deploy as Docker containers using Docker Compose or orchestration tools like Kubernetes.
+•   Cloud Services: Deploy to cloud services like Azure App Service, AWS Elastic Beanstalk, or Google App Engine for easy scaling and management.  </p>
+<p>f. <strong>Monitoring &amp; Testing</strong><br />
+•   Smoke Testing: After deployment, perform basic tests to ensure the application is running correctly.
+•   Monitoring: Set up monitoring for your application to track uptime, performance, and errors. Tools like Prometheus, Grafana, or cloud-native monitoring solutions can help. </p>
+<h3 id="4-deployment-models">4.  Deployment Models</h3>
+<p>•   Rolling Deployment: Gradually update parts of the application so that there is no downtime. This helps ensure that users still have access during the update.
+•   Blue-Green Deployment: Set up two identical environments (blue and green). Deploy to one environment, and if everything works fine, switch traffic from the old environment to the new one.
+•   Canary Deployment: Roll out the new version to a small subset of users first before a full-scale rollout. This approach helps minimize the impact of potential issues.</p>
+<h3 id="5-cicd-in-deployment">5.  CI/CD in Deployment</h3>
+<p>•   Continuous Integration (CI): Automatically build and test code changes whenever developers push code to version control.
+•   Continuous Deployment (CD): Automatically deploy changes that pass tests to the production environment. This provides a seamless flow from development to production.</p>
+<h3 id="6-deployment-tools">6.  Deployment Tools</h3>
+<p>•   Jenkins: Automate build, test, and deployment processes.
+•   GitHub Actions: Run workflows to build, test, and deploy directly from GitHub.
+•   Docker: Containerize applications for easy deployment across different environments.
+•   Kubernetes: Automate deployment, scaling, and management of containerized applications.
+•   Ansible/Chef/Puppet: Automate server setup, configuration, and deployment.</p>
+<h2 id="application-software-server-vs-servers">Application / Software server vs Servers:</h2>
+<p>Application servers are specialized software that provides an environment for applications to run, manage business logic, and facilitate communication between the client and the database or backend services.</p>
+<h3 id="application-server-options-by-language">Application Server Options by Language</h3>
+<p>This document provides an overview of common application server options based on programming language, along with their descriptions and typical use cases.</p>
+<h4 id="c">C</h4>
+<table>
+<thead>
+<tr>
+<th>Application Server</th>
+<th>Description and Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kestrel</strong></td>
+<td>Default ASP.NET Core server, often used with Nginx/Apache as a reverse proxy.</td>
+</tr>
+<tr>
+<td><strong>IIS</strong></td>
+<td>Enterprise server for Windows environments.</td>
+</tr>
+<tr>
+<td><strong>Azure App Service</strong></td>
+<td>Managed cloud hosting for .NET apps.</td>
+</tr>
+<tr>
+<td><strong>NGINX/Apache with Kestrel</strong></td>
+<td>Reverse proxy for handling traffic, SSL, and load balancing.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="python">Python</h4>
+<table>
+<thead>
+<tr>
+<th>Application Server</th>
+<th>Description and Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gunicorn</strong></td>
+<td>WSGI server for Flask, Django, etc., often with NGINX.</td>
+</tr>
+<tr>
+<td><strong>uWSGI</strong></td>
+<td>Flexible WSGI server paired with NGINX for scalability.</td>
+</tr>
+<tr>
+<td><strong>Apache HTTP Server with mod_wsgi</strong></td>
+<td>Hosts Python web applications using Apache.</td>
+</tr>
+<tr>
+<td><strong>Daphne</strong></td>
+<td>Used for real-time Django applications.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="java">Java</h4>
+<table>
+<thead>
+<tr>
+<th>Application Server</th>
+<th>Description and Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apache Tomcat</strong></td>
+<td>Lightweight, popular for JSP/Servlet applications.</td>
+</tr>
+<tr>
+<td><strong>WildFly</strong></td>
+<td>Java EE application server for enterprise-grade apps.</td>
+</tr>
+<tr>
+<td><strong>Apache TomEE</strong></td>
+<td>Tomcat with Java EE capabilities.</td>
+</tr>
+<tr>
+<td><strong>GlassFish</strong></td>
+<td>Full Java EE server, good for development and testing.</td>
+</tr>
+<tr>
+<td><strong>Jetty</strong></td>
+<td>Lightweight, ideal for embedded or microservices deployment.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="notes">Notes</h3>
+<blockquote>
+<p><strong>Actual servers</strong> are the physical or virtual machines that host these application servers, providing the necessary infrastructure and resources for applications to operate.</p>
+</blockquote>
+<hr />
+<h1 id="azure-devops">🔗 <a href="https://dev.azure.com/">Azure DevOps</a></h1>
+<h2 id="complete-devops-automation">Complete DevOps Automation:</h2>
+<h3 id="introduction_1">introduction</h3>
+<p>Basic steps to create a running application is:
+1.  Create the project    
+2.  Build the project        dotnet build     or (dotnet publish -c release -o ./publish)              <br />
+3.  Deployed the project on server to run it      copy the build file and placed in server path like tomcat server or local server  </p>
+<p><strong>CI (Continuous Integration):</strong>
+Continuous Integration is the practice of frequently integrating code changes into a shared repository. Each integration is verified by automated builds and tests to detect issues early in the development process.
+Key Features:
+1.  Frequent Commits: Developers commit code changes regularly (multiple times a day) to the shared repository.
+2.  Automated Builds: Each commit triggers an automated build process, compiling the code to ensure it can be built without errors.
+3.  Automated Testing: Automated tests (unit tests, integration tests) are executed to verify that the new code does not break existing functionality.
+4.  Immediate Feedback: Developers receive quick feedback on the success or failure of their changes, allowing for prompt bug fixes.</p>
+<h3 id="cd-continuous-delivery">CD (Continuous delivery):</h3>
+<p>Continuous Deployment takes Continuous integration a step further by automatically deploying every change that passes automated testing directly to production without manual intervention.
+Key Features:
+1.  No Manual Approval: Changes are deployed to production automatically once they pass the testing phase.
+2.  Frequent Releases: The application can be updated multiple times a day, enabling rapid delivery of new features, improvements, and fixes.
+3.  Monitoring and Rollback: Continuous deployment typically includes monitoring and rollback mechanisms to quickly address any issues that arise in production.</p>
+<h3 id="building-ci-with-azure-pipelines">Building CI with Azure pipelines:</h3>
+<p>•   Azure Pipelines is a cloud-based service provided by Microsoft Azure that enables you to automate the building, testing, and deployment of your applications.
+•   It is a key component of Azure DevOps, which provides a comprehensive set of development tools and services for managing the entire software development lifecycle. 
+•   Azure Pipelines supports various programming languages, platforms, and cloud environments, making it a versatile choice for CI/CD practices.</p>
+<h4 id="key-features-of-azure-pipelines">Key Features of Azure Pipelines</h4>
+<ol>
+<li>Continuous Integration (CI):
+o   Automate the building and testing of code changes when they are pushed to a version control system (like GitHub, Azure Repos, etc.).
+o   Supports various build agents, including Windows, Linux, and macOS.</li>
+<li>Continuous Deployment (CD):
+o   Automatically deploy applications to various environments (development, testing, production) based on defined triggers and conditions.
+o   Integrates with Azure services and third-party services for seamless deployment.</li>
+<li>Multi-Platform Support:
+o   Supports a wide range of programming languages, including .NET, Java, Python, Node.js, and more.
+o   Can deploy applications to various platforms such as Azure App Services, Kubernetes, virtual machines, and other cloud services.</li>
+<li>Pipeline as Code:
+o   Define your CI/CD pipeline using YAML configuration files, allowing versioning and easier management of your pipeline configuration.
+o   YAML pipelines provide a more flexible and powerful way to define the build and release process.</li>
+<li>Integration with Other Tools:
+o   Integrates seamlessly with Azure DevOps Services, GitHub, Docker, Jenkins, and other tools and services, allowing for a more robust development workflow.
+o   Supports the use of custom tasks and extensions to enhance the pipeline capabilities.</li>
+<li>Multi-Stage Pipelines:
+o   Support for creating multi-stage pipelines, allowing you to define various stages (build, test, deploy) in a single YAML file.
+o   Enables complex workflows with conditions and approvals between stages.</li>
+<li>Environment Management:
+o   Manage deployment environments directly within Azure Pipelines, allowing you to define different configurations and approvals for production deployments.</li>
+</ol>
+<h2 id="azure-pipelines">Azure Pipelines:</h2>
+<p><strong>Build pipeline</strong>: 
+•   these pipelines jobs clone the code from assigned repositories and build the project based on instruction provided in yaml file.
+•   Typically, we use build pipeline to publish artifacts of the project
+•   Based on instruction we can build any kind of project like .net, JavaScript, angular etc.</p>
+<p><strong>Release Pipeline:</strong>
+•   These pipelines generally used to deploy the build artifacts into agent Machines.</p>
+<p><strong>Create Release:</strong>
+•   This component helps us to build end to end pipeline (connecting build and release pipeline) For CI/CD implementation.</p>
+<h2 id="basic-terms-tool-on-ado-board">Basic terms / tool on ADO board:</h2>
+<ol>
+<li>Pipeline: A definition of the steps needed to build, test, and deploy your application. Can be defined in the Azure DevOps portal or through a YAML file.</li>
+<li>Build Pipeline: Automates the build process, including compiling code, running tests, and packaging the application. </li>
+<li>Release Pipeline: Automates the deployment of applications to various environments.</li>
+<li>Agent: A software component that runs the tasks in your pipeline. Azure provides hosted agents, or you can set up self-hosted agents.</li>
+<li>Task: A single unit of work that does something, like compiling code or running tests.</li>
+</ol>
+<h2 id="setting-up-azure-pipelines">Setting Up Azure Pipelines</h2>
+<ol>
+<li>Create an Azure DevOps Organization:
+o   Go to the Azure DevOps website and create a new organization if you don't have one.</li>
+<li>Create a New Project:
+o   Within your Azure DevOps organization, create a new project to house your pipeline.</li>
+<li>Create a Pipeline:
+o   Go to the Pipelines section and select "New Pipeline."
+o   Follow the wizard to connect your repository (e.g., GitHub, Azure Repos) and select the YAML file or configure your pipeline.</li>
+<li>Run the Pipeline:
+o   Once the pipeline is created, you can manually trigger it or let it run automatically based on the defined triggers.</li>
+</ol>
+<h2 id="example-of-a-basic-yaml-pipeline">Example of a Basic YAML Pipeline</h2>
+<p>Here’s a simple example of a YAML pipeline that builds a .NET application:</p>
+<pre><code class="language-cmd">trigger:
+  - main
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    versioningScheme: 'byBuildNumber'
+    publishWebProjects: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/*.csproj'
+
+</code></pre>
+<h3 id="breakdown-of-the-yaml-pipeline">Breakdown of the YAML Pipeline</h3>
+<ol>
+<li>trigger: Defines the branch that triggers the pipeline. In this case, it triggers on the main branch.</li>
+<li>pool: Specifies the type of agent to use. Here, it uses a hosted Windows agent.</li>
+<li>steps: Lists the tasks to be executed in the pipeline:
+o   The first task uses the DotNetCoreCLI task to build all .csproj projects.
+o   The second task runs tests on all .csproj projects.</li>
+</ol>
+<h2 id="publish-your-webapp">Publish your webapp:</h2>
+<h3 id="hosting-a-static-website-on-github">Hosting a static Website on GitHub:</h3>
+<ol>
+<li>Create a GitHub account on github.com.</li>
+<li>Download either GitHub for Mac or GitHub for Windows, depending on your operating system. Open the app and log in using the account you just created.</li>
+<li>(On Mac): After you login, click advanced and make sure that your name and email are correct. Then, click "Install Command Line Tools", just in case you want to start using the command line later in life.</li>
+<li>Create a new repository in your GitHub application. Name it your-username.github.io. The name is very important. Note the folder that GitHub is saving the repository to. Make sure the "Push to GitHub?" box is checked.</li>
+<li>Move your website's files into the folder that GitHub just created when you made the repository. IMPORTANT: Your homepage HTML file must be called "index.html", and it must exist in the top-level directory.</li>
+<li>Back in the GitHub application, you should see your files in the left column. Make sure they are all checked. If so, enter a message in the text box called "commit summary", something like "initial commit." Then, click the commit button.</li>
+<li>Click the "Publish repo" button in the top right corner.</li>
+<li>Give it about 10 minutes, then check your-username.github.io. Your website should be there!</li>
+</ol>
+<h3 id="publish-blazer-app-on-github">Publish blazer App on GitHub;</h3>
+<p>•   Deployed using GitHub Action
+•   Create workflow
+•   Main.yml file</p>
+<pre><code class="language-code">name: Deploy blazor app to GitHub Pages
+
+# Run workflow on every push to the master branch
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy-to-github-pages:
+    # use ubuntu-latest image to run steps on
+    runs-on: ubuntu-latest
+    steps:
+    # uses GitHub's checkout action to checkout code form the master branch
+    - uses: actions/checkout@v2
+
+    # Setup .NET Core SDK 3.1
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.x
+        include-prerelease: true
+
+    # publishes Blazor project to the release-folder
+    - name: Publish .NET Core Project
+      run: dotnet publish LearningwithAbhi.sln -c Release -o release --nologo
+
+    # changes the base-tag in index.html from '/' to 'LearningwithAbhi' to match GitHub Pages repository subdirectory
+    - name: Change base-tag in index.html from / to LearningwithAbhi
+      run: sed -i 's/&lt;base href=&quot;\/&quot; \/&gt;/&lt;base href=&quot;\/LearningwithAbhi\/&quot; \/&gt;/g' release/wwwroot/index.html
+
+    # copy index.html to 404.html to serve the same file when a file is not found
+    - name: copy index.html to 404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
+
+    # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
+    - name: Add .nojekyll file
+      run: touch release/wwwroot/.nojekyll
+
+    - name: Commit wwwroot to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: release/wwwroot
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

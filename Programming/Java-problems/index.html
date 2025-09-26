@@ -1,0 +1,1214 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Java problems - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Java problems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Java problems</h1>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#jc01">Java string operations</a></li>
+<li><a href="#jc02">Reverse a String</a></li>
+<li><a href="#jc03">Check for Palindrome</a></li>
+<li><a href="#jc04">Fibonacci Series</a></li>
+<li><a href="#jc05">Factorial of a Number</a></li>
+<li><a href="#jc06">Prime Number Check</a></li>
+<li><a href="#jc07">Count Vowels and Consonants</a></li>
+<li><a href="#jc08">Sort an Array</a></li>
+<li><a href="#jc09">Merge Two Arrays</a></li>
+<li><a href="#jc10">Remove Duplicates from an Array</a></li>
+<li><a href="#jc11">Check if a Number is Armstrong</a></li>
+<li><a href="#jc12">Reverse a Number</a></li>
+<li><a href="#jc13">Calculate GCD of Two Numbers</a></li>
+<li><a href="#jc14">Check for Anagram</a></li>
+<li><a href="#jc15">Count the Number of Digits in a Number</a></li>
+<li><a href="#jc16">Print the Prime Numbers in a Range</a></li>
+<li><a href="#jc17">Find the Second Largest Element in an Array</a></li>
+<li><a href="#jc18">Swap Two Numbers</a></li>
+<li><a href="#jc19">Print the Pascal's Triangle</a></li>
+<li><a href="#jc20">Find the Missing Number in an Array</a></li>
+<li><a href="#jc21">Convert Decimal to Binary</a></li>
+<li><a href="#jc22">Check for Perfect Number</a></li>
+<li><a href="#jc23">Implementing a Simple Calculator</a></li>
+<li><a href="#jc24">Find the Sum of Digits of a Number</a></li>
+<li><a href="#jc25">Find the Length of a String</a></li>
+<li><a href="#jc26">Check if a String is Empty</a></li>
+<li><a href="#jc27">Count the Occurrences of a Character in a String</a></li>
+<li><a href="#jc28">Find the First Non-Repeated Character in a String</a></li>
+<li><a href="#jc29">Remove All Whitespaces from a String</a></li>
+<li><a href="#jc30">Find the Common Elements in Two Arrays</a></li>
+<li><a href="#jc31">Find the Factorial of a Number using Recursion</a></li>
+<li><a href="#jc32">Generate Random Numbers</a></li>
+<li><a href="#jc33">Check if a Year is Leap Year</a></li>
+<li><a href="#jc34">Find the Sum of First N Natural Numbers</a></li>
+<li><a href="#jc35">Implement a Simple Login System</a></li>
+<li><a href="#jc36">Check if a String Contains Another String</a></li>
+<li><a href="#jc37">Find the Maximum Occurring Character in a String</a></li>
+<li><a href="#jc38">Implementing Bubble Sort</a></li>
+<li><a href="#jc39">Implementing Selection Sort</a></li>
+<li><a href="#jc40">Find the Longest Substring Without Repeating Characters</a></li>
+<li><a href="#jc41">Find the Largest Element in an Array</a></li>
+<li><a href="#jc42">Email Validation</a></li>
+<li><a href="#jc43">File Reading and Tokenization</a>  </li>
+<li><a href="#jc44">Different List Operations</a><br />
+  a. <a href="#jc44a">Reverse ArrayList</a><br />
+  b. <a href="#jc44b">Merge Sorted List</a>  </li>
+<li><a href="#jc45">Examples of HashMap</a><br />
+  a. <a href="#jc45a">Iterating over Map</a><br />
+  b. <a href="#jc45b">Two Sum Problem</a><br />
+  c. <a href="#jc45c">Using Hashtable and Iterating Through Keys</a>  </li>
+<li><a href="#jc46">Working with Design Patterns</a><br />
+  a. <a href="#jc46a">Singleton Design Pattern</a><br />
+  b. <a href="#jc46b">Factory Design Pattern</a>  </li>
+<li><a href="#jc47">Convert a Roman Numeral to an Integer</a>  </li>
+<li><a href="#jc48">Increment a Number Represented as an Array</a>  </li>
+</ol>
+<hr />
+<p><br>
+<br>
+<br></p>
+<ol>
+<li>Java string operations: <a id="jc01"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.*;
+public class Main {
+    public static void main(String[] args) {      
+
+      ArrayList&lt;String&gt; str = new ArrayList&lt;&gt;() ;
+
+      str.add(&quot;ab&quot;);
+      str.add(&quot;ce&quot;);
+      str.add(0,&quot;df&quot;);
+      System.out.println(String.join(&quot;-&quot;,str ));
+
+      str.set(1, &quot;Blue&quot;);      //updating value at index 01
+      System.out.println(String.join(&quot;-&quot;,str ));    // join the list value
+
+
+      String str1 = &quot;Hello Abhishek&quot;;
+
+     char ch = str.charAt(0);
+      System.out.println(ch);    // print character from string
+
+     System.out.println(str1.toUpperCase());
+     System.out.println(str1.toLowerCase());
+
+
+      boolean bl = str1.equals(&quot;hello abhishek&quot;);
+      System.out.println(bl);
+
+    // 
+      boolean b2 = str1.equalsIgnoreCase(&quot;hello abhishek&quot;);
+      System.out.println(b2);      
+
+      int i1 = str1.indexOf(&quot;e&quot;); // Output: 1
+      System.out.println(i1);
+
+
+    //        
+      int i2 = str1.lastIndexOf(&quot;e&quot;); // Output: 12
+      System.out.println(i2);
+
+
+    //------ String Modification-------
+    String str2 = &quot; Hello Abhishek  &quot;;
+
+     System.out.println(str2);
+
+    System.out.println(str2.trim());    // trimmed left and right space
+
+    String s3=  str2.replace(&quot;Abhi&quot;, &quot;Ani&quot;);
+    System.out.println(str2);
+    System.out.println(s3);
+
+
+    //--------Splitting and Joining----------
+
+    String[] spl = str2.split(&quot; &quot;);
+    String[] spl2 = &quot; i love my country &quot;.split(&quot; &quot;);
+
+    for(String s : spl)
+    System.out.println(s );
+
+    String result = String.join(&quot;-&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;); // Output: &quot;a-b-c&quot;
+    System.out.println(result );
+
+    String result2 = String.join( &quot;-&quot;, spl2 );     // adding array values
+    System.out.println(result2 );
+
+  }
+}
+</code></pre>
+<ol>
+<li>Reverse a String: <a id="jc02"></a></li>
+</ol>
+<pre><code class="language-java">public class ReverseString {
+public static void main(String[] args) { String str = &quot;Automation&quot;;
+StringBuilder reversed = new StringBuilder(str).reverse(); System.out.println(reversed);
+}
+}
+</code></pre>
+<ol>
+<li>Check for Palindrome: <a id="jc03"></a></li>
+</ol>
+<pre><code class="language-java">public class Palindrome {
+public static void main(String[] args) { String str = &quot;madam&quot;;
+String reversed = new StringBuilder(str).reverse().toString(); System.out.println(str.equals(reversed));
+}
+}
+</code></pre>
+<ol>
+<li>Fibonacci Series: <a id="jc04"></a></li>
+</ol>
+<pre><code class="language-java">public class Fibonacci {
+public static void main(String[] args) {
+int n = 10, num1 = 0, num2 = 1;
+System.out.print(&quot;Fibonacci Series: &quot; + num1 + &quot;, &quot; + num2);
+for (int i = 2; i &lt; n; i++) {
+int num3 = num1 + num2; System.out.print(&quot;, &quot; + num3); num1 = num2;
+num2 = num3;
+}
+} 
+}
+</code></pre>
+<ol>
+<li>Factorial of a Number: <a id="jc05"></a></li>
+</ol>
+<pre><code class="language-java">public class Factorial {
+public static void main(String[] args) {
+int num = 5, factorial = 1;
+for (int i = 1; i &lt;= num; i++) { factorial *= i;
+}
+System.out.println(factorial);
+}
+}
+</code></pre>
+<ol>
+<li>Prime Number Check: <a id="jc06"></a></li>
+</ol>
+<pre><code class="language-java">public class PrimeCheck {
+public static void main(String[] args) {
+int num = 11;
+boolean isPrime = true;
+for (int i = 2; i &lt;= Math.sqrt(num); i++) {
+if (num % i == 0) { isPrime = false; break;
+}
+}
+System.out.println(isPrime);
+}
+}
+</code></pre>
+<ol>
+<li>Count Vowels and Consonants: <a id="jc07"></a></li>
+</ol>
+<pre><code class="language-java">public class VowelConsonantCount {
+public static void main(String[] args) { String str = &quot;Automation&quot;;
+
+int vowels = 0, consonants = 0;
+for (char c : str.toCharArray()) {
+if (&quot;aeiouAEIOU&quot;.indexOf(c) != -1) { vowels++;
+} else if (Character.isLetter(c)) { consonants++;
+}
+}
+System.out.println(&quot;Vowels: &quot; + vowels + &quot;, Consonants: &quot; + consonants);
+}
+}
+</code></pre>
+<ol>
+<li>Sort an Array: <a id="jc08"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.Arrays;
+public class SortArray {
+public static void main(String[] args) {
+int[] arr = {5, 2, 8, 1, 3};
+Arrays.sort(arr); System.out.println(Arrays.toString(arr));
+}
+}
+</code></pre>
+<ol>
+<li>Merge Two Arrays: <a id="jc09"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.Arrays;
+public class MergeArrays {
+public static void main(String[] args) {
+int[] arr1 = {1, 3, 5};
+int[] arr2 = {2, 4, 6};
+int[] merged = new int[arr1.length + arr2.length]; System.arraycopy(arr1, 0, merged, 0, arr1.length); System.arraycopy(arr2, 0, merged, arr1.length, arr2.length);
+
+System.out.println(Arrays.toString(merged));
+}
+}
+</code></pre>
+<ol>
+<li>Remove Duplicates from an Array: <a id="jc10"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.HashSet;
+public class RemoveDuplicates {
+public static void main(String[] args) {
+int[] arr = {1, 2, 2, 3, 4, 4};
+HashSet&lt;Integer&gt; set = new HashSet&lt;&gt;();
+for (int num : arr) { set.add(num);
+}
+System.out.println(set);
+}
+}
+</code></pre>
+<ol>
+<li>Check if a Number is Armstrong: <a id="jc11"></a></li>
+</ol>
+<pre><code class="language-java">public class ArmstrongNumber {
+public static void main(String[] args) { int num = 153, sum = 0, temp = num; while (temp != 0) {
+int digit = temp % 10;
+sum += Math.pow(digit, 3); temp /= 10;
+}
+System.out.println(num == sum);
+}
+}
+</code></pre>
+<ol>
+<li>Reverse a Number: <a id="jc12"></a></li>
+</ol>
+<pre><code class="language-java">public class ReverseNumber {
+public static void main(String[] args) { int num = 12345, reversed = 0; while (num != 0) {
+reversed = reversed * 10 + num % 10; num /= 10;
+}
+System.out.println(reversed);
+}
+}
+</code></pre>
+<ol>
+<li>Calculate GCD of Two Numbers: <a id="jc13"></a></li>
+</ol>
+<pre><code class="language-java">public class GCD {
+public static void main(String[] args) {
+int a = 60, b = 48;
+while (b != 0) {
+int temp = b;
+
+b = a % b; a = temp;
+}
+System.out.println(a);
+}
+}
+</code></pre>
+<ol>
+<li>Check for Anagram: <a id="jc14"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.Arrays;
+public class AnagramCheck {
+public static void main(String[] args) { String str1 = &quot;listen&quot;, str2 = &quot;silent&quot;; char[] arr1 = str1.toCharArray(); char[] arr2 = str2.toCharArray(); Arrays.sort(arr1);
+Arrays.sort(arr2);
+System.out.println(Arrays.equals(arr1, arr2));
+}
+}
+</code></pre>
+<ol>
+<li>Count the Number of Digits in a Number: <a id="jc15"></a></li>
+</ol>
+<pre><code class="language-java">public class CountDigits {
+public static void main(String[] args) {
+int num = 12345;
+int count = String.valueOf(num).length(); System.out.println(count);
+}
+}
+</code></pre>
+<ol>
+<li>Print the Prime Numbers in a Range: <a id="jc16"></a></li>
+</ol>
+<pre><code class="language-java">public class PrimeInRange {
+public static void main(String[] args) {
+
+int start = 10, end = 50;
+for (int num = start; num &lt;= end; num++) {
+boolean isPrime = true;
+for (int i = 2; i &lt;= Math.sqrt(num); i++) {
+if (num % i == 0) { isPrime = false; break;
+}
+}
+if (isPrime CC num &gt; 1) { System.out.print(num + &quot; &quot;);
+}
+}
+}
+}
+</code></pre>
+<ol>
+<li>Find the Second Largest Element in an Array: <a id="jc17"></a></li>
+</ol>
+<pre><code class="language-java">public class SecondLargest {
+public static void main(String[] args) {
+int[] arr = {12, 35, 1, 10, 34, 1};
+int first = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+for (int num : arr) {
+if (num &gt; first) { second = first; first = num;
+} else if (num &gt; second CC num != first) { second = num;
+}
+}
+System.out.println(second);
+} 
+}
+</code></pre>
+<ol>
+<li>Swap Two Numbers: <a id="jc18"></a></li>
+</ol>
+<pre><code class="language-java">public class SwapNumbers {
+public static void main(String[] args) {
+int a = 5, b = 10;
+a = a + b;
+b = a - b;
+a = a - b;
+System.out.println(&quot;a: &quot; + a + &quot;, b: &quot; + b);
+}
+}
+</code></pre>
+<ol>
+<li>Print the Pascal's Triangle: <a id="jc19"></a></li>
+</ol>
+<pre><code class="language-java">public class PascalsTriangle {
+public static void main(String[] args) {
+int rows = 5;
+for (int i = 0; i &lt; rows; i++) {
+int num = 1;
+System.out.format(&quot;%&quot; + (rows - i) * 2 + &quot;s&quot;, &quot;&quot;);
+for (int j = 0; j &lt;= i; j++) { System.out.format(&quot;%4d&quot;, num); num = num * (i - j) / (j + 1);
+}
+System.out.println();
+}
+}
+}
+</code></pre>
+<ol>
+<li>Find the Missing Number in an Array: <a id="jc20"></a></li>
+</ol>
+<pre><code class="language-java">public class MissingNumber {
+public static void main(String[] args) {
+
+int[] arr = {1, 2, 4, 5, 6};
+int n = arr.length + 1; int total = n * (n + 1) / 2; for (int num : arr) {
+total -= num;
+}
+System.out.println(total);
+}
+}
+</code></pre>
+<ol>
+<li>Convert Decimal to Binary: <a id="jc21"></a></li>
+</ol>
+<pre><code class="language-java">public class DecimalToBinary {
+public static void main(String[] args) {
+int num = 10;
+String binary = Integer.toBinaryString(num); System.out.println(binary);
+}
+}
+</code></pre>
+<ol>
+<li>Check for Perfect Number: <a id="jc22"></a></li>
+</ol>
+<pre><code class="language-java">public class PerfectNumber {
+public static void main(String[] args) {
+int num = 28, sum = 0;
+for (int i = 1; i &lt;= num / 2; i++) {
+if (num % i == 0) { sum += i;
+}
+}
+System.out.println(num == sum);
+}
+}
+</code></pre>
+<ol>
+<li>Implementing a Simple Calculator: <a id="jc23"></a></li>
+</ol>
+<pre><code class="language-java">
+import java.util.Scanner;
+public class SimpleCalculator {
+public static void main(String[] args) { Scanner scanner = new Scanner(System.in); System.out.print(&quot;Enter first number: &quot;); double num1 = scanner.nextDouble(); System.out.print(&quot;Enter second number: &quot;); double num2 = scanner.nextDouble();
+System.out.print(&quot;Enter operation (+, -, *, /): &quot;); char operation = scanner.next().charAt(0); double result;
+switch (operation) {
+case '+': result = num1 + num2; break; case '-': result = num1 - num2; break; case '*': result = num1 * num2; break; case '/': result = num1 / num2; break;
+default: throw new IllegalArgumentException(&quot;Invalid operation&quot;);
+}
+System.out.println(&quot;Result: &quot; + result);
+}
+}
+</code></pre>
+<ol>
+<li>Find the Sum of Digits of a Number: <a id="jc24"></a></li>
+</ol>
+<pre><code class="language-java">
+public class SumOfDigits {
+public static void main(String[] args) {
+int num = 12345, sum = 0;
+while (num != 0) { sum += num % 10; num /= 10;
+}
+
+System.out.println(sum);
+}
+}
+</code></pre>
+<ol>
+<li>Find the Length of a String: <a id="jc25"></a></li>
+</ol>
+<pre><code class="language-java">public class StringLength {
+public static void main(String[] args) { String str = &quot;Automation&quot;; System.out.println(str.length());
+}
+}
+</code></pre>
+<ol>
+<li>Check if a String is Empty: <a id="jc26"></a></li>
+</ol>
+<pre><code class="language-java">public class CheckEmptyString {
+public static void main(String[] args) { String str = &quot;&quot;;
+System.out.println(str.isEmpty());
+}
+}
+</code></pre>
+<ol>
+<li>Count the Occurrences of a Character in a String: <a id="jc27"></a></li>
+</ol>
+<pre><code class="language-java">public class CountCharacter {
+public static void main(String[] args) { String str = &quot;Automation&quot;;
+char ch = 'a';
+int count = 0;
+for (char c : str.toCharArray()) {
+if (c == ch) count++;
+}
+System.out.println(count);
+}
+}
+</code></pre>
+<ol>
+<li>Find the First Non-Repeated Character in a String: <a id="jc28"></a></li>
+</ol>
+<pre><code class="language-java">
+import java.util.LinkedHashMap;
+import java.util.Map;
+public class FirstNonRepeatedCharacter {
+public static void main(String[] args) { String str = &quot;swiss&quot;;
+Map&lt;Character, Integer&gt; charCount = new LinkedHashMap&lt;&gt;();
+for (char c : str.toCharArray()) {
+charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+}
+for (Map.Entry&lt;Character, Integer&gt; entry : charCount.entrySet()) {
+if (entry.getValue() == 1) { System.out.println(entry.getKey()); break;
+}
+}
+}
+}
+</code></pre>
+<ol>
+<li>Remove All Whitespaces from a String: <a id="jc29"></a></li>
+</ol>
+<pre><code class="language-java">public class RemoveWhitespaces {
+public static void main(String[] args) { String str = &quot; A u t o m a t i o n &quot;;
+String result = str.replaceAll(&quot;\\s+&quot;, &quot;&quot;); System.out.println(result);
+}
+}
+</code></pre>
+<ol>
+<li>Find the Common Elements in Two Arrays: <a id="jc30"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.HashSet;
+public class CommonElements {
+
+public static void main(String[] args) {
+int[] arr1 = {1, 2, 3, 4};
+int[] arr2 = {3, 4, 5, 6};
+HashSet&lt;Integer&gt; set = new HashSet&lt;&gt;();
+for (int num : arr1) { set.add(num);
+}
+for (int num : arr2) {
+if (set.contains(num)) { System.out.print(num + &quot; &quot;);
+}
+}
+}
+}
+</code></pre>
+<ol>
+<li>Find the Factorial of a Number using Recursion: <a id="jc31"></a></li>
+</ol>
+<pre><code class="language-java">
+public class FactorialRecursion {
+public static void main(String[] args) { int num = 5; System.out.println(factorial(num));
+}
+
+
+static int factorial(int n) {
+if (n == 0) return 1;
+return n * factorial(n - 1);
+}
+}
+</code></pre>
+<ol>
+<li>Generate Random Numbers: <a id="jc32"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.Random;
+public class RandomNumbers {
+
+public static void main(String[] args) { Random random = new Random(); for (int i = 0; i &lt; 5; i++) {
+System.out.println(random.nextInt(100)); // Random number between 0-SS
+}
+}
+}
+</code></pre>
+<ol>
+<li>Check if a Year is Leap Year: <a id="jc33"></a></li>
+</ol>
+<pre><code class="language-java">public class LeapYear {
+public static void main(String[] args) {
+int year = 2024;
+boolean isLeap = (year % 4 == 0 CC year % 100 != 0) || (year % 400 == 0); System.out.println(isLeap);
+}
+}
+</code></pre>
+<ol>
+<li>Find the Sum of First N Natural Numbers: <a id="jc34"></a></li>
+</ol>
+<pre><code class="language-java">public class SumOfNaturalNumbers {
+public static void main(String[] args) { int n = 10, sum = n * (n + 1) / 2; System.out.println(sum);
+}
+}
+</code></pre>
+<ol>
+<li>Implement a Simple Login System: <a id="jc35"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.Scanner;
+public class SimpleLogin {
+public static void main(String[] args) { String username = &quot;admin&quot;;
+String password = &quot;password&quot;;
+Scanner scanner = new Scanner(System.in);
+
+System.out.print(&quot;Enter username: &quot;); String inputUsername = scanner.nextLine(); System.out.print(&quot;Enter password: &quot;); String inputPassword = scanner.nextLine();
+if (username.equals(inputUsername) CC password.equals(inputPassword)) { System.out.println(&quot;Login successful!&quot;);
+} else {
+System.out.println(&quot;Login failed!&quot;);
+}
+}
+}
+</code></pre>
+<ol>
+<li>Check if a String Contains Another String: <a id="jc36"></a></li>
+</ol>
+<pre><code class="language-java">public class StringContains {
+public static void main(String[] args) { String str1 = &quot;Automation Testing&quot;; String str2 = &quot;Testing&quot;; System.out.println(str1.contains(str2));
+}
+}
+</code></pre>
+<ol>
+<li>Find the Maximum Occurring Character in a String: <a id="jc37"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.HashMap;
+public class MaxOccurringCharacter {
+public static void main(String[] args) { String str = &quot;programming&quot;;
+HashMap&lt;Character, Integer&gt; charCount = new HashMap&lt;&gt;();
+for (char c : str.toCharArray()) {
+charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+}
+char maxChar = str.charAt(0);
+
+int maxCount = 0;
+for (char c : charCount.keySet()) {
+if (charCount.get(c) &gt; maxCount) { maxCount = charCount.get(c); maxChar = c;
+}
+}
+System.out.println(maxChar);
+}
+}
+</code></pre>
+<ol>
+<li>Implementing Bubble Sort: <a id="jc38"></a></li>
+</ol>
+<pre><code class="language-java">public class BubbleSort {
+public static void main(String[] args) {
+int[] arr = {64, 34, 25, 12, 22, 11, 90};
+int n = arr.length;
+for (int i = 0; i &lt; n - 1; i++) {
+for (int j = 0; j &lt; n - i - 1; j++) {
+if (arr[j] &gt; arr[j + 1]) { int temp = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = temp;
+}
+}
+}
+for (int num : arr) { System.out.print(num + &quot; &quot;);
+}
+}
+}
+ ```
+
+39. Implementing Selection Sort: &lt;a id=&quot;jc39&quot;&gt;&lt;/a&gt;
+```java
+public class SelectionSort {
+public static void main(String[] args) {
+int[] arr = {64, 25, 12, 22, 11};
+int n = arr.length;
+for (int i = 0; i &lt; n - 1; i++) {
+int minIndex = i;
+for (int j = i + 1; j &lt; n; j++) {
+if (arr[j] &lt; arr[minIndex]) { minIndex = j;
+}
+}
+int temp = arr[minIndex]; arr[minIndex] = arr[i]; arr[i] = temp;
+}
+for (int num : arr) { System.out.print(num + &quot; &quot;);
+}
+}
+}
+</code></pre>
+<ol>
+<li>How do you find the longest substring without repeating characters in a string?  <a id="jc40"></a></li>
+</ol>
+<p>Steps:
+•   Use two pointers (left and right) to maintain a sliding window.
+•   Use a HashMap to store characters and their last seen indices.
+•   If a duplicate character is found, move the left pointer to avoid repetition.
+•   Keep track of the maximum length encountered.</p>
+<pre><code class="language-java"> import java.util.HashMap;
+
+public class LongestUniqueSubstring {
+    public static int lengthOfLongestSubstring(String s) {
+        HashMap&lt;Character, Integer&gt; charIndexMap = new HashMap&lt;&gt;();
+        int maxLength = 0;
+        int left = 0;
+
+        for (int right = 0; right &lt; s.length(); right++) {
+            char currentChar = s.charAt(right);
+
+            // If character is repeated, update left pointer
+            if (charIndexMap.containsKey(currentChar)) {
+                left = Math.max(charIndexMap.get(currentChar) + 1, left);
+            }
+
+            // Store the latest index of the character
+            charIndexMap.put(currentChar, right);
+
+            // Update max length
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String str = &quot;abcabcbb&quot;;
+        System.out.println(&quot;Longest substring length: &quot; + lengthOfLongestSubstring(str)); // Output: 3 (&quot;abc&quot;)
+    }
+}
+</code></pre>
+<ol>
+<li>Find the Largest Element in an Array: <a id="jc41"></a></li>
+</ol>
+<pre><code class="language-java">public class LargestInArray {
+public static void main(String[] args) {
+int[] arr = {1, 3, 5, 7, 9};
+int largest = arr[0];
+for (int num : arr) {
+if (num &gt; largest) { largest = num;
+}
+}
+System.out.println(largest);
+}
+}
+</code></pre>
+<ol>
+<li>Email Validation <a id="jc42"></a></li>
+</ol>
+<pre><code class="language-java">import java.util.regex.*;
+
+public class EmailValidation {
+    public static void main(String[] args) {
+        String email = &quot;john@example.com&quot;;
+        String emailRegex = &quot;^[a-zA-Z0-9_+&amp;*-]+(?:\\.[a-zA-Z0-9_+&amp;*-]+)*@&quot; +
+                           &quot;(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$&quot;;
+
+        Pattern pat = Pattern.compile(emailRegex);
+        System.out.println(pat.matcher(email).matches() ? &quot;Valid&quot; : &quot;Invalid&quot;);
+    }
+}
+</code></pre>
+<ol>
+<li>File Reading and Tokenization   <a id="jc43"></a></li>
+</ol>
+<pre><code class="language-java">import java.io.*;
+import java.util.*;
+
+public class FileReadAndTokenize {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(&quot;file.txt&quot;));
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            StringTokenizer tokenizer = new StringTokenizer(line, &quot; ,.;!?&quot;);
+            while (tokenizer.hasMoreTokens()) {
+                System.out.println(tokenizer.nextToken());
+            }
+        }
+        reader.close();
+    }
+}
+</code></pre>
+<ol>
+<li>Different List Operations <a id="jc44"></a>
+  a. Reverse ArrayList <a id="jc44a"></a></li>
+</ol>
+<pre><code class="language-java">Collections.reverse(list);
+</code></pre>
+<p>b. Merge sorted list <a id="jc44b"></a></p>
+<pre><code class="language-java">public static List&lt;Integer&gt; mergeSortedLists(List&lt;Integer&gt; list1, List&lt;Integer&gt; list2) {
+    List&lt;Integer&gt; result = new ArrayList&lt;&gt;();
+    int i = 0, j = 0;
+
+    while (i &lt; list1.size() &amp;&amp; j &lt; list2.size()) {
+        if (list1.get(i) &lt; list2.get(j)) {
+            result.add(list1.get(i++));
+        } else {
+            result.add(list2.get(j++));
+        }
+    }
+
+    while (i &lt; list1.size()) result.add(list1.get(i++));
+    while (j &lt; list2.size()) result.add(list2.get(j++));
+
+    return result;
+}
+</code></pre>
+<ol>
+<li>Some example of HashMap <a id="jc45"></a></li>
+</ol>
+<p>a. Iterating over Map <a id="jc45a"></a></p>
+<pre><code class="language-java">    for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) {
+    System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());
+   }
+</code></pre>
+<p>b.  Return the indices of the two numbers such that they add up to targe  <a id="jc45b"></a></p>
+<pre><code class="language-java">    public int[] twoSum(int[] nums, int target) {
+    Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+    for (int i = 0; i &lt; nums.length; i++) {
+        int complement = target - nums[i];
+        if (map.containsKey(complement)) {
+            return new int[] { map.get(complement), i };
+        }
+        map.put(nums[i], i);
+    }
+    throw new IllegalArgumentException(&quot;No solution&quot;);
+}
+</code></pre>
+<p>c. how to use a Hashtable and how to iterate through its keys <a id="jc45c"></a></p>
+<pre><code class="language-java">Hashtable&lt;Integer, String&gt; hashtable = new Hashtable&lt;&gt;();
+hashtable.put(1, &quot;one&quot;);
+
+// Iteration
+Enumeration&lt;Integer&gt; keys = hashtable.keys();
+while (keys.hasMoreElements()) {
+    Integer key = keys.nextElement();
+    System.out.println(&quot;Key: &quot; + key + &quot; Value: &quot; + hashtable.get(key));
+}
+</code></pre>
+<ol>
+<li>Working with design pattern  <a id="jc46"></a></li>
+</ol>
+<p>a. Singletone design pattern <a id="jc46a"></a></p>
+<pre><code class="language-java">  public class Singleton {
+    private static Singleton instance;
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+  }
+</code></pre>
+<p>b. Factory design patter <a id="jc46b"></a></p>
+<pre><code class="language-java">public interface Shape { void draw(); }
+
+public class Circle implements Shape {
+    public void draw() { System.out.println(&quot;Drawing Circle&quot;); }
+}
+
+public class ShapeFactory {
+    public Shape getShape(String type) {
+        if (type.equalsIgnoreCase(&quot;CIRCLE&quot;)) {
+            return new Circle();
+        }
+        return null;
+    }
+}
+</code></pre>
+<ol>
+<li>Convert a Roman numeral to an integer.  <a id="jc47"></a></li>
+</ol>
+<pre><code class="language-java">  public int romanToInt(String s) {
+    Map&lt;Character, Integer&gt; values = new HashMap&lt;&gt;();
+    values.put('I', 1);
+    values.put('V', 5);
+    values.put('X', 10);
+    values.put('L', 50);
+    values.put('C', 100);
+    values.put('D', 500);
+    values.put('M', 1000);
+    int result = 0;
+    for (int i = 0; i &lt; s.length(); i++) {
+      int currentVal = values.get(s.charAt(i));
+      int nextVal = (i &lt; s.length()-1) ? values.get(s.charAt(i + 1))
+      : 0;
+      if (currentVal &lt; nextVal) {
+      result-= currentVal;
+      } else {
+      result += currentVal;
+      }
+    }
+    return result;
+  }
+</code></pre>
+<ol>
+<li>Given a non-empty array of digits representing a non-negative integer, increment one to the integer.   <a id="jc48"></a>
+example:  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[1,2,3]</td>
+<td>[1,2,4]</td>
+</tr>
+<tr>
+<td>[1,2,9]</td>
+<td>[1,3,0]</td>
+</tr>
+<tr>
+<td>[9,9,9]</td>
+<td>[1,0,0,0]</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-java">  public static  int[] plusOne(int[] digits) {
+    int n = digits.length;
+
+    // Start from the end of the array  (check and retrun by incrementing 1 if any digit &lt; 9)  [1,9,9] =&gt; [2,0,0]
+    for (int i = n - 1; i &gt;= 0; i--) {
+        if (digits[i] &lt; 9) {
+            digits[i]++;
+            return digits;    // return out from code if &lt; 9
+        }
+        digits[i] = 0;    // iterate for all digit if greater than 9
+    }
+
+    // If all digits were 9, we need to add a new digit at the beginning (9,9,9) =&gt; (1,0,0,0)
+    int[] newNumber = new int[n + 1];
+    newNumber[0] = 1;
+    return newNumber;
+}
+</code></pre>
+<ol>
+<li></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

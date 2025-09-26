@@ -1,0 +1,656 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Automationwith java - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#restassured-api-automation-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automationwith java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-send-a-get-request-and-validate-status-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Send a GET Request and Validate Status Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-send-a-post-request-to-create-a-new-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Send a POST Request to Create a New User
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-validate-a-json-response-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validate a JSON Response Field
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-add-headers-in-a-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Add Headers in a Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-validate-api-response-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Validate API Response Time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verify-json-field-presence" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Verify JSON Field Presence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-send-a-put-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Send a PUT Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-handle-pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Handle Pagination
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-verify-json-array-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Verify JSON Array Size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-extract-specific-data-from-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Extract Specific Data from JSON
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-send-a-delete-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Send a DELETE Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-validate-specific-header-in-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Validate Specific Header in Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-handle-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Handle Query Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-handle-basic-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Handle Basic Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-send-a-patch-request-for-partial-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Send a PATCH Request for Partial Update
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-add-multiple-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Add Multiple Query Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-check-for-non-null-json-path-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Check for Non-Null JSON Path Value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-send-form-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Send Form Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../README.md">🏠 Home</a></p>
+<h1 id="restassured-api-automation-notes">📘 RestAssured API Automation Notes</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-send-a-get-request-and-validate-status-code">Send a GET Request and Validate Status Code</a></li>
+<li><a href="#2-send-a-post-request-to-create-a-new-user">Send a POST Request to Create a New User</a></li>
+<li><a href="#3-validate-a-json-response-field">Validate a JSON Response Field</a></li>
+<li><a href="#4-add-headers-in-a-request">Add Headers in a Request</a></li>
+<li><a href="#5-validate-api-response-time">Validate API Response Time</a></li>
+<li><a href="#6-verify-json-field-presence">Verify JSON Field Presence</a></li>
+<li><a href="#7-send-a-put-request">Send a PUT Request</a></li>
+<li><a href="#8-handle-pagination">Handle Pagination</a></li>
+<li><a href="#9-verify-json-array-size">Verify JSON Array Size</a></li>
+<li><a href="#10-extract-specific-data-from-json">Extract Specific Data from JSON</a></li>
+<li><a href="#11-send-a-delete-request">Send a DELETE Request</a></li>
+<li><a href="#12-validate-specific-header-in-response">Validate Specific Header in Response</a></li>
+<li><a href="#13-handle-query-parameters">Handle Query Parameters</a></li>
+<li><a href="#14-handle-basic-authentication">Handle Basic Authentication</a></li>
+<li><a href="#15-send-a-patch-request-for-partial-update">Send a PATCH Request for Partial Update</a></li>
+<li><a href="#16-add-multiple-query-parameters">Add Multiple Query Parameters</a></li>
+<li><a href="#17-check-for-non-null-json-path-value">Check for Non-Null JSON Path Value</a></li>
+<li><a href="#18-send-form-parameters">Send Form Parameters</a></li>
+</ol>
+<h2 id="1-send-a-get-request-and-validate-status-code">1. Send a GET Request and Validate Status Code</h2>
+<p><strong>Explanation:</strong><br />
+RestAssured allows sending requests and validating responses in a single line.</p>
+<pre><code class="language-java">given()
+.when()
+    .get(&quot;https://api.example.com/users&quot;)
+.then()
+    .statusCode(200);
+</code></pre>
+<hr />
+<h2 id="2-send-a-post-request-to-create-a-new-user">2. Send a POST Request to Create a New User</h2>
+<p><strong>Explanation:</strong><br />
+Sends a JSON body with user data and checks if the response returns a <code>201 Created</code> status.</p>
+<pre><code class="language-java">given()
+    .header(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .body(&quot;{\&quot;name\&quot;: \&quot;John\&quot;, \&quot;job\&quot;: \&quot;Engineer\&quot;}&quot;)
+.when()
+    .post(&quot;https://api.example.com/users&quot;)
+.then()
+    .statusCode(201);
+</code></pre>
+<hr />
+<h2 id="3-validate-a-json-response-field">3. Validate a JSON Response Field</h2>
+<p><strong>Explanation:</strong><br />
+Validates the <code>email</code> field in the JSON response.</p>
+<pre><code class="language-java">.then()
+    .body(&quot;data.email&quot;, equalTo(&quot;john@example.com&quot;));
+</code></pre>
+<hr />
+<h2 id="4-add-headers-in-a-request">4. Add Headers in a Request</h2>
+<p><strong>Explanation:</strong><br />
+Adds <code>Content-Type</code> and <code>Authorization</code> headers.</p>
+<pre><code class="language-java">given()
+    .header(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .header(&quot;Authorization&quot;, &quot;Bearer your_token&quot;);
+</code></pre>
+<hr />
+<h2 id="5-validate-api-response-time">5. Validate API Response Time</h2>
+<p><strong>Explanation:</strong><br />
+Checks if the response time is less than 2 seconds.</p>
+<pre><code class="language-java">.then()
+    .time(lessThan(2000L));
+</code></pre>
+<hr />
+<h2 id="6-verify-json-field-presence">6. Verify JSON Field Presence</h2>
+<p><strong>Explanation:</strong><br />
+Checks if the response JSON has a <code>"data"</code> key.</p>
+<pre><code class="language-java">.then()
+    .body(&quot;$&quot;, hasKey(&quot;data&quot;));
+</code></pre>
+<hr />
+<h2 id="7-send-a-put-request">7. Send a PUT Request</h2>
+<p><strong>Explanation:</strong><br />
+Sends a PUT request to update user information.</p>
+<pre><code class="language-java">given()
+    .header(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .body(&quot;{\&quot;name\&quot;: \&quot;John\&quot;, \&quot;job\&quot;: \&quot;Manager\&quot;}&quot;)
+.when()
+    .put(&quot;https://api.example.com/users/2&quot;)
+.then()
+    .statusCode(200);
+</code></pre>
+<hr />
+<h2 id="8-handle-pagination">8. Handle Pagination</h2>
+<p><strong>Explanation:</strong><br />
+Keeps requesting pages until there are no more records.</p>
+<pre><code class="language-java">int page = 1;
+while (true) {
+    Response response = given()
+        .queryParam(&quot;page&quot;, page++)
+    .when()
+        .get(&quot;https://api.example.com/users&quot;);
+
+    List&lt;Object&gt; users = response.jsonPath().getList(&quot;data&quot;);
+    if (users.isEmpty()) break;
+    users.forEach(System.out::println);
+}
+</code></pre>
+<hr />
+<h2 id="9-verify-json-array-size">9. Verify JSON Array Size</h2>
+<p><strong>Explanation:</strong><br />
+Checks if the <code>data</code> array has exactly six items.</p>
+<pre><code class="language-java">.then()
+    .body(&quot;data.size()&quot;, equalTo(6));
+</code></pre>
+<hr />
+<h2 id="10-extract-specific-data-from-json">10. Extract Specific Data from JSON</h2>
+<p><strong>Explanation:</strong><br />
+Uses <code>jsonPath()</code> to extract values.</p>
+<pre><code class="language-java">String email = response.jsonPath().getString(&quot;data.email&quot;);
+</code></pre>
+<hr />
+<h2 id="11-send-a-delete-request">11. Send a DELETE Request</h2>
+<p><strong>Explanation:</strong><br />
+Removes a user resource, expecting status <code>204 No Content</code>.</p>
+<pre><code class="language-java">.when()
+    .delete(&quot;https://api.example.com/users/2&quot;)
+.then()
+    .statusCode(204);
+</code></pre>
+<hr />
+<h2 id="12-validate-specific-header-in-response">12. Validate Specific Header in Response</h2>
+<p><strong>Explanation:</strong><br />
+Checks if <code>Content-Type</code> header matches expected value.</p>
+<pre><code class="language-java">.then()
+    .header(&quot;Content-Type&quot;, equalTo(&quot;application/json; charset=utf-8&quot;));
+</code></pre>
+<hr />
+<h2 id="13-handle-query-parameters">13. Handle Query Parameters</h2>
+<p><strong>Explanation:</strong><br />
+Passes query parameters like <code>page=2</code>.</p>
+<pre><code class="language-java">given()
+    .queryParam(&quot;page&quot;, 2);
+</code></pre>
+<hr />
+<h2 id="14-handle-basic-authentication">14. Handle Basic Authentication</h2>
+<p><strong>Explanation:</strong><br />
+Provides username and password for basic auth.</p>
+<pre><code class="language-java">given()
+    .auth().basic(&quot;username&quot;, &quot;password&quot;);
+</code></pre>
+<hr />
+<h2 id="15-send-a-patch-request-for-partial-update">15. Send a PATCH Request for Partial Update</h2>
+<p><strong>Explanation:</strong><br />
+Updates only specific fields without overwriting all data.</p>
+<pre><code class="language-java">given()
+    .header(&quot;Content-Type&quot;, &quot;application/json&quot;)
+    .body(&quot;{\&quot;job\&quot;: \&quot;Architect\&quot;}&quot;)
+.when()
+    .patch(&quot;https://api.example.com/users/2&quot;)
+.then()
+    .statusCode(200);
+</code></pre>
+<hr />
+<h2 id="16-add-multiple-query-parameters">16. Add Multiple Query Parameters</h2>
+<p><strong>Explanation:</strong><br />
+Adds multiple query parameters using repeated <code>queryParam()</code> calls.</p>
+<pre><code class="language-java">given()
+    .queryParam(&quot;page&quot;, 1)
+    .queryParam(&quot;limit&quot;, 10);
+</code></pre>
+<hr />
+<h2 id="17-check-for-non-null-json-path-value">17. Check for Non-Null JSON Path Value</h2>
+<p><strong>Explanation:</strong><br />
+Ensures <code>data.email</code> is not null.</p>
+<pre><code class="language-java">.then()
+    .body(&quot;data.email&quot;, notNullValue());
+</code></pre>
+<hr />
+<h2 id="18-send-form-parameters">18. Send Form Parameters</h2>
+<p><strong>Explanation:</strong><br />
+Used when content type is <code>application/x-www-form-urlencoded</code>.</p>
+<pre><code class="language-java">given()
+    .contentType(&quot;application/x-www-form-urlencoded&quot;)
+    .formParam(&quot;username&quot;, &quot;john&quot;)
+    .formParam(&quot;password&quot;, &quot;1234&quot;);
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

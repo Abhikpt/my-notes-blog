@@ -1,0 +1,705 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Introduction to testing - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-software-testing-and-test-case-design-techniques" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to testing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-case-design-techniques-in-software-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Case Design Techniques in Software Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Case Design Techniques in Software Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-specification-based-or-black-box-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Specification-Based or Black-Box Techniques
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 Example:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b-structure-based-or-white-box-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Structure-Based or White-Box Techniques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-experience-based-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Experience-Based Techniques
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa-engineering-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      QA Engineering Roadmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automation-testing-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automation Testing Roadmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-testing-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software testing lifecycle:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automation-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automation Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automation Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-automation-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Automation Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-automation-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Automation Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../README.md">🏠 Home</a></p>
+<h1 id="introduction-to-software-testing-and-test-case-design-techniques">Introduction to Software Testing and Test Case Design Techniques</h1>
+<h2 id="table-of-contents">Table of Contents:</h2>
+<ol>
+<li><a href="#introduction-to-testing">Introduction to Testing</a></li>
+<li><a href="#test-case-design-techniques">Test Case Design Techniques</a><ul>
+<li><a href="#black-box-testing">Black-Box Testing</a></li>
+<li><a href="#white-box-testing">White-Box Testing</a></li>
+<li><a href="#experience-based-testing">Experience-Based Testing</a></li>
+</ul>
+</li>
+<li><a href="#qa-engineering-roadmap">QA Engineering Roadmap</a></li>
+<li><a href="#automation-testing-roadmap-1">Automation Testing Roadmap</a></li>
+<li><a href="#automation-testing">Automation Testing </a></li>
+<li>Web Automation<br />
+        a. <a href="../SeleniumLearning/Selenium-intro/">Working with Selenium</a> <br />
+        b. <a href="/Testing/Playwright/Playwright-csharp.md">Working with Playwright</a>  <br />
+        c. <a href="/Testing/cypress-javascript.md">working with Cypress</a>    </li>
+<li>API Automation<br />
+        a. <a href="../APIAutomation/RestSharp-API-Automation/">API Automation - Csharp</a><br />
+        b. <a href="../APIAutomation/Automationwith-java/">API Automation - Java</a>  </li>
+<li><a href="../SeleniumLearning/Design-Roboust-Framework/">Design the Roboust Framewrok -C#</a></li>
+<li><a href="#gen-ai-in-testing">GEN AI in Testing</a><ul>
+<li><a href="#test-pyramid-and-left-testing">Test Pyramid and Left Testing</a></li>
+<li><a href="#ai-powered-testing-tools">AI-Powered Testing Tools</a></li>
+</ul>
+</li>
+<li><a href="#automation-with-robot-framework">Automation with Robot Framework</a><ul>
+<li><a href="#robot-framework-features">Robot Framework Features</a></li>
+<li><a href="#robot-framework-installation">Robot Framework Installation</a></li>
+<li><a href="#creating-a-robot-framework-project">Creating a Robot Framework Project</a></li>
+<li><a href="#creating-a-test-suite">Creating a Test Suite</a></li>
+<li><a href="#commonly-used-libraries">Commonly Used Libraries</a></li>
+<li><a href="#types-of-variables">Types of Variables</a></li>
+</ul>
+</li>
+<li><a href="#performance-testing">Performance Testing</a><ul>
+<li><a href="#performance-testing-introduction">Performance Testing Introduction</a></li>
+<li><a href="#performance-testing-tools">Performance Testing Tools</a></li>
+<li><a href="#api-testing-setup">API Testing Setup</a></li>
+</ul>
+</li>
+<li><a href="#graphql-testing">GraphQL Testing</a></li>
+<li><a href="/Testing/SeleniumLearning/Master-xpath-css.md">Mastring Xpath and CSS</a></li>
+<li><a href="#websites-for-automation-practice">Websites for Automation Practice</a>]</li>
+<li><a href="/Devops/Playwright-test-Devops.md">CI CD for you TestAutomation</a></li>
+<li><a href="/interview%20questions/AutomationInterview.md">Automation Interview Question Part-1</a></li>
+<li><a href="/interview%20questions/Testing-interview-ques-2.md">Testing interview Part -02</a></li>
+</ol>
+<h2 id="introduction-to-testing">Introduction to Testing <a id="introduction-to-testing"></a></h2>
+<p>Software testing is a critical process in software development that aims to identify defects or errors in a software application before it is released to end-users. It ensures that the software meets the specified requirements and functions as expected. Effective testing improves software quality, reliability, and user satisfaction.</p>
+<h2 id="test-case-design-techniques-in-software-testing">Test Case Design Techniques in Software Testing <a id="test-case-design-techniques"></a></h2>
+<p>Test case design techniques are essential for planning, designing, and implementing tests for software applications. These techniques can be classified into three major groups:</p>
+<h3 id="a-specification-based-or-black-box-techniques">a. Specification-Based or Black-Box Techniques <a id="black-box-testing"></a></h3>
+<p>Black-box testing focuses on testing the software system based on its functional requirements and specifications without any knowledge of the underlying code or system structure.</p>
+<ol>
+<li>
+<p><strong>Boundary Value Analysis (BVA):</strong></p>
+<ul>
+<li>BVA identifies errors at the input domain's boundary.</li>
+<li>Example: Testing a text box that requires the user to enter a number between 1 and 10.</li>
+<li>Boundary values: 1 and 10.</li>
+<li>Test values: Min (1), Min+1 (2), Min-1 (0), Max (10), Max+1 (11), Max-1 (9).</li>
+</ul>
+</li>
+<li>
+<p><strong>Equivalence Partitioning (EP):</strong></p>
+<ul>
+<li>EP reduces the number of test cases by partitioning input data into classes where all elements within a partition are expected to be treated the same by the software.</li>
+<li>Example: If a program requires an input of numbers between 1 and 100, an EP test would include a range of values, such as 1-50 and 51-100, and numbers outside that range, such as -1 or 101.</li>
+</ul>
+</li>
+<li>
+<p><strong>Decision Table Testing:</strong></p>
+<ul>
+<li>This technique involves designing test cases based on decision tables, which represent different combinations of inputs and their corresponding outputs based on various conditions and scenarios, adhering to business rules.</li>
+</ul>
+<h2 id="example">🔹 Example:</h2>
+<table>
+<thead>
+<tr>
+<th>Condition A</th>
+<th>Condition B</th>
+<th>Action 1</th>
+<th>Action 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>4.  <strong>State Transition Diagrams (STD):</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>* Developers use STDs to test software with a finite number of states of different types. A set of rules that define the response to various inputs guides the transition from one state to another.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Use Case Testing:</strong></p>
+<ul>
+<li>This involves designing test cases to execute different business scenarios and end-user functionalities.</li>
+</ul>
+</li>
+</ol>
+<h3 id="b-structure-based-or-white-box-techniques">b. Structure-Based or White-Box Techniques <a id="white-box-testing"></a></h3>
+<p>White-box testing involves testing the internal structures or components of software applications. In this approach, the tests interact with the code directly.</p>
+<ol>
+<li>
+<p><strong>Statement Testing and Coverage:</strong></p>
+<ul>
+<li>This technique involves executing all the executable statements in the source code at least once.</li>
+</ul>
+</li>
+<li>
+<p><strong>Decision Testing/Branch Coverage:</strong></p>
+<ul>
+<li>Also known as branch coverage, this technique validates all the branches in the code by executing each possible branch from each decision point at least once.</li>
+</ul>
+</li>
+<li>
+<p><strong>Multiple Condition Testing:</strong></p>
+<ul>
+<li>This technique aims to test different combinations of conditions to achieve 100% coverage.</li>
+</ul>
+</li>
+</ol>
+<h3 id="c-experience-based-techniques">c. Experience-Based Techniques <a id="experience-based-testing"></a></h3>
+<p>Experience-based testing relies on the testers’ skill, intuition, and experience to anticipate potential errors in the product.</p>
+<ol>
+<li>
+<p><strong>Error Guessing:</strong></p>
+<ul>
+<li>This testing technique relies on the testers’ skill, intuition, and experience to anticipate potential errors in the product.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exploratory Testing:</strong></p>
+<ul>
+<li>This technique is used to test applications without any formal documentation.</li>
+</ul>
+</li>
+</ol>
+<h2 id="qa-engineering-roadmap">QA Engineering Roadmap <a id="qa-engineering-roadmap"></a></h2>
+<p><img alt="roadMape" src="../TestingImages/qa-engineering-roadmap.png" /></p>
+<h2 id="automation-testing-roadmap">Automation Testing Roadmap <a id="automation-testing-roadmap-1"></a></h2>
+<ol>
+<li>Learn a Languages  - JavaScript, C#, Java, or Python</li>
+<li>Learn all methods suported by tools - Playwright, Selenium, Restsharp, etc.</li>
+<li>Unit testing <ul>
+<li>UI</li>
+<li>API</li>
+<li>DB</li>
+<li>Visual testing</li>
+</ul>
+</li>
+<li>Version control System for remote execution  - Github, Git, Azure</li>
+<li>Run on remote machine</li>
+<li>CI/CD - Jenkins, Git Actions, </li>
+<li>Run in Container - Docker</li>
+</ol>
+<p><img alt="roadMape" src="../TestingImages/automation_roadmap.png" /></p>
+<h2 id="software-testing-lifecycle">Software testing lifecycle:</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[Requirement Gathering &amp; Analysis] --&gt; B[Planning]
+    B --&gt; C[System Design]
+    C --&gt; D[Implementation (Coding)]
+    D --&gt; E[Testing]
+    E --&gt; F[Deployment]
+    F --&gt; G[Maintenance]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#aff,stroke:#333,stroke-width:2px
+    style D fill:#aaf,stroke:#333,stroke-width:2px
+    style E fill:#faa,stroke:#333,stroke-width:2px
+    style F fill:#afa,stroke:#333,stroke-width:2px
+    style G fill:#ffd,stroke:#333,stroke-width:
+</code></pre>
+<h2 id="automation">Automation</h2>
+<p>Automation is a word for applications where reduce human efforts. There are include 
+business process automation (BPA), IT automation, personal applications, business
+related applications, E-commerce applications such as home automation, and more. </p>
+<h2 id="automation-testing">Automation Testing <a id="automation-testing"></a></h2>
+<p>Automation testing involves using specialized tools and scripts to execute test cases, compare actual outcomes with expected results, and report findings. It helps reduce manual effort, improve accuracy, and accelerate the testing process.</p>
+<h4 id="types-of-automation-testing">Types of Automation Testing</h4>
+<ol>
+<li>
+<p><strong>Web Application Testing</strong><br />
+    Automation testing for web applications ensures that the functionality, performance, and compatibility of the application work as expected across different browsers and platforms.  </p>
+<ul>
+<li><strong>Tools Used:</strong> Selenium, Cypress, Playwright, TestCafe.</li>
+</ul>
+</li>
+<li>
+<p><strong>API Testing</strong><br />
+    API testing focuses on verifying the functionality, reliability, and performance of APIs. It ensures that APIs return the correct responses for various requests and handle edge cases effectively.  </p>
+<ul>
+<li><strong>Tools Used:</strong> Postman, RestAssured, SoapUI, Karate.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mobile Application Testing</strong><br />
+    Mobile testing ensures that mobile applications function correctly on various devices, operating systems, and screen sizes. It includes functional, performance, and compatibility testing.  </p>
+<ul>
+<li><strong>Tools Used:</strong> Appium, Espresso, XCUITest, TestComplete.</li>
+</ul>
+</li>
+</ol>
+<h4 id="benefits-of-automation-testing">Benefits of Automation Testing</h4>
+<ul>
+<li>Faster execution of repetitive test cases.</li>
+<li>Improved test coverage and accuracy.</li>
+<li>Early detection of defects.</li>
+<li>Cost and time efficiency in the long run.</li>
+</ul>
+<p>Automation testing is a critical component of modern software development, enabling teams to deliver high-quality applications efficiently.</p>
+<h2 id="_1"></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

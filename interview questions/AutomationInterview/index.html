@@ -1,0 +1,2038 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>AutomationInterview - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#selenium-automation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AutomationInterview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-automation-testing-and-why-is-it-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is automation testing, and why is it important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-how-to-maintain-automation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. How to Maintain Automation Script:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-are-the-advantages-and-disadvantages-of-automation-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What are the advantages and disadvantages of automation testing?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-when-will-you-avoid-automated-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. When will you avoid automated testing?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-do-you-approach-writing-test-scripts-for-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. How do you approach writing test scripts for automation?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-what-strategies-do-you-use-to-identify-areas-where-automation-can-improve-efficiency-or-reduce-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. What strategies do you use to identify areas where automation can improve efficiency or reduce costs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-what-strategies-do-you-use-to-ensure-that-automated-systems-remain-up-to-date-with-changing-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. What strategies do you use to ensure that automated systems remain up-to-date with changing technology?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-other-kinds-of-testing-can-be-performed-on-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. What other kinds of testing can be performed on the application?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-how-are-you-going-to-test-an-application-if-no-requirement-is-given-and-you-got-the-application-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. How are you going to test an application if no requirement is given and you got the application directly?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-what-is-the-difference-between-selenium-rc-and-selenium-webdriver" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. What is the difference between Selenium RC and Selenium WebDriver?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-how-you-will-prioritize-the-test-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. How you will prioritize the test Case?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-do-you-have-idea-about-defect-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Do you have idea about defect lifecycle?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-how-would-you-design-a-test-automation-framework-from-scratch-what-components-would-you-include-and-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. How would you design a test automation framework from scratch? What components would you include and why?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. How would you design a test automation framework from scratch? What components would you include and why?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-folder-structure-for-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample folder structure for framework:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-selenium-suit-has-following-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Selenium suit has following components:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-explain-the-architecture-of-selenium-webdriver" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Explain the architecture of Selenium WebDriver.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Explain the architecture of Selenium WebDriver.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selenium-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium 3:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selenium 4:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-have-you-worked-with-any-automation-tools-if-so-which-ones" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Have you worked with any automation tools? If so, which ones?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-compare-javascript-and-python-for-selenium-scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Compare JavaScript and Python for Selenium scripting.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-explain-the-purpose-of-the-webdriver-interface-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Explain the purpose of the WebDriver interface in Selenium.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-discuss-the-advantages-of-using-python-for-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Discuss the advantages of using Python for automation.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-what-is-the-page-object-model-pom-and-how-does-it-improve-test-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. What is the Page Object Model (POM), and how does it improve test maintenance?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-blackbox-vs-gray-box-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Blackbox vs gray box testing.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-how-to-prioritize-skipping-and-execute-the-test-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. How to prioritize, skipping and execute the test case?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-how-to-run-test-case-parallelly" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. How to run test case parallelly?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-what-can-be-a-problem-while-executing-the-test-case-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. What can be a problem while executing the test case parallel.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-how-to-group-the-test-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. How to group the test script.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-what-is-the-cookies-and-how-we-manage-in-on-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. What is the cookies and how we manage in on selenium
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-how-to-run-the-script-parallelly-on-two-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. How to run the script parallelly on two environments.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-how-to-pass-data-set-in-specflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      28. How to pass data set in SpecFlow:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-how-to-do-data-driven-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      29. How to do data driven testing:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-what-is-the-difference-between-implicit-and-explicit-waits-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      30. What is the difference between implicit and explicit waits in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-how-do-you-handle-frames-or-iframes-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      31. How do you handle frames or iframes in Selenium?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="31. How do you handle frames or iframes in Selenium?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      note:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-how-do-you-handle-alerts-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      32. How do you handle alerts in Selenium?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="32. How do you handle alerts in Selenium?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common exception
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-how-do-you-handle-multiple-windows-or-tabs-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      33. How do you handle multiple windows or tabs in Selenium?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="33. How do you handle multiple windows or tabs in Selenium?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Exceptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-how-do-you-handle-dropdowns-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      34. How do you handle dropdowns in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-how-do-you-handle-file-uploads-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      35. How do you handle file uploads in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-how-do-you-handle-mouse-hover-nested-menu-hovering-context-menu-actions-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      36. How do you handle mouse hover ,nested menu hovering, context menu actions in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-how-do-you-handle-drag-and-drop-actions-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      37. How do you handle drag and drop actions in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-how-do-you-handle-scrolling-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      38. How do you handle scrolling in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-what-are-locators-in-selenium-and-which-locators-do-you-prefer" class="md-nav__link">
+    <span class="md-ellipsis">
+      39. What are locators in Selenium, and which locators do you prefer?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-what-is-xpath-and-when-is-it-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      40. What is XPath, and when is it useful?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-what-is-css-selector-and-when-is-it-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      41. What is CSS selector, and when is it useful?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-how-do-you-handle-dynamic-web-elements-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      42. How do you handle dynamic web elements in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-how-do-you-handle-shadow-dom-elements-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      43. How do you handle shadow DOM elements in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-how-to-take-screenshot-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      44. How to take screenshot in selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-how-to-run-test-in-headless-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      45. How to run test in headless mode?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-how-to-handle-auto-suggestion-like-global-search-of-flipkart" class="md-nav__link">
+    <span class="md-ellipsis">
+      46. How to handle Auto suggestion like Global search of Flipkart.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="46. How to handle Auto suggestion like Global search of Flipkart.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-actions-class-for-better-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Actions Class for Better Control:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-char-and-wait-for-suggestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      input char and wait for suggestion:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-what-is-selenium-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      47. What is Selenium Grid?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-what-is-the-difference-between-driverclose-and-driverquit" class="md-nav__link">
+    <span class="md-ellipsis">
+      48. What is the difference between driver.close() and driver.quit()?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-how-do-you-handle-ssl-certificate-errors-in-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      49. How do you handle SSL certificate errors in Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50-how-do-you-integrate-selenium-with-cicd-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      50. How do you integrate Selenium with CI/CD tools?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-how-do-you-handle-localization-testing-with-selenium" class="md-nav__link">
+    <span class="md-ellipsis">
+      51. How do you handle localization testing with Selenium?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../../README.md">🏠 Home</a></p>
+<h1 id="selenium-automation">Selenium Automation</h1>
+<ul>
+<li><strong>table of Content</strong></li>
+<li><a href="#101">What is automation testing, and why is it important?</a></li>
+<li><a href="#102">How to Maintain Automation Script</a></li>
+<li><a href="#103">What are the advantages and disadvantages of automation testing?</a></li>
+<li><a href="#104"> When will you avoid automated testing?</a></li>
+<li><a href="#105">How do you approach writing test scripts for automation?</a></li>
+<li><a href="#106">What strategies do you use to identify areas where automation can improve efficiency or reduce costs?</a></li>
+<li><a href="#107">What strategies do you use to ensure that automated systems remain up-to-date with changing technology?</a></li>
+<li><a href="#108">What other kinds of testing can be performed on the application?</a></li>
+<li><a href="#109"> How are you going to test an application if no requirement is given and you got the application directly?</a></li>
+<li><a href="#110">What is the difference between Selenium RC and Selenium WebDriver?</a></li>
+<li><a href="#111"> How you will prioritize the test Case?</a></li>
+<li><a href="#112">Do you have idea about defect lifecycle?</a></li>
+<li><a href="#113">How would you design a test automation framework from scratch? What components would you include and why?</a></li>
+<li><a href="#114">Selenium suit has following components:</a></li>
+<li><a href="#115">Explain the architecture of Selenium WebDriver.</a></li>
+<li><a href="#116"> Have you worked with any automation tools? If so, which ones?</a></li>
+<li><a href="#117">Compare JavaScript and Python for Selenium scripting.</a></li>
+<li><a href="#118">Explain the purpose of the WebDriver interface in Selenium.</a></li>
+<li><a href="#119">Discuss the advantages of using Python for automation.</a></li>
+<li><a href="#120">What is the Page Object Model (POM), and how does it improve test maintenance?</a></li>
+<li><a href="#121">Blackbox vs gray box testing.</a></li>
+<li><a href="#122">How to prioritize, skipping and execute the test case?</a></li>
+<li><a href="#123">How to run test case parallelly?</a></li>
+<li><a href="#124">What can be a problem while executing the test case parallel.</a></li>
+<li><a href="#125">How to group the test script</a></li>
+<li><a href="#126">What is the cookies and how we manage in on selenium</a></li>
+<li><a href="#127">How to run the script parallelly on two environments</a></li>
+<li><a href="#128">How to pass data set in SpecFlow</a></li>
+<li><a href="#29-how-to-do-data-driven-testing">How to do data driven testing</a></li>
+<li><a href="#30-what-is-the-difference-between-implicit-and-explicit-waits-in-selenium">What is the difference between implicit and explicit waits in Selenium?</a>  </li>
+<li><a href="#31-how-do-you-handle-frames-or-iframes-in-selenium">How do you handle frames or iframes in Selenium?</a>  </li>
+<li><a href="#32-how-do-you-handle-alerts-in-selenium">How do you handle alerts in Selenium?</a>  </li>
+<li><a href="#33-how-do-you-handle-multiple-windows-or-tabs-in-selenium">How do you handle multiple windows or tabs in Selenium?</a>  </li>
+<li><a href="#34-how-do-you-handle-dropdowns-in-selenium">How do you handle dropdowns in Selenium?</a>  </li>
+<li><a href="#35-how-do-you-handle-file-uploads-in-selenium">How do you handle file uploads in Selenium?</a>  </li>
+<li><a href="#36-how-do-you-handle-mouse-hover-or-context-menu-actions-in-selenium">How do you handle mouse hover or context menu actions in Selenium?</a>  </li>
+<li><a href="#37-how-do-you-handle-drag-and-drop-actions-in-selenium">How do you handle drag and drop actions in Selenium?</a>  </li>
+<li><a href="#38-how-do-you-handle-scrolling-in-selenium">How do you handle scrolling in Selenium?</a>  </li>
+<li><a href="#39-what-are-locators-in-selenium-and-which-locators-do-you-prefer">What are locators in Selenium, and which locators do you prefer?</a>  </li>
+<li><a href="#40-what-is-xpath-and-when-is-it-useful">What is XPath, and when is it useful?</a>  </li>
+<li><a href="#41-what-is-css-selector-and-when-is-it-useful">What is CSS selector, and when is it useful?</a>  </li>
+<li><a href="#42-how-do-you-handle-dynamic-web-elements-in-selenium">How do you handle dynamic web elements in Selenium?</a>  </li>
+<li><a href="#43-how-do-you-handle-shadow-dom-elements-in-selenium">How do you handle shadow DOM elements in Selenium?</a>  </li>
+<li><a href="#44-how-to-take-screenshot-in-selenium">How to take screenshot in Selenium?</a>  </li>
+<li><a href="#45-how-to-run-test-in-headless-mode">How to run tests in headless mode?</a>  </li>
+<li><a href="#46-what-is-selenium-grid">What is Selenium Grid?</a>  </li>
+<li><a href="#47-what-is-the-difference-between-driverclose-and-driverquit">What is the difference between <code>driver.close()</code> and <code>driver.quit()</code>?</a>  </li>
+<li><a href="#48-how-do-you-handle-ssl-certificate-errors-in-selenium">How do you handle SSL certificate errors in Selenium?</a>  </li>
+<li><a href="#49-how-do-you-integrate-selenium-with-cicd-tools">How do you integrate Selenium with CI/CD tools?</a>  </li>
+<li><a href="#50-how-do-you-handle-localization-testing-with-selenium">How do you handle localization testing with Selenium?</a>  </li>
+<li><a href="#46-how-to-handle-auto-suggestion-like-global-search-of-flipkart">How to handle Auto suggestion like Global search of Flipkart.</a></li>
+</ul>
+<h2 id="1-what-is-automation-testing-and-why-is-it-important">1. What is automation testing, and why is it important? <a id="101"></a></h2>
+<p>Automation testing is a process of using automation software tools to write a script to perform test cases such as entering data and comparing the results, etc. is known as Automation testing.<br />
+The goal of Automation Testing is to reduce the number of test cases to be run manually so we can reduce human efforts.<br />
+It is essential for repetitive and time-consuming test scenarios, ensuring quicker feedback and improving test coverage.</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>Speed:</strong> Automated tests execute faster than manual tests, which accelerates the testing process.</li>
+<li><strong>Reusability:</strong> Test scripts can be reused across different versions of an application.</li>
+<li><strong>Consistency:</strong> Automation eliminates human error, ensuring consistent test execution.</li>
+<li><strong>Coverage:</strong> Automation allows for running a large number of test cases in a short period, covering more scenarios.</li>
+<li><strong>Efficiency:</strong> It frees up testers to focus on more complex testing tasks by handling repetitive test cases.</li>
+</ul>
+<h2 id="2-how-to-maintain-automation-script">2. How to Maintain Automation Script: <a id="102"></a></h2>
+<p>Automation scripts are a powerful tool, saving you time and reducing errors. But they are not set-and-forget. Regular maintenance is essential to keep them running smoothly and adapt to changing requirements.</p>
+<ol>
+<li>
+<p><strong>Documentation is Your Best Friend:</strong></p>
+<ul>
+<li>Start with thorough documentation.</li>
+<li>Properly document your automation script, detailing its purpose, inputs, outputs, and dependencies.</li>
+<li>This documentation will be invaluable for future reference and for helping other team members understand and work with the script.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Control:</strong></p>
+<ul>
+<li>Use version control systems like Git to manage your automation script. This enables you to track changes, collaborate with others, and easily roll back to previous versions if issues arise.</li>
+<li>Create branches for new features or bug fixes and merge them when they are stable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Regular Testing:</strong></p>
+<ul>
+<li>Automation scripts can break when systems change, and they need to adapt. Implement automated tests to regularly validate the functionality of your scripts.</li>
+<li>This allows for easier maintenance and reusability.</li>
+<li>These tests should check for expected outputs and flag any discrepancies.</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Base:</strong></p>
+<ul>
+<li>Follow a code base and naming conventions for your scripts.</li>
+<li>Use comments to explain complex logic and document important decisions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Continuous Integration (CI):</strong></p>
+<ul>
+<li>Integrate your automation script into your CI/CD pipeline. Automated building and testing of code to ensure it works correctly within the shared codebase.</li>
+<li>Rapid feedback to developers on the status of their code changes.</li>
+<li>This ensures that changes are tested and deployed automatically with each code change to quickly identify regressions, reducing manual intervention and ensuring that the script remains compatible with the latest software updates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Docker:</strong></p>
+<ul>
+<li>Docker containers encapsulate the testing environment, ensuring that test scripts run consistently, regardless of the host system’s configuration.</li>
+<li>Test environments can be easily shared between developers and integrated into CI/CD pipelines, ensuring that the same environment is used for testing at every stage.</li>
+<li>Docker containers are lightweight and start quickly, allowing for rapid scaling of test automation processes.</li>
+<li>Docker for test script automation, you can create and manage isolated, consistent testing environments, making it easier to develop, execute, and maintain automated tests as part of your CI/CD pipeline.</li>
+</ul>
+</li>
+<li>
+<p><strong>Parameterization:</strong></p>
+<ul>
+<li>Avoid hardcoding values whenever possible.</li>
+<li>Use configuration files or external data sources for test data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Page Object Model (POM):</strong></p>
+<ul>
+<li>Implement the Page Object Model to separate page elements from test scripts.</li>
+<li>Changes in the UI won’t affect your tests as much.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling:</strong></p>
+<ul>
+<li>Create robust error-handling mechanisms within your script.</li>
+<li>By logging errors and exceptions, you’ll be able to diagnose issues quickly and make necessary adjustments.</li>
+<li>Use explicit waits for elements rather than hard-coded sleeps.</li>
+</ul>
+</li>
+<li>
+<p><strong>Keep Software Dependencies Updated:</strong></p>
+<ul>
+<li>Regularly update and maintain the libraries and dependencies your automation script relies on.</li>
+<li>Outdated dependencies can lead to vulnerabilities and compatibility issues.</li>
+<li>This ensures compatibility with new browser versions and security updates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Test Maintenance:</strong></p>
+<ul>
+<li>Update tests to reflect changes in the application.</li>
+<li>Automated tests should evolve with the application’s features.</li>
+</ul>
+</li>
+<li>
+<p><strong>Regression Testing:</strong></p>
+<ul>
+<li>Continuously run regression tests to catch issues early.</li>
+<li>Prioritize and select a subset of test cases for faster feedback.</li>
+</ul>
+</li>
+<li>
+<p><strong>Test Data Management:</strong></p>
+<ul>
+<li>Keep test data separate from test scripts and manage it effectively.</li>
+<li>Consider using data factories or generators to create test data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Training and Knowledge Sharing:</strong></p>
+<ul>
+<li>Ensure that team members are trained and knowledgeable about the testing framework and best practices.</li>
+<li>Share information about changes and updates within the team.</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitor Performance:</strong></p>
+<ul>
+<li>Set up performance monitoring to track how your script performs over time.</li>
+<li>This can help identify slowdowns or bottlenecks, allowing you to optimize the script for efficiency.</li>
+</ul>
+</li>
+<li>
+<p><strong>Review and Refactor:</strong></p>
+<ul>
+<li>Periodically review your automation script’s code for redundancies and inefficiencies.</li>
+<li>Refactoring can make your script cleaner and more maintainable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Plan for Scalability:</strong></p>
+<ul>
+<li>Consider future growth when designing your script. Ensure it can easily adapt to increased data or user demands without major overhauls.</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-what-are-the-advantages-and-disadvantages-of-automation-testing">3. What are the advantages and disadvantages of automation testing? <a id="103"></a></h2>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Faster execution of repetitive tasks.</li>
+<li>Improved test coverage.</li>
+<li>Early detection of defects.</li>
+<li>Reusability of test scripts.</li>
+<li>Consistent test execution.</li>
+<li>Efficient regression testing.</li>
+<li>Increased reliability of test results.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>High initial setup.</li>
+<li>Maintenance overhead.</li>
+<li>Inability to replace human intuition.</li>
+<li>Cost associated with training and resources.</li>
+</ul>
+<h2 id="4-when-will-you-avoid-automated-testing">4. When will you avoid automated testing? <a id="104"></a></h2>
+<ol>
+<li>High Cost of Automation.</li>
+<li>Short-Lived or Low-Complexity Projects.</li>
+<li>Rapidly Changing Applications.</li>
+<li>Non-Repetitive Testing.</li>
+<li>Complex Test Scenarios, that are difficult to automate reliably.</li>
+<li>Test Data Management Issues: If the application requires complex, large, or dynamic test data that is difficult to manage and maintain in an automated environment.</li>
+<li>Data Privacy: If the test data involves sensitive or personal information and handling it securely is challenging.</li>
+</ol>
+<h2 id="5-how-do-you-approach-writing-test-scripts-for-automation">5. How do you approach writing test scripts for automation? <a id="105"></a></h2>
+<p>Writing effective and maintainable test scripts for automation involves a structured approach. Here are the key steps and considerations:</p>
+<ul>
+<li><strong>Understand Requirements:</strong> Clearly understand what needs to be tested and why.</li>
+<li><strong>Choose Tools:</strong> Select appropriate tools and frameworks for the task. (Selenium, Appium, Restsharp)</li>
+<li><strong>Design Framework:</strong> Structure your test automation framework for scalability and maintainability. Create reusable components such as functions, keywords, and data tables to avoid duplication. Design the framework structure, including directories for test cases, keywords, data, and configuration files.</li>
+<li><strong>Write Scripts:</strong> Develop test scripts with clear and reusable components. It should include the necessary setup, actions, and validations.</li>
+<li><strong>Error Handling:</strong> Implement robust error handling (to manage exceptions and unexpected behaviors) and logging (to capture the test execution details, which helps in debugging issues when tests fail.).</li>
+<li><strong>Manage Data:</strong> Use test data from external sources like CSV files, Excel spreadsheets, or databases if your tests require dynamic or varied inputs. If applicable, implement data-driven testing to run the same test logic with different data sets.</li>
+<li><strong>Integrate CI/CD:</strong> Integrate with CI/CD pipelines for automated testing (run tests automatically on code commits or scheduled intervals.).</li>
+<li><strong>Review and Refactor:</strong> Continuously improve and maintain your test scripts.</li>
+<li><strong>Execute and Monitor:</strong> Run and monitor tests to ensure reliability.</li>
+<li><strong>Document and Train:</strong> Provide necessary documentation and training for the team.</li>
+<li><strong>Reporting:</strong> Configure your CI/CD tool to generate and publish test reports, so stakeholders can easily review test results.</li>
+</ul>
+<h2 id="6-what-strategies-do-you-use-to-identify-areas-where-automation-can-improve-efficiency-or-reduce-costs">6. What strategies do you use to identify areas where automation can improve efficiency or reduce costs? <a id="106"></a></h2>
+<p>a. Analyze Business Processes: Map processes, document tasks, evaluate repetitive task and evaluate time and resource utilization.
+b. Gather Feedback: Use surveys and interviews to understand pain points and gather suggestions.
+c. Evaluate Current Automation: Review existing tools and assess automation coverage.
+d. Identify Automation Opportunities: Focus on repetitive, high-frequency tasks and perform cost-benefit analysis.
+e. Pilot and Prototype: Develop prototypes and run pilot programs to validate automation solutions.
+f. Implement and Monitor: Roll out automation solutions, integrate with existing systems, and continuously monitor and optimize.</p>
+<h2 id="7-what-strategies-do-you-use-to-ensure-that-automated-systems-remain-up-to-date-with-changing-technology">7. What strategies do you use to ensure that automated systems remain up-to-date with changing technology? <a id="107"></a></h2>
+<p>Solution: “I stay informed about industry trends by reading technical blogs, attending webinars, and participating in professional forums. I also regularly review and update the automation tools and frameworks we use to incorporate the latest features and improvements.”</p>
+<h2 id="8-what-other-kinds-of-testing-can-be-performed-on-the-application">8. What other kinds of testing can be performed on the application? <a id="108"></a></h2>
+<ol>
+<li>Exploratory testing</li>
+<li>Functional testing</li>
+<li>Non- functional testing</li>
+<li>Performance testing – load testing, stress testing</li>
+<li>Security testing</li>
+<li>Integration testing</li>
+</ol>
+<h2 id="9-how-are-you-going-to-test-an-application-if-no-requirement-is-given-and-you-got-the-application-directly">9. How are you going to test an application if no requirement is given and you got the application directly?   <a id="109"></a></h2>
+<ol>
+<li>Will do the exploratory test,</li>
+<li>and try to understand the actual flow and functionality working for the application.</li>
+<li>Do the documentation and discuss with the application owner if there is any query.</li>
+</ol>
+<h2 id="10-what-is-the-difference-between-selenium-rc-and-selenium-webdriver">10. What is the difference between Selenium RC and Selenium WebDriver? <a id="110"></a></h2>
+<ul>
+<li><strong>Selenium RC (Remote Control):</strong> Older tool that uses a server to inject JavaScript code into web pages to simulate user actions. It is slower and has been largely replaced by WebDriver.</li>
+<li><strong>Selenium WebDriver:</strong> Directly interacts with the browser using its native support, providing faster and more reliable interactions with web elements.</li>
+</ul>
+<h2 id="11-how-you-will-prioritize-the-test-case">11. How you will prioritize the test Case?  <a id="111"></a></h2>
+<p>Prioritizing test cases for automation involves determining which test cases should be automated first based on various criteria, including their business value, complexity, and frequency of execution. Here’s a structured approach to prioritize test cases for automation:</p>
+<ol>
+<li>Align with Business Objectives: Focus on high-value and compliance-related test cases.</li>
+<li>Assess Test Case Characteristics: Prioritize based on frequency of execution, complexity, and stability.</li>
+<li>Evaluate Test Case ROI: Perform cost-benefit analysis and consider long-term benefits.</li>
+<li>Prioritize Based on Risk: Automate high-risk and historically problematic areas.</li>
+<li>Consider Test Execution Time: Prioritize quick wins and long-running tests.</li>
+<li>Utilize Automation Framework Capabilities: Ensure compatibility and leverage reusable components.</li>
+<li>Engage Stakeholders and Review: Gather input from stakeholders and adjust priorities as needed.</li>
+</ol>
+<p><strong>Priority:</strong></p>
+<ol>
+<li>Navigate</li>
+<li>Functionality - search, button click,</li>
+<li>Ui content and images</li>
+</ol>
+<h2 id="12-do-you-have-idea-about-defect-lifecycle">12. Do you have idea about defect lifecycle? <a id="112"></a></h2>
+<p>The defect lifecycle, also known as the bug lifecycle, is a systematic process that tracks the status and progress of a defect (or bug) from its identification through to its resolution and closure.</p>
+<p>Severity vs. Priority: Severity indicates the impact of the defect on the system, while priority indicates the urgency of fixing the defect.</p>
+<h2 id="13-how-would-you-design-a-test-automation-framework-from-scratch-what-components-would-you-include-and-why">13. How would you design a test automation framework from scratch? What components would you include and why? <a id="113"></a></h2>
+<p>Designing a test automation framework from scratch requires careful planning and consideration of maintainability, scalability, and efficiency.</p>
+<ol>
+<li>
+<p><strong>Define Framework Goals:</strong></p>
+<ul>
+<li>Ease of Use: The framework should be easy for both developers and testers to use.</li>
+<li>Scalability: It should handle the increasing number of tests and growing complexity.</li>
+<li>Maintainability: Changes in tests or the system under test should not require extensive rework.</li>
+<li>Modularity and Reusability: Common functionalities should be reusable across different test cases.</li>
+</ul>
+</li>
+<li>
+<p><strong>Choose the Right Technology Stack:</strong></p>
+<ul>
+<li>Programming Language: Choose based on the tech stack of the project (e.g., C# for .NET projects, Java for Spring-based projects, Python for data-heavy projects).</li>
+<li>Automation Tool: Use tools like Selenium, Cypress, or Playwright for UI tests, and RestAssured or Postman for API tests.</li>
+<li>Test Runner: Use test runners like NUnit (C#), JUnit/TestNG (Java), or PyTest (Python) to organize and execute tests.</li>
+</ul>
+</li>
+<li>
+<p><strong>Framework Architecture:</strong>
+    Design a layered architecture with the following components:
+    3.1 <strong>Test Structure:</strong></p>
+<ul>
+<li>Test Suites: Organize tests into suites based on functionality, module, or test type (e.g., regression, smoke, unit).</li>
+<li>Test Cases: Design individual test cases with a single responsibility, focusing on specific functionality.</li>
+<li>Parameterized Tests: Use data-driven testing to run the same tests with different sets of data (e.g., CSV, JSON, or Excel).
+3.2 <strong>Page Object Model (POM) for UI Automation:</strong></li>
+<li>Page Classes: Implement a POM structure where each page or component of the application has a corresponding class. This class contains methods to interact with the page (e.g., click a button, enter text).</li>
+<li>Advantages: This ensures that UI changes affect only the page classes, not the tests themselves. It also promotes code reuse and separation of concerns.
+3.3 <strong>Service Layer for API Automation:</strong></li>
+<li>Service Classes: For API testing, implement service classes to handle HTTP requests and responses.</li>
+<li>Request Builders: Use a request builder pattern to create complex API requests with different headers, payloads, and parameters.</li>
+<li>Response Handlers: Implement logic to handle and validate responses, including checking response codes, body content, and headers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Core Components:</strong>
+    4.1 <strong>Test Data Management:</strong></p>
+<ul>
+<li>Externalize Test Data: Store test data in external files (CSV, JSON, XML, or databases). This allows easy modification of test inputs without changing the test code.</li>
+<li>Factory Design Pattern: Use factory methods to create objects dynamically based on test data.</li>
+<li>Randomized Data: If possible, generate randomized data to ensure tests do not rely on hardcoded values.
+4.2 <strong>Assertion/Validation Layer:</strong></li>
+<li>Custom Assertion Library: Implement a custom library for common validation tasks (e.g., validating response codes, verifying UI elements, database validation).</li>
+<li>Soft Assertions: Use soft assertions to continue test execution even if one assertion fails, useful in complex UI tests where you want multiple validations in one run.
+4.3 <strong>Logging and Reporting:</strong></li>
+<li>Logger: Integrate a logging framework (e.g., Log4j, Serilog, NLog) to capture runtime information like steps executed, test data, errors, and stack traces.</li>
+<li>Reporting: Generate reports after each test run using tools like Allure, Extent Reports, or NUnit HTML reports. These should show test results, execution times, and detailed failure logs.
+4.4 <strong>Test Utilities:</strong></li>
+<li>Helper Classes: Implement utility classes for common tasks like file reading/writing, API requests, and database queries.</li>
+<li>Synchronization Methods: Add explicit waits or fluent waits to handle dynamic elements in UI testing.</li>
+<li>Retry Mechanism: Implement a retry mechanism for flaky tests that may fail due to intermittent issues (e.g., network instability).</li>
+</ul>
+</li>
+<li>
+<p><strong>Environment and Configuration Management:</strong></p>
+<ul>
+<li>Environment Profiles: Set up multiple profiles for different environments (development, staging, production). Use environment-specific configurations for URLs, database connections, and credentials.</li>
+<li>Configuration Files: Store configuration settings in external files (YAML, JSON, or XML). Load them dynamically depending on the environment the tests are running in.</li>
+</ul>
+</li>
+<li>
+<p><strong>Continuous Integration (CI) Integration:</strong></p>
+<ul>
+<li>CI Tools: Integrate the framework with CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions). This ensures tests run automatically on every code commit or pull request.</li>
+<li>Trigger Automated Tests: Set up triggers to run different suites (smoke, regression, nightly) at different stages of the pipeline.</li>
+<li>Parallel Execution: Configure parallel test execution to reduce runtime using test runners and grid-based tools like Selenium Grid, TestNG, or cloud solutions like BrowserStack.</li>
+</ul>
+</li>
+<li>
+<p><strong>Parallel and Cross-Browser Testing:</strong></p>
+<ul>
+<li>Thread-Safe Tests: Ensure tests can run in parallel without conflicting. Use dependency injection or thread-local storage to avoid shared state across threads.</li>
+<li>Cross-Browser Testing: If testing web apps, set up a mechanism to run tests across different browsers (Chrome, Firefox, Edge) and platforms (Windows, macOS, Linux). Use Selenium Grid or cloud-based services to handle this efficiently.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Control and Code Management:</strong></p>
+<ul>
+<li>Version Control: Store the automation framework in a version control system like Git, enabling collaboration and versioning of the test code.</li>
+<li>Branching Strategy: Implement a branching strategy (e.g., feature branches, main branch) to ensure code stability and better collaboration between developers and testers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Scalability and Extensibility:</strong></p>
+<ul>
+<li>Plugin Support: Ensure the framework is modular enough to support additional plugins use or integrations as needed, like performance testing tools (JMeter, Gatling), security testing (OWASP ZAP), or other utilities.</li>
+<li>Scalability: Ensure that the framework can handle an increasing number of test cases and run efficiently over time, both in local and CI environments.</li>
+</ul>
+</li>
+<li>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Code Reviews: Enforce peer code reviews for tests and framework changes to maintain quality and best practices.</li>
+<li>Error Handling: Implement robust error handling mechanisms to capture and log exceptions and failures accurately.</li>
+<li>Test Categorization: Group and tag tests (e.g., smoke, regression, critical) to allow for selective execution based on the situation.</li>
+<li>Use an repo to store code and commit small small code with proper comment</li>
+<li>Keep track dependencies and update as needed.</li>
+<li>Backup your codebase Or use version Control</li>
+<li>Pom model</li>
+<li>Logging integration</li>
+<li>Reporting</li>
+<li>Documentation</li>
+<li>Modularizing test script: like payment and user user management</li>
+<li>Parameterize test data with data table, testsource, data provider</li>
+</ul>
+</li>
+</ol>
+<h3 id="sample-folder-structure-for-framework">Sample folder structure for framework:</h3>
+<p>TestFramework/
+├── Tests/
+│   ├── UI/
+│   │   ├── LoginTests.cs
+│   │   ├── ProductPageTests.cs
+│   ├── API/
+│   │   ├── UserAPITests.cs
+│   │   ├── OrderAPITests.cs
+├── Pages/
+│   ├── LoginPage.cs
+│   ├── ProductPage.cs
+├── Services/
+│   ├── UserService.cs
+│   ├── OrderService.cs
+├── Utilities/
+│   ├── ConfigReader.cs
+│   ├── DatabaseHelper.cs
+│   ├── Logger.cs
+├── TestData/
+│   ├── login_data.csv
+│   ├── product_data.json
+├── Reports/
+│   ├── TestReport.html
+├── Config/
+│   ├── appsettings.json
+├── Drivers/
+│   ├── chromedriver.exe
+│   ├── geckodriver.exe</p>
+<h2 id="14-selenium-suit-has-following-components">14. Selenium suit has following components: <a id="114"></a></h2>
+<p>a. Selenium Integrated Development Environment (IDE).
+b. Selenium Remote Control (RC).
+c. Selenium WebDriver.
+d. Selenium Grid.</p>
+<h2 id="15-explain-the-architecture-of-selenium-webdriver">15. Explain the architecture of Selenium WebDriver. <a id="115"></a></h2>
+<p>Selenium WebDriver follows a client-server architecture. The client (test script) communicates with the WebDriver API, which interacts with different browser drivers to execute commands on the browser.</p>
+<h3 id="selenium-3">Selenium 3:</h3>
+<p>Selenium Client Library --&gt; JSON wire protocol over HTTP --&gt; Browser Drivers --&gt; Browsers</p>
+<ul>
+<li>Selenium Client library: Selenium provides support to multiple libraries such as Ruby, Python, Java, etc as language bindings</li>
+<li>JSON wire protocol over HTTP: JSON is an acronym for JavaScript Object Notation. It is an open standard that provides a transport mechanism for transferring data between client and server on the web.</li>
+<li>Browser Drivers: Selenium browser drivers are native to each browser, interacting with the browser by establishing a secure connection. Selenium supports different browser drivers such as ChromeDriver, GeckoDriver, Microsoft Edge WebDriver, SafariDriver, and InternetExplorerDriver.</li>
+<li>Browsers: Selenium provides support for multiple browsers like Chrome, Firefox, Safari, Internet Explorer etc.</li>
+</ul>
+<h3 id="selenium-4">Selenium 4:</h3>
+<p>In Selenium 4, WebDriver W3C Protocol replaces the older JSON Wire protocol. It essentially means that you no longer need to encode and decode the API request using the W3C protocol, and the tests can directly communicate with the web browser.</p>
+<p>Selenium Client Library --&gt; WebDriver W3C Protocol --&gt; Browser Drivers --&gt; Browsers</p>
+<p>As seen from the architecture of WebDriver W3C Protocol, there is a direct information exchange between the client and server, without the need for the JSON Wire Protocol. As Selenium WebDriver and web browsers use the same protocol, automated Selenium testing will execute tests more consistently between different browsers.</p>
+<h2 id="16-have-you-worked-with-any-automation-tools-if-so-which-ones">16. Have you worked with any automation tools? If so, which ones? <a id="116"></a></h2>
+<p>Yes, I have experience with Selenium WebDriver for web automation, Appium for mobile automation, JUnit and TestNG for test execution, and Apache Maven for build management, Postman, REST Assured, or SoapUI for API automation.</p>
+<h2 id="17-compare-javascript-and-python-for-selenium-scripting">17. Compare JavaScript and Python for Selenium scripting. <a id="117"></a></h2>
+<p>Both JavaScript and Python are suitable for Selenium scripting. JavaScript is mainly used for web automation, while Python is known for its simplicity and versatility, making it a good choice for automation across various domains.</p>
+<h2 id="18-explain-the-purpose-of-the-webdriver-interface-in-selenium">18. Explain the purpose of the WebDriver interface in Selenium. <a id="118"></a></h2>
+<p>The WebDriver interface in Selenium provides methods to interact with web elements and perform browser actions. It acts as a bridge between the test script and the browser.</p>
+<h2 id="19-discuss-the-advantages-of-using-python-for-automation">19. Discuss the advantages of using Python for automation. <a id="119"></a></h2>
+<p>Python is easy to learn, has a rich ecosystem of libraries, and offers excellent readability. Its versatility makes it suitable for various automation tasks beyond testing.</p>
+<h2 id="20-what-is-the-page-object-model-pom-and-how-does-it-improve-test-maintenance">20. What is the Page Object Model (POM), and how does it improve test maintenance? <a id="120"></a></h2>
+<p>POM is a design pattern that represents each web page as a separate class. It improves test maintenance by encapsulating the page structure, making changes easier to implement in case of U0I modifications.</p>
+<h2 id="21-blackbox-vs-gray-box-testing">21. Blackbox vs gray box testing. <a id="121"></a></h2>
+<p>Black Box testing is the process of testing where tester don’t require the detailed knowledge of or internal structure of application. Testers have no access to the source code or design documents of the mobile app. They test only input and corresponding output response. Example: functionality testing (button, link, menus), Compatibility testing (different devices, OS), Usability Testing (UI, navigation flows).</p>
+<p>Grey Box testing: It is a combination of Blackbox testing and white box testing. In this testing process tester has user requirements and documentation of application. Example: Integration testing (how application interact, adding and verifying data in table), Performance testing (speed and response time), Security Testing (encryption and storing the data).</p>
+<p>White box testing: software testing technique where the tester has full access to the internal workings of the application's code. It involves looking at the structure of the code. When you know the internal structure of a product, you can conduct tests to ensure that the internal operations are performed according to the specifications. Example: Unit testing(), Path Coverage (every line of code within the sorting algorithm is executed), Performance testing(algorithm's performance with various input sizes), Boundary Testing (how the algorithm handles extreme values)</p>
+<h2 id="22-how-to-prioritize-skipping-and-execute-the-test-case">22. How to prioritize, skipping and execute the test case? <a id="122"></a></h2>
+<p>Prioritizing test cases can be done on the basis of requirements, costs of bug fixing, history of the parent device etc. Some organizations have the practice of categorizing test cases into Blockers, Critical, Major and Minor functionalities.</p>
+<p>While executing the selenium test then priority can be selected by:</p>
+<ol>
+<li>By default the execution order will be ascending order based on method name.</li>
+<li>By setting the priority attribute</li>
+</ol>
+<p><code>[Test, Category("window Handling"), Order(1)] // Nunit</code>
+<code>@Test (priority = 1) //TestNG</code></p>
+<p>Skip the Test case:</p>
+<p><code>[Test,Category("check iframes"),Ignore("not implemented yet")] //Nunit - C#</code>
+<code>@Test (enabled = false) //TestNG - Java</code></p>
+<h2 id="23-how-to-run-test-case-parallelly">23. How to run test case parallelly?  <a id="123"></a></h2>
+<p>It is a process of running the test case parallel rather than one after another. In parallel testing, the program's multiple parts (or modules) execute together, saving the testers a lot of time and effort.</p>
+<p>Nunit:</p>
+<ul>
+<li>For parallelization, NUnit offers the annotation <code>[Parallelizable]</code> annotation, which can be used at the class level or at the method level.</li>
+</ul>
+<p><code>[TestCase("standard_user"), Order(0), Parallelizable]</code></p>
+<ul>
+<li>You can enable parallel execution for all tests in an assembly using the <code>[assembly: Parallelizable]</code>attribute in your AssemblyInfo.cs file:</li>
+</ul>
+<pre><code class="language-csharp">using NUnit.Framework;
+[assembly: Parallelizable(ParallelScope.All)]
+</code></pre>
+<p>When using the [Parallelizable] annotation, we need to specify the scope of the parallelization. Here are the available options:</p>
+<ul>
+<li><code>ParallelScope.Self:</code> When the test can run in parallel with other tests. This scope can be applied to classes and methods.</li>
+<li><code>ParallelScope.Children:</code> When the child tests can run in parallel with one another. This scope can be applied to the assembly and classes.</li>
+<li><code>ParallelScope.Fixtures:</code> When the fixtures (test classes) can run in parallel with one another. This scope applies to the assembly and classes.</li>
+<li><code>ParallelScope.All:</code> When the test and its descendants can run in parallel with others at the same level. This scope can be applied to classes and methods.</li>
+</ul>
+<h2 id="24-what-can-be-a-problem-while-executing-the-test-case-parallel">24. What can be a problem while executing the test case parallel. <a id="124"></a></h2>
+<p>Concurrency Issues: Tests running in parallel may access shared resources such as databases, files, or network services concurrently.
+Isolation of Test Data: Tests should ideally be independent and not rely on shared state or global variables.
+Order Dependency: Some tests may depend on specific execution order or state from preceding tests.
+Resource Contention: Parallel execution can strain system resources such as CPU, memory, and I/O bandwidth
+Debugging and Diagnosis: Identifying the root cause of failures or issues in parallel execution can be more challenging compared to sequential execution.
+Test Environment Setup: Setting up and tearing down test environments (e.g., databases, services) for parallel tests requires careful management to ensure tests start with a clean state and do not interfere with each other.</p>
+<h2 id="25-how-to-group-the-test-script">25. How to group the test script. <a id="125"></a></h2>
+<p>In NUnit, tests are grouped using the TestFixture attribute, which marks a class as containing tests.</p>
+<p>Filename : Demotest.cs</p>
+<pre><code class="language-csharp">
+using NUnit.Framework;
+
+[TestFixture]
+public class MyTestClass
+{
+    [Test]
+}
+</code></pre>
+<p>NUnit supports categorizing tests using the Category attribute, allowing you to mark tests with one or more categories.</p>
+<pre><code class="language-csharp">
+[Test]
+[Category(&quot;SmokeTests&quot;)]
+public void TestMethod1()
+{
+    // Test logic for Method 1
+}
+Run the test with category:
+
+dotnet test --filter &quot;TestCategory = SmokeTests&quot;
+</code></pre>
+<p>if we are using SpecFlow then we can user @attribute</p>
+<h2 id="26-what-is-the-cookies-and-how-we-manage-in-on-selenium">26. What is the cookies and how we manage in on selenium <a id="126"></a></h2>
+<p>In Selenium, cookies represent small pieces of data stored by the browser to remember user-specific information for a particular website, like session details, preferences, or user IDs. Managing cookies in Selenium WebDriver is essential for tasks like maintaining session state across different tests or clearing cookies to simulate a new session.</p>
+<p>Using Cookies to Maintain Login State: Here’s an example where we store cookies after logging in, then use them in a subsequent test to avoid logging in again:</p>
+<pre><code class="language-csharp">
+// Part 1: Log in and store cookies
+IWebDriver driver = new ChromeDriver();
+driver.Navigate().GoToUrl(&quot;[https://example.com/login](https://example.com/login)&quot;);
+
+// Code to perform login
+// Assume login is successful
+
+// Store cookies after login
+IReadOnlyCollection&lt;Cookie&gt; loginCookies = driver.Manage().Cookies.AllCookies;
+
+// Close the driver after storing cookies
+driver.Quit();
+
+// Part 2: Start a new session and reuse cookies
+driver = new ChromeDriver();
+driver.Navigate().GoToUrl(&quot;[https://example.com](https://example.com)&quot;);
+
+// Add cookies back to maintain login state
+foreach (var cookie in loginCookies)
+{
+    driver.Manage().Cookies.AddCookie(cookie);
+}
+
+// Refresh the page or navigate to another page
+driver.Navigate().Refresh();
+// Now you’re logged in without needing to log in again
+</code></pre>
+<h2 id="27-how-to-run-the-script-parallelly-on-two-environments">27. How to run the script parallelly on two environments. <a id="127"></a></h2>
+<p>Running a Selenium script in parallel across multiple environments (e.g., different browsers or configurations) requires a testing framework that supports parallel execution and, optionally, a test grid for distributing tests across multiple machines.</p>
+<p>Configure Tests for Parallel Execution You can use the [Parallelizable] attribute to specify parallel execution. Set up different test methods to run against different environments.</p>
+<pre><code class="language-csharp">
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+
+namespace ParallelTests
+{
+    [TestFixture]
+    [Parallelizable(ParallelScope.Children)]
+    public class EnvironmentTests
+    {
+        IWebDriver driver;
+
+        [SetUp]
+        public void Setup()
+        {
+            // Common setup, if any
+        }
+
+        [Test]
+        [Parallelizable]
+        public void TestInChrome()
+        {
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(&quot;[https://example.com](https://example.com)&quot;);
+            // Add your test code here
+            Assert.IsTrue(driver.Title.Contains(&quot;Example&quot;));
+            driver.Quit();
+        }
+
+        [Test]
+        [Parallelizable]
+        public void TestInFirefox()
+        {
+            driver = new FirefoxDriver();
+            driver.Navigate().GoToUrl(&quot;[https://example.com](https://example.com)&quot;);
+            // Add your test code here
+            Assert.IsTrue(driver.Title.Contains(&quot;Example&quot;));
+            driver.Quit();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            if (driver != null)
+            {
+                driver.Quit();
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="28-how-to-pass-data-set-in-specflow">28. How to pass data set in SpecFlow:  <a id="128"></a></h2>
+<p>a. Regular expression
+b. Data tables
+c. Scenario outline – Example table</p>
+<h2 id="29-how-to-do-data-driven-testing">29. How to do data driven testing: <a id="129"></a></h2>
+<p>a. Pass value TestCase attribute and method argument (NUnit:</p>
+<p>Can pass the data to the method using Annotation like “TestCase” for method and “TestFixture” for a class.</p>
+<pre><code class="language-csharp">[TestCase(&quot;admin&quot;, &quot;1234&quot;)]
+[TestCase(&quot;standard_user&quot;, &quot;secret_sauce&quot;)]
+public void TC02_LoginWithValidData(string Users, string paswrd)
+{
+    _homePage.UserInput.SendKeys(Users);
+    _homePage.PassInput.SendKeys(paswrd);
+    Thread.Sleep(3000);
+    _homePage.Login();
+}
+</code></pre>
+<p>b. Pass random data using - Nunit AutoFixture autoData attribute. It will generate the random data for passed object “product” class</p>
+<pre><code class="language-csharp">[AutoData]
+public void TC002_PopulatProductDetails(AddProductModel product)
+{
+    _addProductObject.PopulateProduct(product);
+    Thread.Sleep(2000);
+}
+
+</code></pre>
+<p>c. Use the class model : create the object</p>
+<h2 id="30-what-is-the-difference-between-implicit-and-explicit-waits-in-selenium">30. What is the difference between implicit and explicit waits in Selenium?</h2>
+<ul>
+<li><strong>Implicit Wait:</strong> Sets a default waiting time for the entire WebDriver instance. If an element is not found immediately, WebDriver will wait for the specified time before throwing an exception. It's set globally for the driver.</li>
+</ul>
+<pre><code class="language-Csharp">using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+IWebDriver driver = new ChromeDriver();
+
+// Set implicit wait (applies to ALL FindElement calls)
+driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+try 
+{
+    // This will wait up to 10 seconds if element isn't immediately found
+    IWebElement element = driver.FindElement(By.Id(&quot;someDynamicElement&quot;));
+    element.Click();
+}
+finally 
+{
+    driver.Quit();
+}
+</code></pre>
+<ul>
+<li><strong>Explicit Wait:</strong> Waits for a specific condition to be met before proceeding with the next line of code. It waits for a particular element to become visible, clickable, or present, or for any other defined condition. It's used for specific elements and conditions.</li>
+</ul>
+<pre><code class="language-csharp">using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI; // Required for WebDriverWait
+
+IWebDriver driver = new ChromeDriver();
+
+try 
+{
+    // Set up explicit wait with 10 second timeout
+    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+    // Wait for specific conditions
+    IWebElement element = wait.Until(drv =&gt; 
+    {
+        var el = drv.FindElement(By.Id(&quot;someDynamicElement&quot;));
+        return (el.Displayed &amp;&amp; el.Enabled) ? el : null;
+    });
+
+    element.Click();
+
+    // Another example - wait for text to contain specific value
+    wait.Until(drv =&gt; drv.FindElement(By.ClassName(&quot;status&quot;)).Text.Contains(&quot;Complete&quot;));
+}
+finally 
+{
+    driver.Quit();
+}
+</code></pre>
+<h2 id="31-how-do-you-handle-frames-or-iframes-in-selenium">31. How do you handle frames or iframes in Selenium?</h2>
+<ul>
+<li>Use <code>driver.SwitchTo().Frame()</code> to switch to a frame.</li>
+<li>You can switch by frame index, name, or WebElement.</li>
+<li>Use <code>driver.SwitchTo().DefaultContent()</code> to switch back to the main document.</li>
+</ul>
+<pre><code class="language-csharp">using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+IWebDriver driver = new ChromeDriver();
+
+try
+{
+    driver.Navigate().GoToUrl(&quot;https://example.com/page-with-frames&quot;);
+
+    // Wait for frame to be available (explicit wait)
+    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+    IWebElement frame = wait.Until(drv =&gt; drv.FindElement(By.Id(&quot;contentFrame&quot;)));
+
+    // Switch to frame
+    driver.SwitchTo().Frame(frame);
+
+    // Now interact with elements inside the frame
+    IWebElement searchInput = driver.FindElement(By.Name(&quot;search&quot;));
+    searchInput.SendKeys(&quot;Selenium testing&quot;);
+    driver.FindElement(By.Id(&quot;searchButton&quot;)).Click();
+
+    // Switch back to main content
+    driver.SwitchTo().DefaultContent();
+
+    // Continue working with main page elements
+    driver.FindElement(By.LinkText(&quot;Home&quot;)).Click();
+}
+finally
+{
+    driver.Quit();
+}
+</code></pre>
+<h3 id="note">note:</h3>
+<p><em>NoSuchFrameException</em> - When frame doesn't exist<br />
+<em>StaleElementReferenceException</em> - When frame becomes unavailable<br />
+<em>TimeoutException</em> - When frame doesn't load in expected time  </p>
+<h2 id="32-how-do-you-handle-alerts-in-selenium">32. How do you handle alerts in Selenium?</h2>
+<ul>
+<li>Use <code>driver.switchTo().alert()</code> to switch to an alert.</li>
+<li>Use <code>alert.accept()</code> to click "OK."</li>
+<li>Use <code>alert.dismiss()</code> to click "Cancel."</li>
+<li>Use <code>alert.getText()</code> to get the alert message.</li>
+<li>Use <code>alert.sendKeys()</code> to enter text into a prompt alert.</li>
+</ul>
+<pre><code class="language-csharp">driver.FindElement(By.Id(&quot;promptButton&quot;)).Click();
+
+IAlert alert = driver.SwitchTo().Alert();
+alert.SendKeys(&quot;John Doe&quot;); // Enter text
+alert.Accept();
+
+// Verify the entered text was processed
+string result = driver.FindElement(By.Id(&quot;result&quot;)).Text;
+Assert.AreEqual(&quot;Hello John Doe&quot;, result);
+</code></pre>
+<h3 id="common-exception">Common exception</h3>
+<ul>
+<li><em>NoAlertPresentException</em> - When trying to switch to non-existent alert</li>
+<li><em>UnhandledAlertException</em> - When alert blocks interaction with page</li>
+<li><em>TimeoutException</em> - When alert doesn't appear within wait time  </li>
+</ul>
+<h2 id="33-how-do-you-handle-multiple-windows-or-tabs-in-selenium">33. How do you handle multiple windows or tabs in Selenium?</h2>
+<ul>
+<li>Use <code>driver.WindowHandles</code> to get a list of all window handles.</li>
+<li>Use <code>driver.SwitchTo().Window(handle)</code> to switch to a specific window.</li>
+<li>Use <code>driver.CurrentWindowHandle</code> and <code>driver.getTitle()</code> to verify the current window.</li>
+<li>Use <code>driver.Close()</code> to close the current window.</li>
+<li>Use <code>driver.Quit()</code> to close all windows and the WebDriver session.</li>
+</ul>
+<pre><code class="language-csharp">// Store main window
+string mainWindow = driver.CurrentWindowHandle;
+
+// Click button that opens new window
+driver.FindElement(By.Id(&quot;popupButton&quot;)).Click();
+
+// Wait for new window to appear
+WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+wait.Until(drv =&gt; drv.WindowHandles.Count == 2);
+
+// Switch to new window
+string newWindow = driver.WindowHandles.First(handle =&gt; handle != mainWindow);
+driver.SwitchTo().Window(newWindow);
+
+// Verify new window content
+Assert.IsTrue(driver.Title.Contains(&quot;Popup Window&quot;));
+
+// Close popup and return to main
+driver.Close();
+driver.SwitchTo().Window(mainWindow);
+</code></pre>
+<h3 id="common-exceptions">Common Exceptions</h3>
+<ul>
+<li><em>NoSuchWindowException</em> - When trying to switch to non-existent window</li>
+<li><em>StaleWindowHandleException</em> - When window handle becomes invalid</li>
+<li><em>TimeoutException</em> - When new window doesn't appear</li>
+</ul>
+<h2 id="34-how-do-you-handle-dropdowns-in-selenium">34. How do you handle dropdowns in Selenium?</h2>
+<ul>
+<li>Use <code>Select</code> class from <code>OpenQA.Selenium.Support.UI</code>.</li>
+<li>
+<p>Use <code>SelectByVisibleText()</code>, <code>SelectByIndex()</code>, or <code>SelectByValue()</code> to select an option.</p>
+<p><code>csharp
+    using OpenQA.Selenium.Support.UI; // Required for SelectElement
+    // Locate the dropdown element
+    IWebElement dropdownElement = driver.FindElement(By.Id("dropdownId"));
+    // Create SelectElement object
+    SelectElement dropdown = new SelectElement(dropdownElement);
+    // Select by visible text
+    dropdown.SelectByText("Option 2");
+    // Select by value attribute
+    dropdown.SelectByValue("option2_value");
+    // Select by index (0-based)
+    dropdown.SelectByIndex(1);</code></p>
+</li>
+<li>
+<p>checking dropdown properties:
+    ```csharp
+            // Check if dropdown allows multiple selections
+        bool isMultiSelect = dropdown.IsMultiple;</p>
+<pre><code>// Get all available options
+IList&lt;IWebElement&gt; allOptions = dropdown.Options;
+
+// Get currently selected option
+IWebElement selectedOption = dropdown.SelectedOption;
+string selectedText = selectedOption.Text;
+</code></pre>
+<p>```</p>
+</li>
+<li>
+<p>validation dropdown options
+    ```csharp
+    SelectElement dropdown = new SelectElement(driver.FindElement(By.Id("colors")));</p>
+<p>// Verify all expected options exist
+var expectedOptions = new List<string> {"Red", "Green", "Blue"};
+var actualOptions = dropdown.Options.Select(opt =&gt; opt.Text).ToList();</p>
+<p>Assert.IsTrue(expectedOptions.SequenceEqual(actualOptions), 
+    "Dropdown options don't match expected values");
+```</p>
+</li>
+</ul>
+<h2 id="35-how-do-you-handle-file-uploads-in-selenium">35. How do you handle file uploads in Selenium?</h2>
+<ul>
+<li>Use <code>SendKeys()</code> method on the file input element to provide the file path.</li>
+<li>
+<p>Ensure the file input element is visible and enabled.</p>
+<p>```csharp
+        IWebElement fileInput = driver.FindElement(By.CssSelector("input[multiple='multiple']"));</p>
+<pre><code>// For multiple files, separate paths with newline
+fileInput.SendKeys( @"C:\files\image1.png" + "\n" +
+@"C:\files\image2.png");
+</code></pre>
+<p>```</p>
+</li>
+</ul>
+<h2 id="36-how-do-you-handle-mouse-hover-nested-menu-hovering-context-menu-actions-in-selenium">36. How do you handle mouse hover ,nested menu hovering,  context menu actions in Selenium?</h2>
+<ul>
+<li>Use <code>Actions</code> class from ``.</li>
+<li>Use <code>moveToElement()</code> for mouse hover.</li>
+<li>Use <code>contextClick()</code> for right-click (context menu).</li>
+<li>Use <code>perform()</code> to execute the actions.</li>
+<li>
+<p>Use <code>Pause(TimeSpan.FromMilliseconds(300))</code> for wait 30 second</p>
+</li>
+<li>
+<p><strong>MoveToElement:</strong>
+    ``` csharp
+        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+        IWebElement elementToHover = wait.Until(drv =&gt; 
+        drv.FindElement(By.ClassName("hover-trigger")));</p>
+<pre><code> new Actions(driver)
+.MoveToElement(elementToHover)
+.Perform();
+
+// Wait for submenu to appear
+IWebElement subMenu = wait.Until(drv =&gt; 
+    drv.FindElement(By.CssSelector(".submenu:not([style*='none'])")));
+subMenu.Click();
+</code></pre>
+<p>```</p>
+</li>
+<li>
+<p><strong>ContextClick:</strong>
+    ```csharp
+            IWebElement contextElement = driver.FindElement(By.Id("context-target"));</p>
+<pre><code>    // Right-click to open context menu
+    new Actions(driver)
+        .ContextClick(contextElement)
+        .Perform();
+
+    // Select context menu option
+    driver.FindElement(By.XPath("//li[text()='Copy']")).Click();
+</code></pre>
+<p>```</p>
+</li>
+<li>
+<p><strong>Nested hovering</strong></p>
+<p><code>csharp
+    new Actions(driver)
+        .MoveToElement(topMenu)
+        .Pause(TimeSpan.FromMilliseconds(300))  // Brief pause
+        .MoveToElement(secondLevelMenu)
+        .MoveToElement(thirdLevelMenuItem)
+        .Click()
+        .Perform();</code></p>
+</li>
+</ul>
+<h2 id="37-how-do-you-handle-drag-and-drop-actions-in-selenium">37. How do you handle drag and drop actions in Selenium?</h2>
+<ul>
+<li>Use <code>Actions</code> class.</li>
+<li>Use <code>DragAndDrop()</code> or <code>ClickAndHold()</code> and <code>MoveToElement()</code> and <code>Release()</code>.</li>
+<li>
+<p>Use <code>perform()</code> to execute the actions.</p>
+</li>
+<li>
+<p><strong>using DragAndDrop:</strong>
+    ```csharp</p>
+<pre><code>    IWebElement source = driver.FindElement(By.Id("draggable"));
+    IWebElement target = driver.FindElement(By.Id("droppable"));
+
+    new Actions(driver)
+        .DragAndDrop(source, target)
+        .Perform();
+</code></pre>
+<p>```</p>
+</li>
+<li>
+<p><strong>using clickAndHold:</strong>
+    ```csharp
+            IWebElement sliderHandle = driver.FindElement(By.ClassName("slider-handle"));</p>
+<pre><code>    new Actions(driver)
+        .ClickAndHold(sliderHandle)
+        .MoveByOffset(50, 0) // Move 50 pixels right
+        .Release()
+        .Perform();
+</code></pre>
+<p>```</p>
+</li>
+</ul>
+<h2 id="38-how-do-you-handle-scrolling-in-selenium">38. How do you handle scrolling in Selenium?</h2>
+<ul>
+<li>Use <code>JavascriptExecutor</code> to execute JavaScript code.</li>
+<li>Use <code>window.scrollTo(x, y)</code> to scroll to a specific position.</li>
+<li>
+<p>Use <code>element.scrollIntoView(true)</code> to scroll to an element.</p>
+</li>
+<li>
+<p><strong>scroll to Element:</strong></p>
+</li>
+</ul>
+<pre><code class="language-csharp">using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+IWebDriver driver = new ChromeDriver();
+
+// Scroll to make element visible
+IWebElement element = driver.FindElement(By.Id(&quot;footer&quot;));
+((IJavaScriptExecutor)driver).ExecuteScript(&quot;arguments[0].scrollIntoView(true);&quot;, element);
+
+// With smooth scrolling
+((IJavaScriptExecutor)driver).ExecuteScript(
+    &quot;arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});&quot;, 
+    element);
+</code></pre>
+<ul>
+<li><strong>Scroll by Pixel Amount:</strong></li>
+</ul>
+<pre><code class="language-csharp">    // Scroll down by 500 pixels
+    ((IJavaScriptExecutor)driver).ExecuteScript(&quot;window.scrollBy(0, 500);&quot;);
+    // Scroll up
+    ((IJavaScriptExecutor)driver).ExecuteScript(&quot;window.scrollBy(0, -300);&quot;);
+    // Horizontal scroll
+    ((IJavaScriptExecutor)driver).ExecuteScript(&quot;window.scrollBy(200, 0);&quot;);
+</code></pre>
+<ul>
+<li>
+<p><strong>Example</strong></p>
+<p>```csharp
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;</p>
+<p>class ScrollingExample
+{
+    public static void Main()
+    {
+        IWebDriver driver = new ChromeDriver();</p>
+<pre><code>    try
+    {
+        driver.Navigate().GoToUrl("https://long-scroll-page.example");
+
+        // Scroll to footer
+        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        IWebElement footer = wait.Until(drv =&gt; drv.FindElement(By.Id("page-footer")));
+
+        ((IJavaScriptExecutor)driver).ExecuteScript(
+            "arguments[0].scrollIntoView({behavior: 'smooth'});", 
+            footer);
+
+        // Scroll up to middle of page
+        ((IJavaScriptExecutor)driver).ExecuteScript(
+            "window.scrollTo(0, document.body.scrollHeight/2);");
+
+        // Find and click a dynamically loaded element
+        IWebElement dynamicElement = wait.Until(drv =&gt; 
+        {
+            ((IJavaScriptExecutor)drv).ExecuteScript("window.scrollBy(0, 100)");
+            return drv.FindElement(By.CssSelector(".dynamic-item:visible"));
+        });
+
+        dynamicElement.Click();
+    }
+    finally
+    {
+        driver.Quit();
+    }
+}
+</code></pre>
+<p>}
+```</p>
+</li>
+</ul>
+<h2 id="39-what-are-locators-in-selenium-and-which-locators-do-you-prefer">39. What are locators in Selenium, and which locators do you prefer?</h2>
+<ul>
+<li>Locators are used to find elements on a web page.</li>
+<li>Common locators: ID, name, class name, tag name, link text, partial link text, XPath, CSS selector.</li>
+<li>Preferred locators: ID (if unique and stable), CSS selectors, XPath (for complex scenarios).</li>
+</ul>
+<h2 id="40-what-is-xpath-and-when-is-it-useful">40. What is XPath, and when is it useful?</h2>
+<ul>
+<li>XPath is a language for finding elements in XML/HTML documents.</li>
+<li>Useful for complex element locations, dynamic elements, or when other locators are not available.</li>
+</ul>
+<h2 id="41-what-is-css-selector-and-when-is-it-useful">41. What is CSS selector, and when is it useful?</h2>
+<ul>
+<li>CSS selectors are patterns used to select elements based on their attributes, IDs, classes, and other properties.</li>
+<li>Useful for fast and efficient element location, especially when IDs are not available.</li>
+</ul>
+<h2 id="42-how-do-you-handle-dynamic-web-elements-in-selenium">42. How do you handle dynamic web elements in Selenium?</h2>
+<ul>
+<li>Use explicit waits with expected conditions.</li>
+<li>Use relative XPath or CSS selectors that are less likely to change.</li>
+<li>Use dynamic locators that adapt to changes.</li>
+</ul>
+<h2 id="43-how-do-you-handle-shadow-dom-elements-in-selenium">43. How do you handle shadow DOM elements in Selenium?</h2>
+<ul>
+<li>Use <code>element.getShadowRoot()</code> to access the shadow root.</li>
+<li>Use <code>shadowRoot.findElement()</code> to find elements inside the shadow DOM.</li>
+</ul>
+<h2 id="44-how-to-take-screenshot-in-selenium">44. How to take screenshot in selenium?</h2>
+<ul>
+<li>Use <code>TakesScreenshot</code> interface.</li>
+<li>Use <code>getScreenshotAs(OutputType.FILE)</code> to capture the screenshot as a file.</li>
+<li>Save the file to the desired location.</li>
+</ul>
+<h2 id="45-how-to-run-test-in-headless-mode">45. How to run test in headless mode?</h2>
+<ul>
+<li>Use <code>ChromeOptions</code> or <code>FirefoxOptions</code> to configure the browser.</li>
+<li>Use <code>options.AddArguments("--headless")</code> to enable headless mode.</li>
+</ul>
+<h2 id="46-how-to-handle-auto-suggestion-like-global-search-of-flipkart">46. How to handle Auto suggestion like Global search of Flipkart.</h2>
+<h3 id="using-actions-class-for-better-control">Using Actions Class for Better Control:</h3>
+<pre><code class="language-csharp">    Actions actions = new Actions(driver);
+actions.SendKeys(driver.FindElement(By.Name(&quot;q&quot;)), &quot;headphones&quot;)
+       .Pause(TimeSpan.FromSeconds(1)) // Wait for suggestions
+       .SendKeys(Keys.ArrowDown)       // Navigate suggestions
+       .SendKeys(Keys.ArrowDown)
+       .SendKeys(Keys.Enter)
+       .Perform();
+</code></pre>
+<h3 id="input-char-and-wait-for-suggestion">input char and wait for suggestion:</h3>
+<ul>
+<li>Character-by-character input for reliable triggering </li>
+<li>Wait for suggestion container before interacting</li>
+<li>Select suggestions by partial text match</li>
+</ul>
+<pre><code class="language-csharp">using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System.Linq;
+
+class FlipkartSearchExample
+{
+    public static void Main()
+    {
+        IWebDriver driver = new ChromeDriver();
+
+        try
+        {
+            // Navigate to Flipkart
+            driver.Navigate().GoToUrl(&quot;https://www.flipkart.com&quot;);
+
+            // Close login popup if present
+            try
+            {
+                driver.FindElement(By.XPath(&quot;//button[text()='✕']&quot;)).Click();
+            }
+            catch { /* Popup not present */ }
+
+            // Locate search box
+            IWebElement searchBox = new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                .Until(drv =&gt; drv.FindElement(By.Name(&quot;q&quot;)));
+
+            // Type search term slowly
+            foreach (char c in &quot;air conditioner&quot;)
+            {
+                searchBox.SendKeys(c.ToString());
+                Thread.Sleep(100);
+            }
+
+            // Wait for suggestions to load
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            var suggestionsContainer = wait.Until(drv =&gt; 
+                drv.FindElement(By.CssSelector(&quot;._3qX0zy&quot;)));
+
+            // Get all suggestions
+            var suggestions = suggestionsContainer.FindElements(By.CssSelector(&quot;li&quot;));
+
+            // Select suggestion containing &quot;1.5 ton&quot;
+            var desiredSuggestion = suggestions.FirstOrDefault(s =&gt; 
+                s.Text.Contains(&quot;1.5 ton&quot;) &amp;&amp; s.Displayed);
+
+            if (desiredSuggestion != null)
+            {
+                desiredSuggestion.Click();
+            }
+            else
+            {
+                // Fallback: Press Enter for default search
+                searchBox.SendKeys(Keys.Enter);
+            }
+
+            // Verify search results
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                .Until(drv =&gt; drv.Title.Contains(&quot;air conditioner&quot;));
+        }
+        finally
+        {
+            driver.Quit();
+        }
+    }
+}
+</code></pre>
+<h2 id="47-what-is-selenium-grid">47. What is Selenium Grid?</h2>
+<ul>
+<li>Selenium Grid allows you to run tests on multiple machines with different browsers and operating systems in parallel.</li>
+<li>It consists of a hub and nodes.</li>
+</ul>
+<h2 id="48-what-is-the-difference-between-driverclose-and-driverquit">48. What is the difference between <code>driver.close()</code> and <code>driver.quit()</code>?</h2>
+<ul>
+<li><code>driver.Close()</code> closes the current window or tab.</li>
+<li><code>driver.Quit()</code> closes all windows and the WebDriver session.</li>
+</ul>
+<h2 id="49-how-do-you-handle-ssl-certificate-errors-in-selenium">49. How do you handle SSL certificate errors in Selenium?</h2>
+<ul>
+<li>Use <code>ChromeOptions</code> or <code>FirefoxOptions</code> to disable certificate checks.</li>
+<li>Use <code>options.setAcceptInsecureCerts(true)</code>.</li>
+</ul>
+<h2 id="50-how-do-you-integrate-selenium-with-cicd-tools">50. How do you integrate Selenium with CI/CD tools?</h2>
+<ul>
+<li>Use build tools like Maven or Gradle to manage dependencies and build the project.</li>
+<li>Use CI/CD tools like Jenkins, GitLab CI, or GitHub Actions to run tests automatically on code changes.</li>
+<li>Use plugins to generate test reports and integrate with other tools.</li>
+</ul>
+<h2 id="51-how-do-you-handle-localization-testing-with-selenium">51. How do you handle localization testing with Selenium?</h2>
+<ul>
+<li>Use resource files or databases to store localized strings.</li>
+<li>Use Selenium to verify that the correct localized strings are displayed on the UI.</li>
+<li>Parameterize tests with different locales.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
