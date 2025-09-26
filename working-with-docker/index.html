@@ -1,0 +1,996 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Working with docker - My notes blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My notes blog" class="md-header__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My notes blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Working with docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My notes blog" class="md-nav__button md-logo" aria-label="My notes blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My notes blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indexs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../README.md">🏠 Home</a></p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+<li><a href="#docker--test-automation-notes">Docker &amp; Test Automation Notes</a></li>
+<li><a href="#test-dependencies">Test Dependencies</a></li>
+<li><a href="#docker-overview">Docker Overview</a></li>
+<li><a href="#docker-containers">Docker Containers</a></li>
+<li><a href="#linux-containers">Linux Containers</a></li>
+<li><a href="#windows-containers">Windows Containers</a></li>
+<li><a href="#docker-architecture">Docker Architecture</a></li>
+<li><a href="#docker-terminology">Docker Terminology</a></li>
+<li><a href="#some-basic-docker-commands">Some Basic Docker Commands</a></li>
+<li><a href="#docker-commands">Docker Commands</a></li>
+<li><a href="#docker-image">Docker Image</a></li>
+<li><a href="#docker-container">Docker Container</a></li>
+<li><a href="#building-docker-images">Building Docker Images</a></li>
+<li><a href="#docker-volumes">Docker Volumes</a></li>
+<li><a href="#docker-networks">Docker Networks</a></li>
+<li><a href="#copying-files">Copying Files</a></li>
+<li><a href="#docker-compose">Docker-Compose</a></li>
+<li><a href="#basic-workflow-with-docker-compose">Basic Workflow with docker-compose</a></li>
+<li><a href="#sample-docker-composeyml-structure">Sample <code>docker-compose.yml</code> Structure</a></li>
+<li><a href="#dockerfile-process">Dockerfile Process</a></li>
+<li><a href="#selenium-grid-with-docker-compose-diagram-text-flow">Selenium Grid with Docker Compose Diagram</a></li>
+<li><a href="#useful-docker-commands">Useful Docker Commands</a></li>
+<li><a href="#docker-image-format">Docker Image Format</a></li>
+<li><a href="#dockerfile-commands">Dockerfile Commands</a></li>
+<li><a href="#docker-networks">Docker Networks</a></li>
+<li><a href="#working-with-images">Working with Images</a></li>
+<li><a href="#container-creation">Container Creation</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#commands">Commands</a></li>
+<li><a href="#frequently-used-images">Frequently Used Images</a></li>
+<li><a href="#linux-basics">Linux Basics</a></li>
+<li><a href="#file-system-navigation">File System Navigation</a></li>
+<li><a href="#file-operations">File Operations</a></li>
+<li><a href="#viewingediting">Viewing/Editing</a></li>
+<li><a href="#system-info">System Info</a></li>
+<li><a href="#package-management">Package Management</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#networking">Networking</a></li>
+<li><a href="#processes">Processes</a></li>
+<li><a href="#port-mapping-in-docker">Port Mapping in Docker</a></li>
+<li><a href="#why-is-port-mapping-needed">Why is Port Mapping Needed?</a></li>
+<li><a href="#docker-command-for-port-mapping">Docker Command for Port Mapping</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#docker-port-mapping--demo">Docker Port Mapping – Demo</a></li>
+<li><a href="#volume-mapping-in-docker">Volume Mapping in Docker</a></li>
+<li><a href="#docker-project-setup-and-usage">Docker Project Setup and Usage</a></li>
+<li><a href="#working-with-docker-in-my-project">Working with Docker in My Project</a></li>
+<li><a href="#docker-in-my-api-project">Docker in My API Project</a></li>
+<li><a href="#docker-composeyml">docker-compose.yml</a></li>
+<li><a href="#dockerfile">Dockerfile</a></li>
+</ol>
+<hr />
+<h1 id="docker-test-automation-notes">Docker &amp; Test Automation Notes</h1>
+<h2 id="introduction-to-docker">Introduction to Docker</h2>
+<ul>
+<li>Free and open source</li>
+<li>Virtual environment for all dependencies</li>
+<li>Prevents failure due to upgrades (Java, Chrome, Maven, etc.)</li>
+<li>Allows creation of Docker images containing necessary software</li>
+</ul>
+<p><strong>Workflow:</strong>
+Click to run ➝ One or multiple containers start ➝ Tests execute ➝ Containers return to idle</p>
+<h3 id="why-need">Why need?</h3>
+<ul>
+<li>Due to Test Dependencies.</li>
+<li>When creating test automation, the following dependencies are often required:</li>
+<li>Java</li>
+<li>Maven</li>
+<li>Test script</li>
+<li>Firefox browser</li>
+<li>Chrome browser</li>
+<li>ChromeDriver</li>
+<li>Your code</li>
+<li>Directory structure</li>
+<li>Test resources (data files, test cases, etc.)</li>
+</ul>
+<h3 id="docker-terminology">Docker Terminology</h3>
+<table>
+<thead>
+<tr>
+<th>Docker Term</th>
+<th>Description</th>
+<th>Java Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dockerfile</td>
+<td>Infrastructure as Code</td>
+<td><code>.java</code></td>
+</tr>
+<tr>
+<td>Build</td>
+<td>Create image from Dockerfile</td>
+<td>Compile/package</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>VM snapshot</td>
+<td><code>.class</code> / <code>.jar</code></td>
+</tr>
+<tr>
+<td>Tag</td>
+<td>Image version</td>
+<td>Jar version</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Running instance from image</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>DockerHub</td>
+<td>Image repository</td>
+<td>Maven repository</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="docker-containers">Docker Containers</h2>
+<p>Docker can create:</p>
+<h3 id="linux-containers">Linux Containers</h3>
+<ul>
+<li>Work on Windows, Linux, Mac</li>
+<li>Lightweight (few MBs)</li>
+</ul>
+<h3 id="windows-containers">Windows Containers</h3>
+<ul>
+<li>Work on Windows only</li>
+<li>Heavier (few GBs)</li>
+</ul>
+<hr />
+<h2 id="docker-architecture">Docker Architecture</h2>
+<ul>
+<li>Installing Docker sets up a <strong>Docker server (daemon)</strong>.</li>
+<li>The terminal functions as the <strong>Docker client</strong>.</li>
+</ul>
+<pre><code class="language-bash"># Communication Flow in docker
+Client Command ➝ Docker Daemon ➝ Process ➝ Response to Client
+</code></pre>
+<p><strong>Docker commands for Linux:</strong></p>
+<pre><code class="language-bash">sudo service docker status    # Check Docker status
+sudo service docker start     # Start Docker daemon
+</code></pre>
+<h2 id="useful-docker-commands-to-start">Useful Docker Commands to start</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker pull imageName</code></td>
+<td>Pull image from DockerHub</td>
+</tr>
+<tr>
+<td><code>docker image</code></td>
+<td>Show local images</td>
+</tr>
+<tr>
+<td><code>docker ps</code></td>
+<td>Show running containers</td>
+</tr>
+<tr>
+<td><code>docker ps -a</code></td>
+<td>Show all containers</td>
+</tr>
+<tr>
+<td><code>docker run imageName</code></td>
+<td>Create container from image</td>
+</tr>
+<tr>
+<td><code>docker stop containerID</code></td>
+<td>Stop running container</td>
+</tr>
+<tr>
+<td><code>docker system prune -f</code></td>
+<td>Remove stopped containers</td>
+</tr>
+<tr>
+<td><code>docker system prune -a</code></td>
+<td>Remove stopped + unused images</td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="working-with-docker-images">Working with Docker Images</h2>
+<h3 id="pull-the-image-from-dockerhub">Pull the image from dockerhub</h3>
+<pre><code class="language-bash">docker run hello-world     # Pulls and runs hello-world image
+docker pull hello-world    # Pulls updated version
+</code></pre>
+<h3 id="create-an-docker-image">Create an docker image</h3>
+<p>To create a Docker image, you generally need a <code>Dockerfile</code> that contains a set of instructions Docker uses to build the image.
+- <strong>Create a Dockerfile</strong></p>
+<ul>
+<li><strong>Build the image:</strong> By Running this command in the terminal where your Dockerfile is located.</li>
+</ul>
+<pre><code class="language-bash">docker build -t myapp:latest .
+</code></pre>
+<p><code>myapp</code> is the name of the image. <br />
+<code>.</code> indicates the current directory (where Dockerfile is present).</p>
+<ul>
+<li><strong>Verify the images</strong> by running commands</li>
+</ul>
+<pre><code class="language-bash">docker images
+</code></pre>
+<h4 id="dockerfile-commands">Dockerfile Commands</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FROM image</code></td>
+<td>Sets the base image to use</td>
+</tr>
+<tr>
+<td><code>ADD host-files container-files</code></td>
+<td>Copies files from host directory to container</td>
+</tr>
+<tr>
+<td><code>RUN command</code></td>
+<td>Executes a command (e.g. install pkgs)</td>
+</tr>
+<tr>
+<td><code>ENV var value</code></td>
+<td>Sets an environment variable</td>
+</tr>
+<tr>
+<td><code>WORKDIR path</code></td>
+<td>Set working directory inside the container</td>
+</tr>
+<tr>
+<td><code>EXPOSE port</code></td>
+<td>Informs Docker to open the specified port</td>
+</tr>
+<tr>
+<td><code>ENTRYPOINT command</code></td>
+<td>Defines the default executable</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>Used for comments in the Dockerfile</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="working-with-docker-container">Working With Docker Container:</h2>
+<h3 id="creating-docker-container">Creating docker container</h3>
+<p>A container is a running instance of a Docker image. To create one, you use the <code>docker run</code> command.</p>
+<p><strong>Syntax:</strong><br />
+  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</p>
+<p>Options:<br />
+<code>-d</code> -&gt; Run in background <br />
+<code>-i</code> -&gt; Attach input      <br />
+<code>-t</code> -&gt; Attach output     <br />
+<code>--name NAME</code> -&gt; Name container    <br />
+<code>--entrypoint=/bin/bash</code> -&gt; Override entrypoint <br />
+<code>-p 8080:8080</code>  -&gt; Map ports         <br />
+<code>-v /host:/container</code> -&gt; Volume mapping  </p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-bash"># 1.Runs the container in detached mode
+docker run -d imageName
+
+# 2.Runs the ubuntu container in interactive mode with terminal access
+docker run -it ubuntu 
+
+# 3.Runs the container with custom entrypoint (e.g., bash)
+docker run -it --entrypoint=/bin/bash imageName
+
+# 4.Run a container with mounted volume
+docker run -d -v /host/path:/container/path myimage
+
+# 5.Remove container
+docker rm containerName    
+
+</code></pre>
+<h3 id="frequently-used-images">Frequently Used Images</h3>
+<ul>
+<li><code>ubuntu</code></li>
+<li><code>busybox</code></li>
+<li><code>alpine</code></li>
+</ul>
+<hr />
+<h2 id="port-mapping-in-docker">Port Mapping in Docker</h2>
+<p>Port Mapping is a technique used to allow communication between devices or applications by mapping ports on a host machine to specific ports on another machine or a containerized environment. It's commonly used in networking, containerization (e.g., Docker), and application hosting.</p>
+<ul>
+<li>If multiple applications are running on a machine, then to access them from external applications/machines we use port mapping.</li>
+<li>At a time two applications cannot be assigned the same port. We have to stop one application to assign the port to another.</li>
+</ul>
+<h3 id="why-is-port-mapping-needed">Why is Port Mapping Needed?</h3>
+<ol>
+<li><strong>External Access</strong>: Makes an application or service running on a specific port inside a container or a private network accessible externally.</li>
+<li><strong>Port Collision Avoidance</strong>: Helps to avoid conflicts when multiple services use the same port.</li>
+<li><strong>Control and Security</strong>: Restricts access to specific ports and provides flexibility in managing traffic.</li>
+</ol>
+<h3 id="docker-command-for-port-mapping">Docker Command for Port Mapping</h3>
+<pre><code class="language-bash">docker run -p hostPort:containerPort image
+</code></pre>
+<ul>
+<li>Port 80 is the default port.</li>
+</ul>
+<h4 id="examples">Examples:</h4>
+<pre><code class="language-bash">docker run -p 80:80 vindocker/jmserver
+docker run -p 4444:80 mongo
+</code></pre>
+<ul>
+<li>Docker Multi-Container Flow (with Network and Host Access)</li>
+</ul>
+<pre><code>                ┌────────────┐
+                │ Machine A  │
+                └─────┬──────┘
+                      │
+               10.11.12.13
+                      │
+                      ▼
+            ┌────────────────────┐
+            │      Docker        │
+            ├────────┬───────────┤
+            │ Port 80│ Port 90   │
+            ├────────┴───────────┤
+            │                    │
+  ┌───────────────┐   ┌────────────────┐
+  │ Container/vm 1│   │ Container/vm 2 │
+  │───────────────│   │────────────────│
+  │ Jenkins   :80 │   │ MongoDB   :90  │
+  │ Ubuntu    :9023│  │ Selenium  :80  │
+  └───────────────┘   └────────────────┘
+</code></pre>
+<ul>
+<li>For the above scenario, port mappings will be:</li>
+</ul>
+<pre><code class="language-bash">docker run -p 80:80 vindocker/jenkins
+docker run -p 80:9023 vindocker/Ubuntu
+docker run -p 90:80 SeleniumGrid
+</code></pre>
+<h3 id="docker-port-mapping-demo">Docker Port Mapping – Demo</h3>
+<ol>
+<li><strong>Check the running containers:</strong></li>
+</ol>
+<pre><code class="language-bash">docker ps -a
+docker images
+</code></pre>
+<ol>
+<li><strong>Start the nginx server on port 8040:</strong></li>
+</ol>
+<pre><code class="language-bash">docker run -p 8040:80 nginx  # Check in browser: localhost:8040
+</code></pre>
+<ol>
+<li><strong>Start the nginx server on port 8050:</strong></li>
+</ol>
+<pre><code class="language-bash">docker run -p 8050:80 nginx  # Check in browser: localhost:8050
+</code></pre>
+<hr />
+<h2 id="volume-mapping-in-docker">Volume Mapping in Docker</h2>
+<p>Mount host directories into container:</p>
+<pre><code class="language-bash">docker run -v /host/path:/container/path imageName
+</code></pre>
+<hr />
+<h1 id="docker-project-setup-and-usage">Docker Project Setup and Usage</h1>
+<h2 id="working-with-docker-in-my-project">Working with Docker in My Project</h2>
+<h3 id="step-by-step-guide">Step-by-Step Guide:</h3>
+<ol>
+<li><strong>Install Docker</strong> on your system.</li>
+<li><strong>Navigate to your project directory</strong> and create a <code>docker-compose.yml</code> file. This file defines and supports running your application in Docker.</li>
+</ol>
+<h3 id="to-run-it">To Run It:</h3>
+<ol>
+<li>
+<p><code>docker-compose build</code>
+   ➝ Builds the application as an image that will run in a container.</p>
+</li>
+<li>
+<p><code>docker images</code>
+   ➝ Lists the created images.</p>
+</li>
+<li>
+<p><code>docker-compose up</code>
+   ➝ Runs the application based on the <code>docker-compose.yml</code> file.</p>
+</li>
+<li>
+<p>Open the <strong>localhost URL</strong> as configured in your Docker setup to access the application.</p>
+</li>
+</ol>
+<hr />
+<h2 id="docker-in-my-api-project">Docker in My API Project</h2>
+<h3 id="docker-composeyml">docker-compose.yml:</h3>
+<pre><code class="language-yaml"># version: '3.4' # not required in new version
+services:
+  ea_api:
+    image: ea_api
+    container_name: eaapi
+    build:
+      context: .
+      dockerfile: GraphQL.NET/Dockerfile
+    restart: on-failure
+    ports:
+      - 5001:8000
+    networks:
+      - ea_network
+
+networks:
+  ea_network:
+</code></pre>
+<h3 id="dockerfile">Dockerfile:</h3>
+<pre><code class="language-dockerfile">FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY [&quot;GraphQL.NET/GraphQLProductApp.csproj&quot;, &quot;GraphQL.NET/&quot;]
+RUN dotnet restore &quot;GraphQL.NET/GraphQLProductApp.csproj&quot;
+COPY . .
+WORKDIR &quot;/src/GraphQL.NET&quot;
+RUN dotnet build &quot;GraphQLProductApp.csproj&quot; -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish &quot;GraphQLProductApp.csproj&quot; -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ASPNETCORE_URLS=http://*:8000
+EXPOSE 8000
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT [&quot;dotnet&quot;, &quot;GraphQLProductApp.dll&quot;]
+</code></pre>
+<hr />
+<h2 id="docker-commands">Docker Commands</h2>
+<h3 id="docker-image-commands">Docker image Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker</code></td>
+<td>Basic Docker command</td>
+</tr>
+<tr>
+<td><code>docker version</code></td>
+<td>Show version info</td>
+</tr>
+<tr>
+<td><code>docker-compose</code></td>
+<td>Multi-container management</td>
+</tr>
+<tr>
+<td><code>docker-compose version</code></td>
+<td>Show Docker Compose version</td>
+</tr>
+<tr>
+<td><code>docker info</code>       `</td>
+<td>Get detailed information about the Docker installation.</td>
+</tr>
+<tr>
+<td><code>docker images</code></td>
+<td>List all downloaded Docker images on your system.</td>
+</tr>
+<tr>
+<td><code>docker pull imageName</code></td>
+<td>Pull image from DockerHub</td>
+</tr>
+<tr>
+<td><code>docker pull ubuntu</code></td>
+<td>Download a Docker image from Docker Hub.</td>
+</tr>
+<tr>
+<td><code>docker rmi &lt;image_id_or_name&gt;</code></td>
+<td>Remove the specific Docker image.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="docker-container">Docker Container:</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker ps</code></td>
+<td>List all running Docker containers.</td>
+</tr>
+<tr>
+<td><code>docker ps -a</code></td>
+<td>List all containers, including stopped ones.</td>
+</tr>
+<tr>
+<td><code>docker run &lt;image_name&gt;</code></td>
+<td>Run a container from a Docker image.</td>
+</tr>
+<tr>
+<td><code>docker start &lt;container_id_or_name&gt;</code></td>
+<td>Start a stopped container.</td>
+</tr>
+<tr>
+<td><code>docker stop &lt;container_id_or_name&gt;</code></td>
+<td>Stop a running container.</td>
+</tr>
+<tr>
+<td><code>docker restart &lt;container_id_or_name&gt;</code></td>
+<td>Restart a container.</td>
+</tr>
+<tr>
+<td><code>docker rm &lt;container_id_or_name&gt;</code></td>
+<td>Remove a stopped container.</td>
+</tr>
+<tr>
+<td><code>docker logs &lt;container_id_or_name&gt;</code></td>
+<td>View logs of a container.</td>
+</tr>
+<tr>
+<td><code>docker system prune -f</code></td>
+<td>Remove stopped containers</td>
+</tr>
+<tr>
+<td><code>docker system prune -a</code></td>
+<td>Remove stopped + unused images</td>
+</tr>
+</tbody>
+</table>
+<h3 id="building-docker-images">Building Docker Images:</h3>
+<ul>
+<li><code>docker build -t &lt;image_name&gt; &lt;path_to_dockerfile&gt;</code> – Build a Docker image from a Dockerfile.</li>
+</ul>
+<h3 id="docker-volumes">Docker Volumes:</h3>
+<ul>
+<li><code>docker volume create &lt;volume_name&gt;</code> – Create a Docker volume.</li>
+<li><code>docker volume ls</code> – List all Docker volumes.</li>
+<li><code>docker volume rm &lt;volume_name&gt;</code> – Remove a Docker volume.</li>
+</ul>
+<h3 id="docker-networks">Docker Networks:</h3>
+<ul>
+<li><code>docker network ls</code> – List all Docker networks.</li>
+<li><code>docker network create &lt;network_name&gt;</code> – Create a custom Docker network.</li>
+<li><code>docker network connect &lt;network_name&gt; &lt;container_name&gt;</code> – Connect a container to a network.</li>
+</ul>
+<h3 id="copying-files">Copying Files:</h3>
+<ul>
+<li><code>docker cp &lt;container_id&gt;:&lt;container_path&gt; &lt;host_path&gt;</code> – Copy from container to host.</li>
+<li><code>docker cp &lt;host_path&gt; &lt;container_id&gt;:&lt;container_path&gt;</code> – Copy from host to container.</li>
+</ul>
+<hr />
+<h2 id="docker-compose">Docker-Compose</h2>
+<ul>
+<li><code>docker-compose</code> is a tool for defining and managing multi-container Docker applications.</li>
+<li>Uses <code>docker-compose.yml</code> to configure services, networks, and volumes.</li>
+<li>Simplifies running applications requiring multiple containers.</li>
+</ul>
+<h3 id="basic-workflow-with-docker-compose">Basic Workflow with docker-compose:</h3>
+<ol>
+<li>Define your services in <code>docker-compose.yml</code>.</li>
+<li>Run <code>docker-compose up</code> to start services.</li>
+<li>Run <code>docker-compose down</code> to stop and clean up.</li>
+</ol>
+<h3 id="sample-docker-composeyml-structure">Sample <code>docker-compose.yml</code> Structure:</h3>
+<pre><code class="language-yaml">version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - &quot;8080:80&quot;
+    volumes:
+      - ./html:/usr/share/nginx/html
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+</code></pre>
+<hr />
+<h2 id="dockerfile-process">Dockerfile Process</h2>
+<pre><code class="language-plaintext">
+Dockerfile ---------→ Image -----------&gt;  DockerHub
+            [build]           [push]
+
+DockerHub ----------&gt; Image -----------&gt; app1, app2, app3
+             [pull]         [run] 
+
+</code></pre>
+<hr />
+<h2 id="selenium-grid-with-docker-compose-diagram-text-flow">Selenium Grid with Docker Compose Diagram (Text Flow)</h2>
+<ul>
+<li>Defines and runs <strong>multi-container applications</strong></li>
+<li>Uses <code>docker-compose.yml</code></li>
+<li>Promotes <strong>modularity</strong></li>
+</ul>
+<pre><code class="language-markdown">Docker-compose.yml
+     |
+     | UP
+     v
+    HUB
+     |
+     |--&gt; chrome
+     |--&gt; chrome
+     |--&gt; firefox
+     |--&gt; firefox
+</code></pre>
+<p>This diagram represents how <code>docker-compose.yml</code> spins up a <strong>Hub</strong> container and links multiple browser nodes (Chrome and Firefox) for parallel test execution.</p>
+<hr />
+<h2 id="pulling-the-docker-image">Pulling the docker image</h2>
+<pre><code class="language-plaintext">docker pull [repository-host:port]/[owner]/imageName[:tag]
+</code></pre>
+<p>Defaults if optional params are missing:</p>
+<ul>
+<li><code>repository-host:port</code> = <code>hub.docker.com</code></li>
+<li><code>owner</code> = <code>library</code></li>
+<li><code>tag</code> = <code>latest</code></li>
+</ul>
+<hr />
+<h2 id="working-with-docker-networks">Working with Docker Networks</h2>
+<pre><code class="language-bash">docker network create mynetwork
+docker run --network=mynetwork nginx
+docker run --network=mynetwork ubuntu
+</code></pre>
+<hr />
+<h2 id="linux-basics">Linux Basics</h2>
+<h3 id="file-system-navigation">File System Navigation</h3>
+<pre><code class="language-bash">ls, ls -l, ls -la
+cd dirName, cd .., cd ../dir
+pwd
+mkdir dirName
+rm -r dirName, rm -rf dirName
+</code></pre>
+<h3 id="file-operations">File Operations</h3>
+<pre><code class="language-bash">touch file
+cp src dst
+mv src dst
+rm file
+</code></pre>
+<h3 id="viewingediting">Viewing/Editing</h3>
+<pre><code class="language-bash">cat file, cat &gt; file, cat &gt;&gt; file
+tail -f file
+less file
+nano file
+vim file
+</code></pre>
+<h3 id="system-info">System Info</h3>
+<pre><code class="language-bash">uname -a
+top
+df -h
+free -h
+</code></pre>
+<h3 id="package-management">Package Management</h3>
+<pre><code class="language-bash">sudo apt update
+sudo apt upgrade
+sudo apt install pkg
+sudo apt remove pkg
+</code></pre>
+<h3 id="permissions">Permissions</h3>
+<pre><code class="language-bash">chmod 777 file
+chown user:group file
+</code></pre>
+<h3 id="networking">Networking</h3>
+<pre><code class="language-bash">ping host
+ifconfig
+netstat -tuln
+whois domain
+dig domain
+wget url
+curl url
+ssh user@host
+</code></pre>
+<hr />
+<h2 id="processes">Processes</h2>
+<pre><code class="language-bash">ps
+ps aux
+kill PID
+killall processName
+</code></pre>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

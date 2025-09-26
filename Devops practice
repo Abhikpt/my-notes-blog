@@ -1,0 +1,325 @@
+# ðŸ“˜ Complete Notes -- DevOps, GitHub Actions, Playwright (C#), and Git Basics
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ GitHub Actions & CI/CD Basics
+
+### Workflow Structure
+
+A GitHub Actions workflow YAML file generally looks like this:
+
+``` yaml
+name: CI Pipeline
+
+on:
+  push:       # Triggers on every push
+  workflow_dispatch:   # Allows manual trigger
+
+jobs:
+  build:               # Job name (can be anything)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+```
+
+### Trigger Options (`on:`)
+
+-   `push` â†’ Run on every push\
+-   `pull_request` â†’ Run on pull request events\
+-   `workflow_dispatch` â†’ Run manually\
+-   `schedule` â†’ Run on cron schedule\
+-   `release` â†’ Run on release events
+
+### Important Jobs
+
+-   `runs-on` â†’ Defines OS (ubuntu-latest, windows-latest,
+    macos-latest)\
+-   `steps` â†’ Defines each action/command\
+-   `uses` â†’ Use a predefined GitHub Action\
+-   `run` â†’ Run a shell command
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Playwright with C# in CI/CD
+
+### Build & Test
+
+``` yaml
+- name: Setup .NET
+  uses: actions/setup-dotnet@v3
+  with:
+    dotnet-version: '8.0.x'
+
+- name: Restore dependencies
+  run: dotnet restore
+
+- name: Build
+  run: dotnet build --no-restore --configuration Release
+
+- name: Test
+  run: xvfb-run -a dotnet test --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
+```
+
+### Handling Playwright Browsers
+
+``` yaml
+- name: Install Playwright Browsers
+  run: pwsh bin/Debug/net8.0/playwright.ps1 install
+```
+
+### Artifacts (Logs, Screenshots, Reports)
+
+``` yaml
+- name: Upload test results
+  uses: actions/upload-artifact@v3
+  with:
+    name: test-logs
+    path: |
+      TestResults/
+      Logs/
+      Screenshots/
+      Resources/
+```
+
+-   **Artifacts** let you collect outputs (logs, screenshots, reports)
+    from the pipeline.\
+-   You can also use **actions/download-artifact@v3** to get artifacts
+    in later jobs.
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Secrets & Variables in GitHub Actions
+
+### Example Workflow with Secrets & Variables
+
+``` yaml
+name: Manual Workflow with Secrets
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    env:
+      MY_VARIABLE: "HelloWorld"
+    steps:
+      - name: Print variable
+        run: echo "My variable is $MY_VARIABLE"
+
+      - name: Print secret
+        run: echo "Secret is ${{ secrets.MY_SECRET }}"
+```
+
+-   **Variables** â†’ set with `env:` or `echo`.\
+-   **Secrets** â†’ stored in GitHub repo â†’ **Settings â†’ Secrets and
+    variables â†’ Actions â†’ New Repository Secret**.\
+-   Example: store `TEST_USER` and `TEST_PASS` as secrets, then use them
+    in tests.
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Data-Driven Testing in Playwright (C# + NUnit)
+
+### Using `TestCaseData`
+
+``` csharp
+public static IEnumerable<TestCaseData> LoginData =>
+    new List<TestCaseData>
+    {
+        new TestCaseData("user1", "pass1"),
+        new TestCaseData("user2", "pass2")
+    };
+
+[Test, TestCaseSource(typeof(LoginTests), nameof(LoginData))]
+public async Task TestLogin(string username, string password)
+{
+    // Test code with Playwright
+}
+```
+
+-   `TestCaseData` â†’ Defines multiple test inputs.\
+-   `TestCaseSource` â†’ Supplies data from a property/class.\
+-   `typeof(...)` â†’ Used when referencing external class for test data.
+
+### Other Data Sources
+
+-   From JSON/CSV files.\
+-   From database.\
+-   From inline arrays.
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Git Basics
+
+### Config
+
+Check configs:
+
+``` bash
+git config --list
+git config --global --list
+```
+
+Set configs:
+
+``` bash
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+```
+
+### Branches
+
+-   Create branch:
+
+    ``` bash
+    git checkout -b feature/new-feature
+    ```
+
+-   Switch branch:
+
+    ``` bash
+    git checkout develop
+    ```
+
+-   Push branch:
+
+    ``` bash
+    git push origin feature/new-feature
+    ```
+
+### Comparing Branches
+
+``` bash
+git diff develop..HEAD         # Show code differences
+git log develop..HEAD --oneline  # Show commit differences
+```
+
+### Merge vs Rebase
+
+-   **Merge** â†’ Keeps history with extra merge commits.\
+-   **Rebase** â†’ Rewrites history, cleaner but riskier.
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Git Stash
+
+-   Save changes:
+
+    ``` bash
+    git stash
+    git stash save "WIP: changes"
+    ```
+
+-   List stashes:
+
+    ``` bash
+    git stash list
+    ```
+
+-   Apply stash (keep in stash):
+
+    ``` bash
+    git stash apply
+    ```
+
+-   Pop stash (apply & remove):
+
+    ``` bash
+    git stash pop
+    ```
+
+-   Use stash in other branches:
+
+    ``` bash
+    git checkout develop
+    git stash pop stash@{0}
+    ```
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Git Stage, Commit, Reset
+
+-   **Stage** (`git add`) â†’ Prepare files for commit.\
+
+-   **Unstage** â†’ `git reset <file>` moves back to "changes".\
+
+-   **Commit** â†’ Save staged changes permanently.\
+
+-   **Undo commit**:
+
+    ``` bash
+    git reset --soft HEAD~1   # Keep changes staged
+    git reset --mixed HEAD~1  # Keep changes unstaged
+    git reset --hard HEAD~1   # Discard changes
+    ```
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Branch Management
+
+-   Rename branch:
+
+    ``` bash
+    git branch -m old-name new-name
+    ```
+
+-   Delete branch:
+
+    ``` bash
+    git branch -D branch-name
+    ```
+
+-   Fetch remote branches:
+
+    ``` bash
+    git fetch --all
+    git branch -r
+    ```
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Commit Safety & Confirmation
+
+-   Use **hooks** for confirmation:\
+    `.git/hooks/pre-push`
+
+    ``` bash
+    #!/bin/sh
+    read -p "Are you sure you want to push? (y/n) " ans
+    if [ "$ans" != "y" ]; then
+      echo "Push canceled."
+      exit 1
+    fi
+    ```
+
+-   Or use **aliases** for safe commit/push with prompts.
+
+------------------------------------------------------------------------
+
+## ðŸ”¹ Working with Mistakes
+
+### Case: Made changes in `develop` but want them in a new branch
+
+-   If **uncommitted**:
+
+    ``` bash
+    git checkout -b feature/fix-scripts
+    git add .
+    git commit -m "Fix scripts"
+    ```
+
+-   If **committed**:
+
+    ``` bash
+    git checkout -b feature/fix-scripts
+    git checkout develop
+    git reset --hard HEAD~1
+    ```
+
+------------------------------------------------------------------------
+
+âœ… This covers **GitHub Actions (C# Playwright CI/CD)** +
+**Secrets/Artifacts** + **Data Driven Testing** + **Git
+config/branch/stash/merge/rebase** + **Practical fixes for mistakes**.
